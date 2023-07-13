@@ -1,4 +1,4 @@
-module github.com/FourWD/middleware-aot
+module github.com/FourWD/aot.middleware
 
 go 1.19
 
