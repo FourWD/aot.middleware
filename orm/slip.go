@@ -20,6 +20,7 @@ type Slip struct {
 	SlipVehicleSubModelID string `db:"slip_vehicle_model_id" json:"slip_vehicle_model_id" gorm:"type:varchar(36); comment:'ประเภทรถตามหน้าตั๋วที่ซื้อ'"`
 
 	IsPickup  int    `db:"is_pickup" json:"is_pickup" gorm:"default:0; type:tinyint(1); comment:'รับลูกค้าหรือยัง' "`
+	PickupAt  string `db:"pickup_at" json:"pickup_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่รับลูกค้า'  "`
 	CounterID string `db:"counter_id" json:"counter_id" gorm:"type:varchar(36)"`
 
 	OriginPoiID         string  `db:"origin_poi_id" json:"origin_poi_id" gorm:"type:varchar(36);"`
@@ -36,6 +37,8 @@ type Slip struct {
 	Vat                 float64 `db:"vat" json:"vat" gorm:"default:null; type:decimal(16,4); comment:'ภาษี' "`
 	NetPrice            float64 `db:"netprice" json:"netprice" gorm:"default:null; type:decimal(16,4); comment:'รวมราคาค่าบริการทั้งหมด' "`
 	IsPaid              int     `db:"is_paid" json:"is_paid" gorm:"default:0; type:tinyint(2); comment:'ลูกค้าจ่ายหรือยัง' "`
+
+	RefCode string `db:"ref_code" json:"ref_code" gorm:"type:varchar(36) comment:'ref ในหน้า status fleet'"`
 
 	PaymentTypeID    string `db:"payment_type_id" json:"payment_type_id" gorm:"type:varchar(2);"`
 	PaymentAt        string `db:"payment_at" json:"payment_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่จ่าย' "`
