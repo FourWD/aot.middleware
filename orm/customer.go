@@ -24,4 +24,5 @@ type Customer struct {
 	TaxNo         string `db:"tax_no" json:"tax_no" gorm:"type:varchar(20)"`
 	PhoneNo1      string `db:"phone_no1" json:"phone_no1" gorm:"type:varchar(10)"`
 	PhoneNo2      string `db:"phone_no2" json:"phone_no2" gorm:"type:varchar(10)"`
+	RunningNo     int    `db:"running_no" json:"running_no" gorm:"type:int(11)"` //running
 }
