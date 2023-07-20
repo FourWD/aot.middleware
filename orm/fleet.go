@@ -16,5 +16,5 @@ type Fleet struct {
 	Address  string `db:"address" json:"address" gorm:"type:varchar(150)"`
 	PhoneNo  string `db:"phone_no" json:"phone_no" gorm:"type:varchar(10)"`
 	Email    string `db:"email" json:"email" gorm:"type:varchar(50)"`
-	Status   bool   `db:"status" json:"status" gorm:"type:tinyint(2)"`
+	Status   bool   `db:"status" json:"status" gorm:"type:bool"`
 }
