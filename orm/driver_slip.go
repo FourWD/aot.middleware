@@ -4,8 +4,8 @@ import (
 	orm "github.com/FourWD/middleware/orm"
 )
 
-type Slip struct {
-	ID string `db:"id" json:"id" gorm:"type:varchar(36);primary_key;"`
+type DriverSlip struct {
+	ID string `db:"id" json:"id" gorm:"type:varchar(2);primary_key;"`
 	orm.GormModel
 
 	SlipNo    string `db:"slip_no"  json:"slip_no" gorm:"type:varchar(50); index"`
@@ -53,13 +53,11 @@ type Slip struct {
 	VoidBy       string `db:"void_by" json:"void_by" gorm:"type:varchar(36);"`
 	VoidAt       string `db:"void_at" json:"void_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่ยกเลิก' "`
 
-	Latitude       float64 `db:"lat" json:"lat" gorm:"type:decimal(10,6) comment:'ระยะพิกัดต้นทาง'"`
-	Longitude      float64 `db:"long" json:"long" gorm:"type:decimal(10,6) comment:'ระยะพิกัดปลายทาง'"`
-	IsCancel       int     `db:"is_cancel" json:"is_cancel" gorm:"default:0; type:tinyint(1); comment:'ยกเลิก?' "`
-	IsCancelTypeID string  `db:"is_cancel_type_id" json:"is_cancel_type_id" gorm:"type:varchar(36);"`
-	CancelRemark   string  `db:"cancel_remark" json:"cancel_remark" gorm:"type:varchar(500);"`
-	CancelBy       string  `db:"cancel_by" json:"cancel_by" gorm:"type:varchar(36);"`
-	CancelAt       string  `db:"cancel_at" json:"cancel_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่ยกเลิก' "`
+	IsCancel       int    `db:"is_cancel" json:"is_cancel" gorm:"default:0; type:tinyint(1); comment:'ยกเลิก?' "`
+	IsCancelTypeID string `db:"is_cancel_type_id" json:"is_cancel_type_id" gorm:"type:varchar(36);"`
+	CancelRemark   string `db:"cancel_remark" json:"cancel_remark" gorm:"type:varchar(500);"`
+	CancelBy       string `db:"cancel_by" json:"cancel_by" gorm:"type:varchar(36);"`
+	CancelAt       string `db:"cancel_at" json:"cancel_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่ยกเลิก' "`
 
 	IsNewCustomer int    `db:"is_newcustomer" json:"is_newcustomer" gorm:"type:tinyint(2)"`
 	CustomerID    string `db:"customer_id" json:"customer_id" gorm:"type:varchar(36);"`
