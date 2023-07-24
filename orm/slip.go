@@ -53,8 +53,8 @@ type Slip struct {
 	VoidBy       string `db:"void_by" json:"void_by" gorm:"type:varchar(36);"`
 	VoidAt       string `db:"void_at" json:"void_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่ยกเลิก' "`
 
-	Latitude       float64 `db:"lat" json:"lat" gorm:"type:decimal(10,6) comment:'ระยะพิกัดต้นทาง'"`
-	Longitude      float64 `db:"long" json:"long" gorm:"type:decimal(10,6) comment:'ระยะพิกัดปลายทาง'"`
+	Latitude       float64 `db:"lat" json:"lat" gorm:"type:decimal(10,6); comment:'ระยะพิกัดต้นทาง'"`
+	Longitude      float64 `db:"long" json:"long" gorm:"type:decimal(10,6); comment:'ระยะพิกัดปลายทาง'"`
 	IsCancel       int     `db:"is_cancel" json:"is_cancel" gorm:"default:0; type:tinyint(1); comment:'ยกเลิก?' "`
 	IsCancelTypeID string  `db:"is_cancel_type_id" json:"is_cancel_type_id" gorm:"type:varchar(36);"`
 	CancelRemark   string  `db:"cancel_remark" json:"cancel_remark" gorm:"type:varchar(500);"`
