@@ -85,7 +85,7 @@ type Slip struct {
 	ArrivedAt       string `db:"arrived_at" json:"arrived_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่มาถึง' "`
 
 	IsCompleted int    `db:"is_completed" json:"is_completed" gorm:"default:0; type:tinyint(1); comment:'เสร็จสมบูรณ์' "`
-	Remark      string `db:"remark" json:"remark" gorm:"type:varchar(150) comment:'คำอธิบาย'"`
+	Remark      string `db:"remark" json:"remark" gorm:"type:varchar(255); comment:'คำอธิบาย'"`
 
 	BookingNo string `db:"booking_no"  json:"booking_no" gorm:"type:varchar(50); index"`
 	BookingBy string `db:"booking_by" json:"booking_by" gorm:"type:varchar(36); comment:'จองโดย'"`
