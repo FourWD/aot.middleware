@@ -15,7 +15,7 @@ type FleetClient struct {
 	Remark             string `db:"remark" json:"remark" gorm:"type:varchar(200)"`
 	RowOrder           int    `db:"row_order" json:"row_order" gorm:"type:int"`
 	Address            string `db:"address" json:"address" gorm:"type:varchar(150)"`
-	PhoneNo            string `db:"phone_no" json:"phone_no" gorm:"type:varchar(10)"`
+	PhoneNo            string `db:"phone_no" json:"phone_no" gorm:"type:varchar(10)"` //
 	Email              string `db:"email" json:"email" gorm:"type:varchar(50)"`
 	Status             bool   `db:"status" json:"status" gorm:"type:bool"`
 	ContactPerson      string `db:"contact_person" json:"contact_person" gorm:"type:varchar(50)"`
