@@ -66,8 +66,8 @@ type Slip struct {
 	Code          string `db:"code"  json:"code" gorm:"type:varchar(20) ; dafault:null ; index"`
 	CompanyName   string `db:"company_name" json:"company_name" gorm:"type:varchar(150)"`
 	TaxNo         string `db:"tax_no" json:"tax_no" gorm:"type:varchar(20)"`
-	IsTax         bool   `db:"is_tax" json:"is_tax" gorm:"type:tinyint(2)"`
-	IsHQ          bool   `db:"is_hq" json:"is_hq" gorm:"type:tinyint(2)"`
+	IsTax         int    `db:"is_tax" json:"is_tax" gorm:"type:tinyint(2)"`
+	IsHQ          int    `db:"is_hq" json:"is_hq" gorm:"type:tinyint(2)"`
 	Address       string `db:"address" json:"address" gorm:"type:text"`
 	Postcode      string `db:"postcode" json:"postcode" gorm:"type:varchar(5)"`
 	PhoneNo       string `db:"phone_no" json:"phone_no" gorm:"type:varchar(10)"`
