@@ -16,6 +16,8 @@ type FleetClient struct {
 	RowOrder           int     `db:"row_order" json:"row_order" gorm:"type:int"`
 	Address            string  `db:"address" json:"address" gorm:"type:varchar(150)"`
 	PhoneNo            string  `db:"phone_no" json:"phone_no" gorm:"type:varchar(10)"`
+	StartDate          string  `db:"start_date" json:"start_date" gorm:"type:varchar(50) ; comment:'วันที่เริ่ม' "`
+	EndDate            string  `db:"end_date" json:"end_date" gorm:"type:varchar(50) ; comment:'วันที่จบ'"`
 	MinTicket          int     `db:"min_ticket" json:"min_ticket" gorm:"type:int"`
 	Discount           float64 `db:"discount" json:"discount" gorm:"default:null; type:decimal(16,4); comment:'ส่วนลด' "`
 	Email              string  `db:"email" json:"email" gorm:"type:varchar(50)"`
