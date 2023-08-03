@@ -58,12 +58,14 @@ type SlipFleet struct {
 	Code          string `db:"code"  json:"code" gorm:"type:varchar(20) ; dafault:null ; index"`
 	FleetClientId string `db:"fleet_client_id"  json:"fleet_client_id" gorm:"type:varchar(10) ; dafault:null ; "`
 	CompanyName   string `db:"company_name" json:"company_name" gorm:"type:varchar(150)"`
-	IsHQ          int    `db:"is_hq" json:"is_hq" gorm:"type:tinyint(2)"`
-	Address       string `db:"address" json:"address" gorm:"type:text"`
-	Postcode      string `db:"postcode" json:"postcode" gorm:"type:varchar(5)"`
-	PhoneNo       string `db:"phone_no" json:"phone_no" gorm:"type:varchar(10)"`
-	FightNo       string `db:"fight_no" json:"fight_no" gorm:"type:varchar(20)"`
-	FightAt       string `db:"fight_at" json:"fight_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่บิน'"`
+	CompanyID     string `db:"company_id" json:"company_id" gorm:"type:varchar(10)"`
+
+	IsHQ     int    `db:"is_hq" json:"is_hq" gorm:"type:tinyint(2)"`
+	Address  string `db:"address" json:"address" gorm:"type:text"`
+	Postcode string `db:"postcode" json:"postcode" gorm:"type:varchar(5)"`
+	PhoneNo  string `db:"phone_no" json:"phone_no" gorm:"type:varchar(10)"`
+	FightNo  string `db:"fight_no" json:"fight_no" gorm:"type:varchar(20)"`
+	FightAt  string `db:"fight_at" json:"fight_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่บิน'"`
 
 	RentalRateID     string  `db:"rental_rate_id" json:"rental_rate_id" gorm:"type:varchar(36)"`
 	RentalPrice      float64 `db:"rental_price" json:"rental_price" gorm:"type:decimal(16,4)"`
