@@ -55,10 +55,11 @@ type SlipFleet struct {
 	VoidBy       string `db:"void_by" json:"void_by" gorm:"type:varchar(36);"`
 	VoidAt       string `db:"void_at" json:"void_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่ยกเลิก' "`
 
-	Code          string `db:"code"  json:"code" gorm:"type:varchar(20) ; dafault:null ; index"`
-	FleetClientId string `db:"fleet_client_id"  json:"fleet_client_id" gorm:"type:varchar(10) ; dafault:null ; "`
-	CompanyName   string `db:"company_name" json:"company_name" gorm:"type:varchar(150)"`
-	CompanyID     string `db:"company_id" json:"company_id" gorm:"type:varchar(10)"`
+	Code           string `db:"code"  json:"code" gorm:"type:varchar(20) ; dafault:null ; index"`
+	FleetClientId  string `db:"fleet_client_id"  json:"fleet_client_id" gorm:"type:varchar(10) ; dafault:null ; "`
+	CompanyName    string `db:"company_name" json:"company_name" gorm:"type:varchar(150)"`
+	CompanyID      string `db:"company_id" json:"company_id" gorm:"type:varchar(10)"`
+	BusinessTypeID string `db:"business_type_id" json:"business_type_id" gorm:"type:varchar(36)"`
 
 	IsHQ     int    `db:"is_hq" json:"is_hq" gorm:"type:tinyint(2)"`
 	Address  string `db:"address" json:"address" gorm:"type:text"`
