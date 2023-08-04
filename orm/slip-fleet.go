@@ -60,13 +60,12 @@ type SlipFleet struct {
 	CompanyName    string `db:"company_name" json:"company_name" gorm:"type:varchar(150)"`
 	CompanyID      string `db:"company_id" json:"company_id" gorm:"type:varchar(10)"`
 	BusinessTypeID string `db:"business_type_id" json:"business_type_id" gorm:"type:varchar(36)"`
-
-	IsHQ     int    `db:"is_hq" json:"is_hq" gorm:"type:tinyint(2)"`
-	Address  string `db:"address" json:"address" gorm:"type:text"`
-	Postcode string `db:"postcode" json:"postcode" gorm:"type:varchar(5)"`
-	PhoneNo  string `db:"phone_no" json:"phone_no" gorm:"type:varchar(10)"`
-	FightNo  string `db:"fight_no" json:"fight_no" gorm:"type:varchar(20)"`
-	FightAt  string `db:"fight_at" json:"fight_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่บิน'"`
+	IsHQ           int    `db:"is_hq" json:"is_hq" gorm:"type:tinyint(2)"`
+	Address        string `db:"address" json:"address" gorm:"type:text"`
+	Postcode       string `db:"postcode" json:"postcode" gorm:"type:varchar(5)"`
+	PhoneNo        string `db:"phone_no" json:"phone_no" gorm:"type:varchar(10)"`
+	FlightNo       string `db:"flight_no" json:"flight_no" gorm:"type:varchar(20)"`
+	FlightAt       string `db:"flight_at" json:"flight_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่บิน'"`
 
 	RentalRateID     string  `db:"rental_rate_id" json:"rental_rate_id" gorm:"type:varchar(36)"`
 	RentalPrice      float64 `db:"rental_price" json:"rental_price" gorm:"type:decimal(16,4)"`
@@ -87,9 +86,10 @@ type SlipFleet struct {
 	BookingBy string `db:"booking_by" json:"booking_by" gorm:"type:varchar(36); comment:'จองโดย'"`
 	BookingAt string `db:"booking_at" json:"booking_at" gorm:"default:null; type:varchar(50); comment:'วันที่จอง' "`
 
-	PassengerName     string `db:"passenger_name"  json:"passenger_name" gorm:"type:varchar(50);"`
-	PassengerLastName string `db:"passenger_last_name"  json:"passenger_last_name" gorm:"type:varchar(50);"`
-	ContactPersonName string `db:"contact_person_name"  json:"contact_person_name" gorm:"type:varchar(100);"`
+	PassengerName      string `db:"passenger_name"  json:"passenger_name" gorm:"type:varchar(50);"`
+	PassengerLastName  string `db:"passenger_last_name"  json:"passenger_last_name" gorm:"type:varchar(50);"`
+	ContactPersonName  string `db:"contact_person_name"  json:"contact_person_name" gorm:"type:varchar(100);"`
+	ContactPersonPhone string `db:" contact_person_phone " json:" contact_person_phone " gorm:"type:varchar(10)"`
 
 	SubPassengerOneName        string `db:"sub_passengern_one_name"  json:"sub_passengern_one_name" gorm:"type:varchar(50);"`
 	SubPassengerOneLastName    string `db:"sub_passengern_one_last_name"  json:"sub_passengern_one_last_name" gorm:"type:varchar(50);"`
