@@ -9,5 +9,5 @@ type VehicleType struct {
 	Name     string `db:"name" json:"type_name"`
 	NameEn   string `db:"name_en" json:"type_name_en"`
 	RowOrder int    `db:"row_order" json:"row_order" gorm:"type:int"`
-	Image    string `db:"image" json:"image"`
+	// Image    string `db:"image" json:"image"`
 }

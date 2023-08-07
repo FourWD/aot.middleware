@@ -4,8 +4,8 @@ import (
 	orm "github.com/FourWD/middleware/orm"
 )
 
-type Slip struct {
-	ID string `db:"id" json:"id" gorm:"type:varchar(36);primary_key;"`
+type DriverSlip struct {
+	ID string `db:"id" json:"id" gorm:"type:varchar(2);primary_key;"`
 	orm.GormModel
 
 	SlipNo    string `db:"slip_no"  json:"slip_no" gorm:"type:varchar(50); index"`
@@ -16,9 +16,8 @@ type Slip struct {
 	TravelAt    string `db:"travel_at" json:"travel_at" gorm:"default:null; type:varchar(50); comment:'วันทีวิ่งจริง' "`
 	ReconcileAt string `db:"reconcile_at" json:"reconcile_at" gorm:"default:null; type:varchar(50); comment:'วันที่คีย์ตั๋วเทียบ' "`
 
-	SlipTypeID            string `db:"slip_type_id" json:"slip_type_id" gorm:"type:varchar(2);"`
 	SlipSubTypeID         string `db:"slip_sub_type_id" json:"slip_sub_type_id" gorm:"type:varchar(2);"`
-	SlipVehicleSubModelID string `db:"slip_vehicle_model_id" json:"slip_vehicle_model_id" gorm:"type:varchar(2); comment:'ประเภทรถตามหน้าตั๋วที่ซื้อ'"`
+	SlipVehicleSubModelID string `db:"slip_vehicle_model_id" json:"slip_vehicle_model_id" gorm:"type:varchar(36); comment:'ประเภทรถตามหน้าตั๋วที่ซื้อ'"`
 
 	IsPickup  int    `db:"is_pickup" json:"is_pickup" gorm:"default:0; type:tinyint(1); comment:'รับลูกค้าหรือยัง' "`
 	PickupAt  string `db:"pickup_at" json:"pickup_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่รับลูกค้า'  "`
@@ -54,20 +53,17 @@ type Slip struct {
 	VoidBy       string `db:"void_by" json:"void_by" gorm:"type:varchar(36);"`
 	VoidAt       string `db:"void_at" json:"void_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่ยกเลิก' "`
 
-	Latitude       float64 `db:"lat" json:"lat" gorm:"type:decimal(10,6); comment:'ระยะพิกัดต้นทาง'"`
-	Longitude      float64 `db:"long" json:"long" gorm:"type:decimal(10,6); comment:'ระยะพิกัดปลายทาง'"`
-	IsCancel       int     `db:"is_cancel" json:"is_cancel" gorm:"default:0; type:tinyint(1); comment:'ยกเลิก?' "`
-	IsCancelTypeID string  `db:"is_cancel_type_id" json:"is_cancel_type_id" gorm:"type:varchar(36);"`
-	CancelRemark   string  `db:"cancel_remark" json:"cancel_remark" gorm:"type:varchar(500);"`
-	CancelBy       string  `db:"cancel_by" json:"cancel_by" gorm:"type:varchar(36);"`
-	CancelAt       string  `db:"cancel_at" json:"cancel_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่ยกเลิก' "`
+	IsCancel       int    `db:"is_cancel" json:"is_cancel" gorm:"default:0; type:tinyint(1); comment:'ยกเลิก?' "`
+	IsCancelTypeID string `db:"is_cancel_type_id" json:"is_cancel_type_id" gorm:"type:varchar(36);"`
+	CancelRemark   string `db:"cancel_remark" json:"cancel_remark" gorm:"type:varchar(500);"`
+	CancelBy       string `db:"cancel_by" json:"cancel_by" gorm:"type:varchar(36);"`
+	CancelAt       string `db:"cancel_at" json:"cancel_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่ยกเลิก' "`
 
 	IsNewCustomer int    `db:"is_newcustomer" json:"is_newcustomer" gorm:"type:tinyint(2)"`
 	CustomerID    string `db:"customer_id" json:"customer_id" gorm:"type:varchar(36);"`
 	Code          string `db:"code"  json:"code" gorm:"type:varchar(20) ; dafault:null ; index"`
 	CompanyName   string `db:"company_name" json:"company_name" gorm:"type:varchar(150)"`
 	TaxNo         string `db:"tax_no" json:"tax_no" gorm:"type:varchar(20)"`
-	IsTax         int    `db:"is_tax" json:"is_tax" gorm:"type:tinyint(2)"`
 	IsHQ          int    `db:"is_hq" json:"is_hq" gorm:"type:tinyint(2)"`
 	Address       string `db:"address" json:"address" gorm:"type:text"`
 	Postcode      string `db:"postcode" json:"postcode" gorm:"type:varchar(5)"`
@@ -79,8 +75,7 @@ type Slip struct {
 	RentalPrice      float64 `db:"rental_price" json:"rental_price" gorm:"type:decimal(16,4)"`
 	RentalFuelRateID string  `db:"rental_fuel_rate_id" json:"rental_fuel_rate_id" gorm:"type:varchar(20)"`
 	RentalFuelLitre  float64 `db:"rental_fuel_litre" json:"rental_fuel_litre" gorm:"type:decimal(16,4)"`
-	FuelAverage      float64 `db:"fuel_average" json:"fuel_average" gorm:"type:decimal(16,4); comment:'เก็บราคาของค่าน้ำมันเฉลี่ย '"`
-	// Hour             string  `db:"hour" json:"hour" gorm:"type:varchar(2); comment:'ระยะเวลาเช่าของระบบ Fleet '"`
+	// RentalFuelPrice  float64 `db:"rental_fuel_price" json:"rental_fuel_price" gorm:"type:decimal(16,4)"`
 
 	AssignVehicleID string `db:"assign_vehicle_id" json:"assign_vehicle_id" gorm:"type:varchar(36); comment:'รถที่วิ่งงานจริง'"`
 	AssignVehicleBy string `db:"assign_vehicle_by" json:"assign_vehicle_by" gorm:"type:varchar(36);"`
@@ -88,7 +83,7 @@ type Slip struct {
 	ArrivedAt       string `db:"arrived_at" json:"arrived_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่มาถึง' "`
 
 	IsCompleted int    `db:"is_completed" json:"is_completed" gorm:"default:0; type:tinyint(1); comment:'เสร็จสมบูรณ์' "`
-	Remark      string `db:"remark" json:"remark" gorm:"type:varchar(255); comment:'คำอธิบาย'"`
+	Remark      string `db:"remark" json:"remark" gorm:"type:varchar(150) comment:'คำอธิบาย'"`
 
 	BookingNo string `db:"booking_no"  json:"booking_no" gorm:"type:varchar(50); index"`
 	BookingBy string `db:"booking_by" json:"booking_by" gorm:"type:varchar(36); comment:'จองโดย'"`
