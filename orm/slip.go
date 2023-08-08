@@ -28,7 +28,7 @@ type Slip struct {
 	ForceOriginName     string  `db:"force_origin_name" json:"force_origin_name" gorm:"type:varchar(150) ; comment:'กรณีที่ไม่มี POI' "`
 	DesinationPoiID     string  `db:"desination_poi_id" json:"desination_poi_id" gorm:"type:varchar(36);"`
 	ForceDesinationName string  `db:"force_desination_name" json:"force_desination_name" gorm:"type:varchar(150) ; comment:'กรณีที่ไม่มี POI' "`
-	Distance            float64 `db:"distance" json:"distance" gorm:"type:decimal(16,4)"`
+	Distance            float64 `db:"distance" json:"distance" gorm:"type:decimal(10,0)"`
 	PriceRateID         string  `db:"price_rate_id" json:"price_rate_id" gorm:"type:varchar(36);"`
 	PromotionID         string  `db:"promotion_id" json:"promotion_id" gorm:"type:varchar(36);"`
 	PromotionRef        string  `db:"promotion_ref" json:"promotion_ref" gorm:"type:varchar(36); comment:'กรณี duoslip เก็บเลขที่ slip ถ้าkansaiเก็บ เลขของ kansai' "`
