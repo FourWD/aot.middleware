@@ -91,18 +91,18 @@ type SlipFleet struct {
 	ContactPersonName  string `db:"contact_person_name"  json:"contact_person_name" gorm:"type:varchar(100);"`
 	ContactPersonPhone string `db:" contact_person_phone " json:" contact_person_phone " gorm:"type:varchar(10)"`
 
-	SubPassengerOneName        string `db:"sub_passengern_one_name"  json:"sub_passengern_one_name" gorm:"type:varchar(50);"`
-	SubPassengerOneLastName    string `db:"sub_passengern_one_last_name"  json:"sub_passengern_one_last_name" gorm:"type:varchar(50);"`
-	SubPassengerOneDestination string `db:"sub_passenger_one_destination"  json:"sub_passenger_one_destination" gorm:"type:varchar(150);"`
-	IsChargeOne                int    `db:"is_charge_one" json:"is_charge_one" gorm:"default:0; type:tinyint(1);"`
+	SubPassengerName01        string `db:"sub_passenger_name_01"  json:"sub_passenger_name_01" gorm:"type:varchar(50);"`
+	SubPassengerLastName01    string `db:"sub_passenger_lastname_01"  json:"sub_passenger_lastname_01" gorm:"type:varchar(50);"`
+	SubPassengerDestination01 string `db:"sub_passenger_destination_01"  json:"sub_passenger_destination_01" gorm:"type:varchar(150);"`
+	IsCharge01                int    `db:"is_charge_01" json:"is_charge_01" gorm:"default:0; type:tinyint(1);"`
 
-	SubPassengerTwoName        string `db:"sub_passengern_two_name"  json:"sub_passengern_two_name" gorm:"type:varchar(50);"`
-	SubPassengerTwoLastName    string `db:"sub_passengern_two_last_name"  json:"sub_passengern_two_last_name" gorm:"type:varchar(50);"`
-	SubPassengerTwoDestination string `db:"sub_passenger_two_destination"  json:"sub_passenger_two_destination" gorm:"type:varchar(150);"`
-	IsChargeTwo                int    `db:"is_charge_two" json:"is_charge_two" gorm:"default:0; type:tinyint(1);"`
+	SubPassengerName02        string `db:"sub_passenger_name_02"  json:"sub_passenger_name_02" gorm:"type:varchar(50);"`
+	SubPassengerLastName02    string `db:"sub_passenger_lastname_02"  json:"sub_passenger_lastname_02" gorm:"type:varchar(50);"`
+	SubPassengerDestination02 string `db:"sub_passenger_destination_02"  json:"sub_passenger_destination_02" gorm:"type:varchar(150);"`
+	IsCharge02                int    `db:"is_charge_02" json:"is_charge_02" gorm:"default:0; type:tinyint(1);"`
 
-	SubPassengerThreeName        string `db:"sub_passengern_three_name"  json:"sub_passengern_three_name" gorm:"type:varchar(50);"`
-	SubPassengerThreeLastName    string `db:"sub_passengern_three_last_name"  json:"sub_passengern_three_last_name" gorm:"type:varchar(50);"`
-	SubPassengerThreeDestination string `db:"sub_passenger_three_destination"  json:"sub_passenger_three_destination" gorm:"type:varchar(150);"`
-	IsChargeThree                int    `db:"is_charge_three" json:"is_charge_three" gorm:"default:0; type:tinyint(1);"`
+	SubPassengerName03        string `db:"sub_passenger_name_03"  json:"sub_passenger_name_03" gorm:"type:varchar(50);"`
+	SubPassengerLastName03    string `db:"sub_passenger_lastname_03"  json:"sub_passenger_lastname_03" gorm:"type:varchar(50);"`
+	SubPassengerDestination03 string `db:"sub_passenger_destination_03"  json:"sub_passenger_destination_03" gorm:"type:varchar(150);"`
+	IsCharge03                int    `db:"is_charge_03" json:"is_charge_03" gorm:"default:0; type:tinyint(1);"`
 }

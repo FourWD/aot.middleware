@@ -72,8 +72,8 @@ type Slip struct {
 	Address       string `db:"address" json:"address" gorm:"type:text"`
 	Postcode      string `db:"postcode" json:"postcode" gorm:"type:varchar(5)"`
 	PhoneNo       string `db:"phone_no" json:"phone_no" gorm:"type:varchar(10)"`
-	FightNo       string `db:"fight_no" json:"fight_no" gorm:"type:varchar(20)"`
-	FightAt       string `db:"fight_at" json:"fight_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่บิน'"`
+	FlightNo      string `db:"flight_no" json:"flight_no" gorm:"type:varchar(20)"`
+	FlightAt      string `db:"flight_at" json:"flight_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่บิน'"`
 
 	RentalRateID     string  `db:"rental_rate_id" json:"rental_rate_id" gorm:"type:varchar(36)"`
 	RentalPrice      float64 `db:"rental_price" json:"rental_price" gorm:"type:decimal(16,4)"`
