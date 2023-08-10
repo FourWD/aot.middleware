@@ -23,8 +23,8 @@ type Customer struct {
 	CompanyName   string `db:"company_name" json:"company_name" gorm:"type:varchar(150)"`
 	TaxNo         string `db:"tax_no" json:"tax_no" gorm:"type:varchar(20)"`
 	Address       string `db:"address" json:"address" gorm:"type:varchar(255)"`
-	IsShow        bool   `db:"is_show" json:"is_show" gorm:"type:tinyint(2);  comment:'โชว์แสดงผลการค้นหาสมาชิก'"`
-	IsTax         bool   `db:"is_tax" json:"is_tax" gorm:"type:tinyint(2); comment:'ใบกำกับภาษี none company'"` //is_hq
+	IsShow        int    `db:"is_show" json:"is_show" gorm:"type:tinyint(2);  comment:'โชว์แสดงผลการค้นหาสมาชิก'"`
+	IsTax         int    `db:"is_tax" json:"is_tax" gorm:"type:tinyint(2); comment:'ใบกำกับภาษี none company'"` //is_hq
 	RunningNo     int    `db:"running_no" json:"running_no" gorm:"type:int(6)"`
 	PhoneNo1      string `db:"phone_no1" json:"phone_no1" gorm:"type:varchar(10)"`
 	PhoneNo2      string `db:"phone_no2" json:"phone_no2" gorm:"type:varchar(10)"`
