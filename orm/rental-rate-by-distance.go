@@ -4,7 +4,7 @@ import (
 	orm "github.com/FourWD/middleware/orm"
 )
 
-type RentalRate struct { // ค่าเช่าเฉยๆ
+type RentalRateByDistance struct { // ค่าเช่าตา่มระยะทาง
 	ID string `db:"id" json:"id" gorm:"type:varchar(36);primary_key;"`
 	orm.GormModel
 
