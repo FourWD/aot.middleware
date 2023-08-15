@@ -5,7 +5,7 @@ import (
 )
 
 type Customer struct {
-	ID string `db:"id" json:"id" gorm:"type:varchar(36);primary_key;"`
+	ID string `db:"id" json:"id" gorm:"type:varchar(36); unique;"`
 	orm.GormModel
 
 	Code string `db:"code"  json:"code" gorm:"type:varchar(20) ; dafault:null ; index"`
@@ -27,7 +27,7 @@ type Customer struct {
 	AddressCustomer string `db:"address_customer" json:"address_customer" gorm:"type:varchar(255)"`
 	IsShow          int    `db:"is_show" json:"is_show" gorm:"type:tinyint(2);  comment:'โชว์แสดงผลการค้นหาสมาชิก'"`
 	IsTax           int    `db:"is_tax" json:"is_tax" gorm:"type:tinyint(2); comment:'ใบกำกับภาษี none company'"` //is_hq
-	RunningNo       int    `db:"running_no" json:"running_no" gorm:"type:int(6)"`
+	RunningNo       int    `db:"running_no" json:"running_no"  gorm:"primary_key;auto_increment;not_null"`
 	PhoneNo1        string `db:"phone_no1" json:"phone_no1" gorm:"type:varchar(10)"`
 	PhoneNo2        string `db:"phone_no2" json:"phone_no2" gorm:"type:varchar(10)"`
 	Postcode        string `db:"postcode" json:"postcode" gorm:"type:varchar(5)"`
