@@ -30,5 +30,6 @@ type Customer struct {
 	RunningNo       int    `json:"running_no"  gorm:"primary_key;auto_increment;not_null"`
 	PhoneNo1        string `json:"phone_no1" gorm:"type:varchar(10)"`
 	PhoneNo2        string `json:"phone_no2" gorm:"type:varchar(10)"`
+	PhoneNo         string `json:"phone_no" gorm:"type:varchar(10)"`
 	Postcode        string `json:"postcode" gorm:"type:varchar(5)"`
 }
