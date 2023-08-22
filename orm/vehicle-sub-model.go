@@ -8,10 +8,10 @@ type VehicleSubModel struct {
 
 	VehicleSourceID string `db:"vehicle_source_id" json:"vehicle_source_id" gorm:"type:varchar(36)"`
 	VehicleModelID  string `db:"vehicle_model_id" json:"vehicle_model_id" gorm:"type:varchar(36)"`
-
-	Name     string `db:"name" json:"type_name"`
-	NameEn   string `db:"name_en" json:"type_name_en"`
-	RowOrder int    `db:"row_order" json:"row_order" gorm:"type:int"`
-	Image    string `db:"image" json:"image"`
-	//
+	Name            string `db:"name" json:"type_name"`
+	NameEn          string `db:"name_en" json:"type_name_en"`
+	Image           string `db:"image" json:"image"`
+	IsShow          bool   `db:"is_show" json:"is_show"  gorm:"type:bool"`
+	SubModelGroup   string `db:"sub_model_group" json:"sub_model_group" gorm:"type:varchar(5)"`
+	RowOrder        int    `db:"row_order" json:"row_order" gorm:"type:int"`
 }
