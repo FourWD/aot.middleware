@@ -21,7 +21,17 @@ type PDPAConsent struct {
 	IsAccept bool      `db:"is_accept" json:"is_accept" gorm:"type:tinyint(2) ; comment:'ลูกค้าเป็นคนกดรับหรือไม่รับ'"`
 	AcceptAt time.Time `db:"accept_at"  json:"accept_at" gorm:"default:null; type:datetime; comment:'วันที่ลูกค้ากดทำรายการผ่านหน้าเว็บ/แอพ'"`
 
-	IsCancel bool `db:"is_cancel" json:"is_cancel" gorm:"type:tinyint(2) ; comment:'ลูกค้าโทรมายกเลิก pdpa'"`
+	// IsCancel bool `db:"is_cancel" json:"is_cancel" gorm:"type:tinyint(2) ; comment:'ลูกค้าโทรมายกเลิก pdpa'"`
+	IsCancel01 bool `db:"is_cancel_01" json:"is_cancel_01" gorm:"type:tinyint(2) ; comment:'ลูกค้าโทรมายกเลิก pdpa'"`
+
+	IsCancel02 bool `db:"is_cancel_02" json:"is_cancel_02" gorm:"type:tinyint(2) ; comment:'ลูกค้าโทรมายกเลิก pdpa'"`
+
+	IsCancel03 bool `db:"is_cancel_03" json:"is_cancel_03" gorm:"type:tinyint(2) ; comment:'ลูกค้าโทรมายกเลิก pdpa'"`
+
+	IsCancel04 bool `db:"is_cancel_04" json:"is_cancel_04" gorm:"type:tinyint(2) ; comment:'ลูกค้าโทรมายกเลิก pdpa'"`
+
+	IsCancel05 bool `db:"is_cancel_05" json:"is_cancel_05" gorm:"type:tinyint(2) ; comment:'ลูกค้าโทรมายกเลิก pdpa'"`
+
 	// PDPACancelReasonID string    `db:"pdpa_cancel_reason_id"  json:"pdpa_cancel_reason_id" gorm:"type:varchar(2) ; default:null ;"`
 	PDPACancelReason01 string    `db:"pdpa_cancel_reason_01" json:"pdpa_cancel_reason_01" gorm:"default:null; column:pdpa_cancel_reason_01"`
 	PDPACancelReason02 string    `db:"pdpa_cancel_reason_02" json:"pdpa_cancel_reason_02" gorm:"default:null; column:pdpa_cancel_reason_02"`
