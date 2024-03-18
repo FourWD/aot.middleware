@@ -3,7 +3,7 @@ package orm
 import (
 	"time"
 
-	orm "github.com/FourWD/middleware/orm"
+	orm "github.com/FourWD/middleware/model"
 )
 
 type DateTest struct {

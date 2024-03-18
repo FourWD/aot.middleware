@@ -1,7 +1,7 @@
 package orm
 
 import (
-	orm "github.com/FourWD/middleware/orm"
+	orm "github.com/FourWD/middleware/model"
 )
 
 type PaymentType struct { //no CRUD 01 = เงินสด 02 = creditcard 03= chuqe 04 = banktransfer

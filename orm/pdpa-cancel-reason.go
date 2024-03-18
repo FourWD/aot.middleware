@@ -1,7 +1,7 @@
 package orm
 
 import (
-	orm "github.com/FourWD/middleware/orm"
+	orm "github.com/FourWD/middleware/model"
 )
 
 type PDPACancelReason struct { // 01 = Normal 02 = Callcenter 03 = Fleet

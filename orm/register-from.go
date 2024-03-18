@@ -1,7 +1,7 @@
 package orm
 
 import (
-	orm "github.com/FourWD/middleware/orm"
+	orm "github.com/FourWD/middleware/model"
 )
 
 type RegisterFrom struct { // 01 = สมัครจาก counter สุวรรภูมิ 02 = จากเว็บไซต์ aot

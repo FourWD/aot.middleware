@@ -1,7 +1,7 @@
 package orm
 
 import (
-	orm "github.com/FourWD/middleware/orm"
+	orm "github.com/FourWD/middleware/model"
 )
 
 type ExpresswayType struct { //no CRUD ทางด่วน 2 ประเภท

@@ -1,7 +1,7 @@
 package orm
 
 import (
-	orm "github.com/FourWD/middleware/orm"
+	orm "github.com/FourWD/middleware/model"
 )
 
 type Counter struct { // จุดขายหน้าเค้าเตอร์  ที่สุวรรณภูมิ
