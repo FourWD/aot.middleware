@@ -6,9 +6,7 @@ import (
 	orm "github.com/FourWD/middleware/model"
 )
 
-type SlipFleet struct {
-	SlipModel
-
+type SlipModel struct {
 	ID string `json:"id" query:"id" gorm:"type:varchar(36);primary_key;"`
 	orm.GormModel
 

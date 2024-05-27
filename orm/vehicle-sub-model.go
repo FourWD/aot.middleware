@@ -3,15 +3,15 @@ package orm
 import orm "github.com/FourWD/middleware/model"
 
 type VehicleSubModel struct {
-	ID string `db:"id" json:"id" gorm:"type:varchar(2);primary_key;"`
+	ID string `json:"id" query:"id" gorm:"type:varchar(2);primary_key;"`
 	orm.GormModel
 
-	VehicleSourceID string `db:"vehicle_source_id" json:"vehicle_source_id" gorm:"type:varchar(36)"`
-	VehicleModelID  string `db:"vehicle_model_id" json:"vehicle_model_id" gorm:"type:varchar(36)"`
-	Name            string `db:"name" json:"type_name"`
-	NameEn          string `db:"name_en" json:"type_name_en"`
-	Image           string `db:"image" json:"image"`
-	IsShow          bool   `db:"is_show" json:"is_show" gorm:"type:bool"`
-	SubModelGroup   string `db:"sub_model_group" json:"sub_model_group" gorm:"type:varchar(5)"`
-	RowOrder        int    `db:"row_order" json:"row_order" gorm:"type:int"`
+	VehicleSourceID string `json:"vehicle_source_id" query:"vehicle_source_id" gorm:"type:varchar(36)"`
+	VehicleModelID  string `json:"vehicle_model_id" query:"vehicle_model_id" gorm:"type:varchar(36)"`
+	Name            string `json:"name" query:"type_name"`
+	NameEn          string `json:"name_en" query:"type_name_en"`
+	Image           string `json:"image" query:"image"`
+	IsShow          bool   `json:"is_show" query:"is_show" gorm:"type:bool"`
+	SubModelGroup   string `json:"sub_model_group" query:"sub_model_group" gorm:"type:varchar(5)"`
+	RowOrder        int    `json:"row_order" query:"row_order" gorm:"type:int"`
 }

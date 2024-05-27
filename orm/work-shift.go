@@ -5,10 +5,10 @@ import (
 )
 
 type WorkShift struct { // กะ การเข้างาน
-	ID string `db:"id" json:"id" gorm:"type:varchar(2);primary_key;"`
+	ID string `json:"id" query:"id" gorm:"type:varchar(2);primary_key;"`
 	orm.GormModel
-	SourceID  string `db:"source_id" json:"source_id" gorm:"type:varchar(2);"`
-	StartTime string `db:"start_time" json:"start_time" gorm:"type:varchar(50);comment:'เวลาเข้ากะ'"`
-	EndTime   string `db:"end_time" json:"end_time" gorm:"type:varchar(50);comment:'เวลาเลิกกะ'"`
+	SourceID  string `json:"source_id" query:"source_id" gorm:"type:varchar(2);"`
+	StartTime string `json:"start_time" query:"start_time" gorm:"type:varchar(50);comment:'เวลาเข้ากะ'"`
+	EndTime   string `json:"end_time" query:"end_time" gorm:"type:varchar(50);comment:'เวลาเลิกกะ'"`
 	orm.GormRowOrder
 }

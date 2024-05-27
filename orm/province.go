@@ -5,10 +5,10 @@ import (
 )
 
 type Province struct {
-	ID string `db:"id" json:"id" gorm:"type:varchar(2);primary_key;"`
+	ID string `json:"id" query:"id" gorm:"type:varchar(2);primary_key;"`
 	orm.GormModel
 
-	Name           string `db:"name" json:"name" gorm:"type:varchar(150)"`
-	NameEn         string `db:"name_en" json:"name_en" gorm:"type:varchar(150)"`
-	ProvinceTypeID string `db:"province_type_id" json:"province_type_id" gorm:"type:varchar(2);"`
+	Name           string `json:"name" query:"name" gorm:"type:varchar(150)"`
+	NameEn         string `json:"name_en" query:"name_en" gorm:"type:varchar(150)"`
+	ProvinceTypeID string `json:"province_type_id" query:"province_type_id" gorm:"type:varchar(2);"`
 }

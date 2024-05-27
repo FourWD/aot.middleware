@@ -5,8 +5,8 @@ import (
 )
 
 type VoidType struct {
-	ID string `db:"id" json:"id" gorm:"type:varchar(2);primary_key;"`
+	ID string `json:"id" query:"id" gorm:"type:varchar(2);primary_key;"`
 	orm.GormModel
-	Name string `db:"name" json:"name" gorm:"type:varchar(150)"`
+	Name string `json:"name" query:"name" gorm:"type:varchar(150)"`
 	orm.GormRowOrder
 }

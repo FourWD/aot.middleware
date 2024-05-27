@@ -5,11 +5,11 @@ import (
 )
 
 type PDPADetail struct {
-	ID string `db:"id" json:"id" gorm:"type:varchar(36);primary_key;"`
+	ID string `json:"id" query:"id" gorm:"type:varchar(36);primary_key;"`
 	orm.GormModel
 
-	PdpaID string `db:"pdpa_id" json:"pdpa_id" gorm:"type:varchar(36);"`
+	PdpaID string `json:"pdpa_id" query:"pdpa_id" gorm:"type:varchar(36);"`
 
-	Subject string `db:"subject" json:"subject" gorm:"type:varchar(200);"`
-	Detail  string `db:"detail" json:"detail" gorm:"type:text;"`
+	Subject string `json:"subject" query:"subject" gorm:"type:varchar(200);"`
+	Detail  string `json:"detail" query:"detail" gorm:"type:text;"`
 }

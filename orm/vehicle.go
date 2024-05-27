@@ -5,15 +5,15 @@ import (
 )
 
 type Vehicle struct {
-	ID string `db:"id" json:"id" gorm:"type:varchar(36);primary_key;"`
+	ID string `json:"id" query:"id" gorm:"type:varchar(36);primary_key;"`
 	orm.GormModel
 
-	VehicleSubmodelID string  `db:"vehicle_submodel_id" json:"vehicle_submodel_id" gorm:"type:varchar(2)"`
-	Code              string  `db:"code" json:"code" gorm:"type:varchar(50)"`
-	LicensePlate      string  `db:"license_plate" json:"license_plate" gorm:"type:varchar(50)"`
-	Latitude          float64 `db:"lat" json:"lat" gorm:"type:decimal(10,6)"`
-	Longitude         float64 `db:"long" json:"long" gorm:"type:decimal(10,6)"`
-	VehicleStatusID   string  `db:"vehicle_status_id" json:"vehicle_status_id" gorm:"type:varchar(2);"`
-	LocationTypeID    string  `db:"location_type_id" json:"location_type_id" gorm:"type:varchar(2);"`
-	CurrentDriverID   string  `db:"current_driver_id" json:"current_driver_id" gorm:"default:null; type:varchar(36); "`
+	VehicleSubmodelID string  `json:"vehicle_submodel_id" query:"vehicle_submodel_id" gorm:"type:varchar(2)"`
+	Code              string  `json:"code" query:"code" gorm:"type:varchar(50)"`
+	LicensePlate      string  `json:"license_plate" query:"license_plate" gorm:"type:varchar(50)"`
+	Latitude          float64 `json:"lat" query:"lat" gorm:"type:decimal(10,6)"`
+	Longitude         float64 `json:"long" query:"long" gorm:"type:decimal(10,6)"`
+	VehicleStatusID   string  `json:"vehicle_status_id" query:"vehicle_status_id" gorm:"type:varchar(2);"`
+	LocationTypeID    string  `json:"location_type_id" query:"location_type_id" gorm:"type:varchar(2);"`
+	CurrentDriverID   string  `json:"current_driver_id" query:"current_driver_id" gorm:"default:null; type:varchar(36); "`
 }

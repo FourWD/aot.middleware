@@ -5,9 +5,9 @@ import (
 )
 
 type PDPA struct {
-	ID string `db:"id" json:"id" gorm:"type:varchar(36);primary_key;"`
+	ID string `json:"id" query:"id" gorm:"type:varchar(36);primary_key;"`
 	orm.GormModel
 
-	Name    string `db:"name" json:"name" gorm:"type:varchar(150)"`
-	Version string `db:"version" json:"version" gorm:"type:varchar(10)"`
+	Name    string `json:"name" query:"name" gorm:"type:varchar(150)"`
+	Version string `json:"version" query:"version" gorm:"type:varchar(10)"`
 }

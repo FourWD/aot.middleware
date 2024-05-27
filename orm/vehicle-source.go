@@ -5,12 +5,12 @@ import (
 )
 
 type VehicleSource struct { // 01 = VRP 02=BenzThonglor
-	ID string `db:"id" json:"id" gorm:"type:varchar(2);primary_key;"`
+	ID string `json:"id" query:"id" gorm:"type:varchar(2);primary_key;"`
 	orm.GormModel
 
-	Name     string `db:"name" json:"name" gorm:"type:varchar(150)"`
-	NameEn   string `db:"name_en" json:"name_en" gorm:"type:varchar(200)"`
-	PhoneNo  string `db:"phone_no" json:"position" gorm:"type:varchar(10)"`
-	Remark   string `db:"remark" json:"remark" gorm:"type:varchar(200)"`
+	Name    string `json:"name" query:"name" gorm:"type:varchar(150)"`
+	NameEn  string `json:"name_en" query:"name_en" gorm:"type:varchar(200)"`
+	PhoneNo string `json:"phone_no" query:"position" gorm:"type:varchar(10)"`
+	Remark  string `json:"remark" query:"remark" gorm:"type:varchar(200)"`
 	orm.GormRowOrder
 }

@@ -5,10 +5,10 @@ import (
 )
 
 type PaymentType struct { //no CRUD 01 = เงินสด 02 = creditcard 03= chuqe 04 = banktransfer
-	ID string `db:"id" json:"id" gorm:"type:varchar(2);primary_key;"`
+	ID string `json:"id" query:"id" gorm:"type:varchar(2);primary_key;"`
 	orm.GormModel
 
-	Name  string `db:"name" json:"name" gorm:"type:varchar(150)"`
-	IsWht bool   `db:"is_wht" json:"is_wht" gorm:"default:0; type:tinyint(1)"`
+	Name  string `json:"name" query:"name" gorm:"type:varchar(150)"`
+	IsWht bool   `json:"is_wht" query:"is_wht" gorm:"default:0; type:tinyint(1)"`
 	orm.GormRowOrder
 }
