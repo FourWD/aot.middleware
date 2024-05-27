@@ -1,6 +1,8 @@
 package orm
 
 import (
+	"time"
+
 	orm "github.com/FourWD/middleware/model"
 )
 
@@ -8,17 +10,17 @@ type SlipFleet struct {
 	ID string `db:"id" json:"id" gorm:"type:varchar(36);primary_key;"`
 	orm.GormModel
 
-	SlipNo      string `db:"slip_no"  json:"slip_no" gorm:"type:varchar(50); index"`
-	ReceiptNo   string `db:"receipt_no"  json:"receipt_no" gorm:"type:varchar(50); index"`
-	SlipAt      string `db:"slip_at" json:"slip_at" gorm:"default:null; type:varchar(50); comment:'วันที่ลูกค้าจ่ายตัง' "`
-	TravelAt    string `db:"travel_at" json:"travel_at" gorm:"default:null; type:varchar(50); comment:'วันทีวิ่งจริง' "`
-	ReconcileAt string `db:"reconcile_at" json:"reconcile_at" gorm:"default:null; type:varchar(50); comment:'วันที่คีย์ตั๋วเทียบ' "`
+	SlipNo      string    `db:"slip_no"  json:"slip_no" gorm:"type:varchar(50); index"`
+	ReceiptNo   string    `db:"receipt_no"  json:"receipt_no" gorm:"type:varchar(50); index"`
+	SlipAt      string    `db:"slip_at" json:"slip_at" gorm:"default:null; type:varchar(50); comment:'วันที่ลูกค้าจ่ายตัง' "`
+	TravelAt    time.Time `db:"travel_at" json:"travel_at" gorm:"default:null;comment:'วันทีวิ่งจริง' "`
+	ReconcileAt time.Time `db:"reconcile_at" json:"reconcile_at" gorm:"default:null;comment:'วันที่คีย์ตั๋วเทียบ' "`
 
 	SlipTypeID            string `db:"slip_type_id" json:"slip_type_id" gorm:"type:varchar(2);"`
 	SlipSubTypeID         string `db:"slip_sub_type_id" json:"slip_sub_type_id" gorm:"type:varchar(2);"`
 	SlipVehicleSubModelID string `db:"slip_vehicle_model_id" json:"slip_vehicle_model_id" gorm:"type:varchar(2); comment:'ประเภทรถตามหน้าตั๋วที่ซื้อ'"`
 
-	IsPickup  int    `db:"is_pickup" json:"is_pickup" gorm:"default:0; type:tinyint(1); comment:'รับลูกค้าหรือยัง' "`
+	IsPickup  bool    `db:"is_pickup" json:"is_pickup" gorm:"default:0; type:tinyint(1); comment:'รับลูกค้าหรือยัง' "`
 	PickupAt  string `db:"pickup_at" json:"pickup_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่รับลูกค้า'  "`
 	CounterID string `db:"counter_id" json:"counter_id" gorm:"type:varchar(36)"`
 

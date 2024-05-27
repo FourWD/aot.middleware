@@ -12,4 +12,5 @@ type Country struct {
 	NameEn        string `db:"name_en" json:"name_en" gorm:"type:varchar(150)"`
 	Nationality   string `db:"nationality" json:"nationality" gorm:"type:varchar(150)"`
 	NationalityEn string `db:"nationality_en" json:"nationality_en" gorm:"type:varchar(150)"`
+	orm.GormRowOrder
 }
