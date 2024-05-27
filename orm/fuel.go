@@ -5,10 +5,10 @@ import (
 )
 
 type Fuel struct { //no CRUD
-	ID string `db:"id" json:"id" gorm:"type:varchar(2);primary_key;"`
+	ID string `json:"id" query:"id" gorm:"type:varchar(2);primary_key;"`
 	orm.GormModel
 
-	Name       string `db:"name" json:"name" gorm:"type:varchar(50)"`
-	FuelTypeID string `db:"fuel_type_id" json:"fuel_type_id" gorm:"type:varchar(2);"`
+	Name       string `json:"name" query:"name" gorm:"type:varchar(50)"`
+	FuelTypeID string `json:"fuel_type_id" query:"fuel_type_id" gorm:"type:varchar(2);"`
 	orm.GormRowOrder
 }

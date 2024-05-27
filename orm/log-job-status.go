@@ -5,9 +5,9 @@ import (
 )
 
 type LogJobStatus struct {
-	ID string `json:"id" gorm:"type:varchar(36); unique;"`
+	ID string `json:"id" query:"id" gorm:"type:varchar(36);primary_key;"`
 	orm.GormModel
-	SlipID      string `json:"slip_id" gorm:"type:varchar(36)"`
-	DriverID    string `json:"driver_id" gorm:"type:varchar(36)"`
-	JobStatusID string `json:"job_status_id" gorm:"type:varchar(10)"`
+	SlipID      string `json:"slip_id" query:"id" gorm:"type:varchar(36)"`
+	DriverID    string `json:"driver_id" query:"id" gorm:"type:varchar(36)"`
+	JobStatusID string `json:"job_status_id" query:"id" gorm:"type:varchar(10)"`
 }

@@ -13,5 +13,5 @@ type VehicleSubModel struct {
 	Image           string `json:"image" query:"image"`
 	IsShow          bool   `json:"is_show" query:"is_show" gorm:"type:bool"`
 	SubModelGroup   string `json:"sub_model_group" query:"sub_model_group" gorm:"type:varchar(5)"`
-	RowOrder        int    `json:"row_order" query:"row_order" gorm:"type:int"`
+	orm.GormRowOrder
 }

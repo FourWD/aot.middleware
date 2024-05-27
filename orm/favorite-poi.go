@@ -5,10 +5,10 @@ import (
 )
 
 type FavoritePoi struct { // ปลายทางใช้แสดงที่ระบบขายหน้าแรก
-	ID string `db:"id" json:"id" gorm:"type:varchar(36);primary_key;"`
+	ID string `json:"id" query:"id" gorm:"type:varchar(36);primary_key;"`
 	orm.GormModel
 
-	PoiID         string `db:"poi_id" json:"poi_id" gorm:"type:varchar(36);"`
-	FleetClientID string `db:"fleet_client_id"  json:"fleet_client_id" gorm:"type:varchar(10);"`
+	PoiID         string `json:"poi_id" query:"poi_id" gorm:"type:varchar(36);"`
+	FleetClientID string `json:"fleet_client_id"  query:"fleet_client_id" gorm:"type:varchar(10);"`
 	orm.GormRowOrder
 }

@@ -7,6 +7,5 @@ type VehicleType struct {
 	orm.GormModel
 	Name     string `json:"name" query:"type_name"`
 	NameEn   string `json:"name_en" query:"type_name_en"`
-	RowOrder int    `json:"row_order" query:"row_order" gorm:"type:int"`
 	orm.GormRowOrder
 }

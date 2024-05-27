@@ -5,9 +5,9 @@ import (
 )
 
 type LogCancelSlip struct {
-	ID string `json:"id" gorm:"type:varchar(36); unique;"`
+	ID string `json:"id" query:"id" gorm:"type:varchar(36);primary_key;"`
 	orm.GormModel
-	SlipID             string `json:"slip_id" gorm:"type:varchar(36)"`
-	DriverID           string `json:"driver_id" gorm:"type:varchar(36)"`
-	SlipCancelReasonID string `json:"slip_cancel_reason_id" gorm:"type:varchar(36)"`
+	SlipID             string `json:"slip_id" query:"id" gorm:"type:varchar(36)"`
+	DriverID           string `json:"driver_id" query:"id" gorm:"type:varchar(36)"`
+	SlipCancelReasonID string `json:"slip_cancel_reason_id" query:"id" gorm:"type:varchar(36)"`
 }
