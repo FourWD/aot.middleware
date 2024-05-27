@@ -9,9 +9,7 @@ type User struct {
 	orm.GormModel
 
 	SourceID string `db:"source_id" json:"source_id" gorm:"type:varchar(2);"`
-
 	Username string `db:"username" json:"username" gorm:"type:varchar(50)"`
-
 	Password    string `db:"password" json:"password" gorm:"type:varchar(100)"`
 	Firstname   string `db:"firstname" json:"firstname" gorm:"type:varchar(50)"`
 	Lastname    string `db:"lastname" json:"lastname" gorm:"type:varchar(50)"`

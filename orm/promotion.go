@@ -16,6 +16,6 @@ type Promotion struct { //no CRUD 01 = เงินสด 02 = creditcard 03= ch
 	EndDate         time.Time `db:"end_time" json:"end_time"`
 	Name            string    `db:"name" json:"name" gorm:"type:varchar(150)"`
 	PromotionType   string    `db:"promotion_type" json:"promotion_type" gorm:"type:varchar(5);"`
-	PromotionAmount float64   `db:"promotion_amount" json:"promotion_amount" gorm:"type:int(5);"`
+	PromotionAmount float64   `db:"promotion_amount" json:"promotion_amount" gorm:"type:decimal(10,4)"`
 	orm.GormRowOrder
 }
