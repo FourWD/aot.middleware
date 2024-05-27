@@ -12,5 +12,5 @@ type VehicleSource struct { // 01 = VRP 02=BenzThonglor
 	NameEn   string `db:"name_en" json:"name_en" gorm:"type:varchar(200)"`
 	PhoneNo  string `db:"phone_no" json:"position" gorm:"type:varchar(10)"`
 	Remark   string `db:"remark" json:"remark" gorm:"type:varchar(200)"`
-	RowOrder int    `db:"row_order" json:"row_order" gorm:"type:int"`
+	orm.GormRowOrder
 }

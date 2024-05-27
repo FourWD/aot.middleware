@@ -10,5 +10,5 @@ type PaymentType struct { //no CRUD 01 = เงินสด 02 = creditcard 03= 
 
 	Name     string `db:"name" json:"name" gorm:"type:varchar(150)"`
 	IsWht    bool   `db:"is_wht" json:"is_wht" gorm:"default:0; type:tinyint(1); comment:'มีwht?' "`
-	RowOrder int    `db:"row_order" json:"row_order" gorm:"type:int"`
+	orm.GormRowOrder
 }

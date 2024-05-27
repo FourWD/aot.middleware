@@ -11,5 +11,5 @@ type Report struct {
 	ReportCode string `db:"report_code" json:"report_code" gorm:"type:varchar(5)"`
 	AotCode    string `db:"aot_code" json:"aot_code" gorm:"type:varchar(36)"`
 	Name       string `json:"name" query:"name" db:"name" gorm:"type:varchar(150)"`
-	RowOrder   int    `db:"row_order" json:"row_order" gorm:"type:int"`
+	orm.GormRowOrder
 }

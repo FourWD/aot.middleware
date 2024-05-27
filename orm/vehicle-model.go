@@ -11,5 +11,5 @@ type VehicleModel struct {
 	Name           string `db:"name" json:"type_name"`
 	NameEn         string `db:"name_en" json:"type_name_en"`
 	Image          string `db:"image" json:"image"`
-	RowOrder       int    `db:"row_order" json:"row_order" gorm:"type:int"`
+	orm.GormRowOrder
 }

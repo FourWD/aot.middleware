@@ -10,5 +10,5 @@ type Fuel struct { //no CRUD
 
 	Name       string `db:"name" json:"name" gorm:"type:varchar(50)"`
 	FuelTypeID string `db:"fuel_type_id" json:"fuel_type_id" gorm:"type:varchar(2);"`
-	RowOrder   int    `db:"row_order" json:"row_order" gorm:"type:int"`
+	orm.GormRowOrder
 }

@@ -9,5 +9,5 @@ type VehicleStatus struct {
 	orm.GormModel
 
 	Name     string `db:"name" json:"name" gorm:"type:varchar(150)"`
-	RowOrder int    `db:"row_order" json:"row_order" gorm:"type:int"`
+	orm.GormRowOrder
 }

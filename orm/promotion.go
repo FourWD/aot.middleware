@@ -15,5 +15,5 @@ type Promotion struct { //no CRUD 01 = เงินสด 02 = creditcard 03= ch
 	Name            string `db:"name" json:"name" gorm:"type:varchar(150)"`
 	PromotionType   string `db:"promotion_type" json:"promotion_type" gorm:"type:varchar(5);"`
 	PromotionAmount int    `db:"promotion_amount" json:"promotion_amount" gorm:"type:int(5);"`
-	RowOrder        int    `db:"row_order" json:"row_order" gorm:"type:int"`
+	orm.GormRowOrder
 }
