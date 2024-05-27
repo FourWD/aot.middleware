@@ -24,20 +24,20 @@ type Slip struct {
 	PickupAt  string `db:"pickup_at" json:"pickup_at" gorm:"default:null; type:varchar(50); comment:'วันเวลาที่รับลูกค้า'  "`
 	CounterID string `db:"counter_id" json:"counter_id" gorm:"type:varchar(36)"`
 
-	OriginPoiID         string  `db:"origin_poi_id" json:"origin_poi_id" gorm:"type:varchar(36);"`
-	ForceOriginName     string  `db:"force_origin_name" json:"force_origin_name" gorm:"type:varchar(150) ; comment:'กรณีที่ไม่มี POI' "`
-	DesinationPoiID     string  `db:"desination_poi_id" json:"desination_poi_id" gorm:"type:varchar(36);"`
-	ForceDesinationName string  `db:"force_desination_name" json:"force_desination_name" gorm:"type:varchar(150) ; comment:'กรณีที่ไม่มี POI' "`
-	Distance            float64 `db:"distance" json:"distance" gorm:"type:decimal(16,4)"`
-	PriceRateID         string  `db:"price_rate_id" json:"price_rate_id" gorm:"type:varchar(36);"`
-	PromotionID         string  `db:"promotion_id" json:"promotion_id" gorm:"type:varchar(36);"`
-	PromotionRef        string  `db:"promotion_ref" json:"promotion_ref" gorm:"type:varchar(36); comment:'กรณี duoslip เก็บเลขที่ slip ถ้าkansaiเก็บ เลขของ kansai' "`
-	Price               float64 `db:"price" json:"price" gorm:"default:null; type:decimal(16,4); comment:'ราคาค่าบริการ' "`
-	Discount            float64 `db:"discount" json:"discount" gorm:"default:null; type:decimal(16,4); comment:'ส่วนลด' "`
-	Wht                 float64 `db:"wht" json:"wht" gorm:"default:null; type:decimal(16,4); comment:'ภาษีหัก ที่จ่าย' "`
-	Vat                 float64 `db:"vat" json:"vat" gorm:"default:null; type:decimal(16,4); comment:'ภาษี' "`
-	NetPrice            float64 `db:"netprice" json:"netprice" gorm:"default:null; type:decimal(16,4); comment:'รวมราคาค่าบริการทั้งหมด' "`
-	IsPaid              int     `db:"is_paid" json:"is_paid" gorm:"default:0; type:tinyint(2); comment:'ลูกค้าจ่ายหรือยัง' "`
+	OriginPoiID          string  `db:"origin_poi_id" json:"origin_poi_id" gorm:"type:varchar(36);"`
+	ForceOriginName      string  `db:"force_origin_name" json:"force_origin_name" gorm:"type:varchar(150) ; comment:'กรณีที่ไม่มี POI' "`
+	DestinationPoiID     string  `db:"destination_poi_id" json:"destination_poi_id" gorm:"type:varchar(36);"`
+	ForceDestinationName string  `db:"force_destination_name" json:"force_destination_name" gorm:"type:varchar(150) ; comment:'กรณีที่ไม่มี POI' "`
+	Distance             float64 `db:"distance" json:"distance" gorm:"type:decimal(16,4)"`
+	PriceRateID          string  `db:"price_rate_id" json:"price_rate_id" gorm:"type:varchar(36);"`
+	PromotionID          string  `db:"promotion_id" json:"promotion_id" gorm:"type:varchar(36);"`
+	PromotionRef         string  `db:"promotion_ref" json:"promotion_ref" gorm:"type:varchar(36); comment:'กรณี duoslip เก็บเลขที่ slip ถ้าkansaiเก็บ เลขของ kansai' "`
+	Price                float64 `db:"price" json:"price" gorm:"default:null; type:decimal(16,4); comment:'ราคาค่าบริการ' "`
+	Discount             float64 `db:"discount" json:"discount" gorm:"default:null; type:decimal(16,4); comment:'ส่วนลด' "`
+	Wht                  float64 `db:"wht" json:"wht" gorm:"default:null; type:decimal(16,4); comment:'ภาษีหัก ที่จ่าย' "`
+	Vat                  float64 `db:"vat" json:"vat" gorm:"default:null; type:decimal(16,4); comment:'ภาษี' "`
+	NetPrice             float64 `db:"netprice" json:"netprice" gorm:"default:null; type:decimal(16,4); comment:'รวมราคาค่าบริการทั้งหมด' "`
+	IsPaid               int     `db:"is_paid" json:"is_paid" gorm:"default:0; type:tinyint(2); comment:'ลูกค้าจ่ายหรือยัง' "`
 
 	RefCode string `db:"ref_code" json:"ref_code" gorm:"type:varchar(36) comment:'ref ในหน้า status fleet'"`
 
