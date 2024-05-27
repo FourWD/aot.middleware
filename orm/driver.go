@@ -24,6 +24,6 @@ type Driver struct {
 	WorkingStartDate        time.Time `db:"working_start_date" json:"working_start_date" `
 	WorkingEndDate          time.Time `db:"working_end_date" json:"working_end_date" `
 	Remark                  string    `db:"remark" json:"remark" gorm:"type:varchar(200)"`
-	DefaultVehicleID        string    `db:"default_vehicle_id" json:"default_vehicle_id" gorm:"default:null; type:varchar(36); "`
-	CurrentVehicleID        string    `db:"current_vehicle_id" json:"current_vehicle_id" gorm:"default:null; type:varchar(36); "`
+	DefaultVehicleID        string    `db:"default_vehicle_id" json:"default_vehicle_id" gorm:"default:null;type:varchar(36); "`
+	CurrentVehicleID        string    `db:"current_vehicle_id" json:"current_vehicle_id" gorm:"default:null;type:varchar(36); "`
 }

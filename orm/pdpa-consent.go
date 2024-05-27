@@ -10,7 +10,7 @@ type PDPAConsent struct {
 	ID string `db:"id" json:"id" gorm:"type:varchar(36);primary_key;"`
 	orm.GormModel
 
-	CustomerID string `db:"customer_id"  json:"customer_id" gorm:"type:varchar(36) ; dafault:null ;"`
+	CustomerID string `db:"customer_id"  json:"customer_id" gorm:"type:varchar(36) ; default:null ;"`
 	// PdpaDetailID string `db:"pdpa_detail_id" json:"pdpa_detail_id" gorm:"type:varchar(36);"`
 	PDPADetail01 string `db:"pdpa_detail_01" json:"pdpa_detail_01" gorm:"default:null; column:pdpa_detail_01"`
 	PDPADetail02 string `db:"pdpa_detail_02" json:"pdpa_detail_02" gorm:"default:null; column:pdpa_detail_02"`
@@ -35,7 +35,7 @@ type PDPAConsent struct {
 	PDPACancelReason04 string    `db:"pdpa_cancel_reason_04" json:"pdpa_cancel_reason_04" gorm:"default:null; column:pdpa_cancel_reason_04"`
 	PDPACancelReason05 string    `db:"pdpa_cancel_reason_05" json:"pdpa_cancel_reason_05" gorm:"default:null; column:pdpa_cancel_reason_05"`
 	CancelAt           time.Time `db:"cancel_at"  json:"cancel_at" gorm:"default:null; type:datetime;"`
-	// Remark             string    `db:"remark"  json:"remark" gorm:"type:varchar(200) ; dafault:null ;"`
+	// Remark             string    `db:"remark"  json:"remark" gorm:"type:varchar(200) ; default:null ;"`
 	Remark01 string `db:"remark_01" json:"remark_01" gorm:"default:null; column:remark_01"`
 	Remark02 string `db:"remark_02" json:"remark_02" gorm:"default:null; column:remark_02"`
 	Remark03 string `db:"remark_03" json:"remark_03" gorm:"default:null; column:remark_03"`

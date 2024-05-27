@@ -20,7 +20,7 @@ type FleetClient struct {
 	StartDate          time.Time `db:"start_date" json:"start_date" comment:"วันที่เริ่ม"`
 	EndDate            time.Time `db:"end_date" json:"end_date" comment:"วันที่จบ"`
 	MinTicket          int       `db:"min_ticket" json:"min_ticket" gorm:"type:int"`
-	Discount           float64   `db:"discount" json:"discount" gorm:"default:null;type:decimal(16,4)"; comment:"ส่วนลด"`
+	Discount           float64   `db:"discount" json:"discount" gorm:"default:null;type:decimal(16,4)"`
 	Email              string    `db:"email" json:"email" gorm:"type:varchar(50)"`
 	Status             bool      `db:"status" json:"status" gorm:"type:bool"`
 	ContactPerson      string    `db:"contact_person" json:"contact_person" gorm:"type:varchar(50)"`

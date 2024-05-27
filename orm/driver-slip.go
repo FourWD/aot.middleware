@@ -18,7 +18,7 @@ type DriverSlip struct {
 	ReconcileAt           time.Time `db:"reconcile_at" json:"reconcile_at" gorm:"default:null; comment:'วันที่คีย์ตั๋วเทียบ' "`
 	SlipSubTypeID         string    `db:"slip_sub_type_id" json:"slip_sub_type_id" gorm:"type:varchar(2);"`
 	SlipVehicleSubModelID string    `db:"slip_vehicle_sub_model_id" json:"slip_vehicle_sub_model_id" gorm:"type:varchar(36); comment:'ประเภทรถตามหน้าตั๋วที่ซื้อ'"`
-	IsPickup              int       `db:"is_pickup" json:"is_pickup" gorm:"default:0; type:tinyint(1); comment:'รับลูกค้าหรือยัง' "`
+	IsPickup              bool      `db:"is_pickup" json:"is_pickup" gorm:"default:0; type:tinyint(1); comment:'รับลูกค้าหรือยัง' "`
 	PickupAt              time.Time `db:"pickup_at" json:"pickup_at" gorm:"default:null; comment:'วันเวลาที่รับลูกค้า'  "`
 	CounterID             string    `db:"counter_id" json:"counter_id" gorm:"type:varchar(36)"`
 	OriginPoiID           string    `db:"origin_poi_id" json:"origin_poi_id" gorm:"type:varchar(36);"`
@@ -46,14 +46,14 @@ type DriverSlip struct {
 	VoidRemark            string    `db:"void_remark" json:"void_remark" gorm:"type:varchar(500);"`
 	VoidBy                string    `db:"void_by" json:"void_by" gorm:"type:varchar(36);"`
 	VoidAt                time.Time `db:"void_at" json:"void_at" gorm:"default:null; comment:'วันเวลาที่ยกเลิก' "`
-	IsCancel              bool      `db:"is_cancel" json:"is_cancel" gorm:"default:0; type:tinyint(1); comment:'ยกเลิก?' "`
+	IsCancel              bool      `db:"is_cancel" json:"is_cancel" gorm:"default:0; type:tinyint(1); comment:'ยกเลิก?'"`
 	IsCancelTypeID        string    `db:"is_cancel_type_id" json:"is_cancel_type_id" gorm:"type:varchar(36);"`
 	CancelRemark          string    `db:"cancel_remark" json:"cancel_remark" gorm:"type:varchar(500);"`
 	CancelBy              string    `db:"cancel_by" json:"cancel_by" gorm:"type:varchar(36);"`
 	CancelAt              time.Time `db:"cancel_at" json:"cancel_at" gorm:"default:null; comment:'วันเวลาที่ยกเลิก' "`
 	IsNewCustomer         bool      `db:"is_new_customer" json:"is_new_customer" gorm:"type:tinyint(1)"`
 	CustomerID            string    `db:"customer_id" json:"customer_id" gorm:"type:varchar(36);"`
-	Code                  string    `db:"code"  json:"code" gorm:"type:varchar(20) ; dafault:null ; index"`
+	Code                  string    `db:"code"  json:"code" gorm:"type:varchar(20) ;default:null;index"`
 	CompanyName           string    `db:"company_name" json:"company_name" gorm:"type:varchar(150)"`
 	TaxNo                 string    `db:"tax_no" json:"tax_no" gorm:"type:varchar(20)"`
 	IsHQ                  bool      `db:"is_hq" json:"is_hq" gorm:"type:tinyint(1)"`

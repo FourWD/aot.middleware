@@ -11,6 +11,7 @@ type Slip struct {
 	orm.GormModel
 
 	SlipNo    string `db:"slip_no"  json:"slip_no" gorm:"type:varchar(50); index"`
+	JobNo     string `db:"job_no"  json:"job_no" gorm:"type:varchar(50); index"`
 	ReceiptNo string `db:"receipt_no"  json:"receipt_no" gorm:"type:varchar(50); index"`
 	RrNo      string `db:"rr_no"  json:"rr_no" gorm:"type:varchar(50); index"`
 
