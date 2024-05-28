@@ -40,8 +40,7 @@ type Slip struct {
 	Vat                  float64 `json:"vat" query:"vat" gorm:"default:null; type:decimal(16,4); comment:'ภาษี' "`
 	NetPrice             float64 `json:"net_price" query:"net_price" gorm:"default:null; type:decimal(16,4); comment:'รวมราคาค่าบริการทั้งหมด' "`
 	IsPaid               bool    `json:"is_paid" query:"is_paid" gorm:"default:0; type:tinyint(1); comment:'ลูกค้าจ่ายหรือยัง' "`
-
-	RefCode string ` json:"ref_code" query:"ref_code"  gorm:"type:varchar(36) comment:'ref ในหน้า status fleet'"`
+	RefCode              string  `json:"ref_code" query:"ref_code" gorm:"type:varchar(36); comment:'refในหน้าstatusfleet'"`
 
 	PaymentTypeID    string    `json:"payment_type_id" query:"payment_type_id" gorm:"type:varchar(2);"`
 	PaymentAt        time.Time `json:"payment_at" query:"payment_at" gorm:"default:0; comment:'วันเวลาที่จ่าย'"`
