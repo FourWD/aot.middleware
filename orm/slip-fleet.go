@@ -1,14 +1,7 @@
 package orm
 
-import (
-	orm "github.com/FourWD/middleware/model"
-)
-
 type SlipFleet struct {
-	SlipModel
-
-	ID string `json:"id" query:"id" gorm:"type:varchar(36);primary_key;"`
-	orm.GormModel
+	Slip
 
 	PassengerName             string `json:"passenger_name"  query:"passenger_name" gorm:"type:varchar(50);"`
 	PassengerLastName         string `json:"passenger_last_name"  query:"passenger_last_name" gorm:"type:varchar(200);"`
