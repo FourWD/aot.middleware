@@ -27,7 +27,7 @@ type PDPAConsent struct {
 	PDPACancelReason03 string    `json:"pdpa_cancel_reason_03" query:"pdpa_cancel_reason_03" gorm:"default:null;column:pdpa_cancel_reason_03"`
 	PDPACancelReason04 string    `json:"pdpa_cancel_reason_04" query:"pdpa_cancel_reason_04" gorm:"default:null;column:pdpa_cancel_reason_04"`
 	PDPACancelReason05 string    `json:"pdpa_cancel_reason_05" query:"pdpa_cancel_reason_05" gorm:"default:null;column:pdpa_cancel_reason_05"`
-	CancelAt           time.Time `json:"cancel_at"  query:"cancel_at" gorm:"default:null; type:datetime;"`
+	CancelAt           time.Time `json:"cancel_at"  query:"cancel_at"`
 	Remark01           string    `json:"remark_01" query:"remark_01" gorm:"default:null; column:remark_01"`
 	Remark02           string    `json:"remark_02" query:"remark_02" gorm:"default:null; column:remark_02"`
 	Remark03           string    `json:"remark_03" query:"remark_03" gorm:"default:null; column:remark_03"`

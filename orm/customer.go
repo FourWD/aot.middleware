@@ -17,7 +17,7 @@ type Customer struct {
 	Lastname        string    `json:"lastname" query:"lastname" gorm:"type:varchar(200)"`
 	Birthday        time.Time `json:"birthday" query:"birthday" `
 	Avatar          string    `json:"avatar" query:"avatar" gorm:"type:varchar(500)"`
-	Email           string    `json:"email" query:"email" gorm:"type:varchar(50)"`
+	Email           string    `json:"email" query:"email" gorm:"type:varchar(100)"`
 	IDCardNo        string    `json:"idcard_no" query:"idcard_no" gorm:"type:varchar(50)"`
 	NationalityID   string    `json:"nationality_id" query:"nationality_id" gorm:"type:varchar(3)"` // table country
 	PassportNo      string    `json:"passport_no" query:"passport_no" gorm:"type:varchar(20)"`

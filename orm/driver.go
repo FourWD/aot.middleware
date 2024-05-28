@@ -15,7 +15,7 @@ type Driver struct {
 	Lastname                string    `json:"lastname" query:"lastname" gorm:"type:varchar(100)"`
 	Nickname                string    `json:"nickname" query:"nickname" gorm:"type:varchar(50)"`
 	Birthday                time.Time `json:"birthday" query:"birthday" `
-	Email                   string    `json:"email" query:"email" gorm:"type:varchar(50)"`
+	Email                   string    `json:"email" query:"email" gorm:"type:varchar(100)"`
 	IDCardNo                string    `json:"idcard_no" query:"idcard_no" gorm:"type:varchar(13)"`
 	DriverLicenseNo         string    `json:"driver_license_no" query:"driver_license_no" gorm:"type:varchar(13)"`
 	DriverLicenseExpireDate time.Time `json:"driver_license_expire_date" query:"driver_license_expire_date" gorm:"type:varchar(50)"`
