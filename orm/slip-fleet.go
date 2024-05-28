@@ -2,6 +2,8 @@ package orm
 
 type SlipFleet struct {
 	Slip
+	FleetClientID string `json:"fleet_client_id"  query:"fleet_client_id" gorm:"type:varchar(10) ; default:null ; "`
+	Hour          string `query:"hour" json:"hour" gorm:"type:varchar(2); comment:'ระยะเวลาเช่าของระบบ Fleet '"`
 
 	PassengerName             string `json:"passenger_name"  query:"passenger_name" gorm:"type:varchar(50);"`
 	PassengerLastName         string `json:"passenger_last_name"  query:"passenger_last_name" gorm:"type:varchar(200);"`
