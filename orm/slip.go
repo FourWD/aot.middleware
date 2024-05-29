@@ -55,8 +55,8 @@ type Slip struct {
 	Voijsony     string    `json:"void_by" query:"void_by" gorm:"type:varchar(36);"`
 	VoidAt       time.Time `json:"void_at" query:"void_at"`
 
-	Latitude       float64   `json:"lat" query:"lat" gorm:"type:decimal(10,6);comment:'ระยะพิกัดต้นทาง'"`
-	Longitude      float64   `json:"long" query:"long" gorm:"type:decimal(10,6);comment:'ระยะพิกัดปลายทาง'"`
+	Latitude       float64   `json:"latitude" query:"latitude" gorm:"type:decimal(10,6);comment:'ระยะพิกัดต้นทาง'"`
+	Longitude      float64   `json:"longitude" query:"longitude" gorm:"type:decimal(10,6);comment:'ระยะพิกัดปลายทาง'"`
 	IsCancel       bool      `json:"is_cancel" query:"is_cancel" gorm:"default:0;type:tinyint(1); comment:'ยกเลิก?' "`
 	IsCancelTypeID string    `json:"is_cancel_type_id" query:"is_cancel_type_id" gorm:"type:varchar(36);"`
 	CancelRemark   string    `json:"cancel_remark" query:"cancel_remark" gorm:"type:varchar(500);"`
