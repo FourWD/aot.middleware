@@ -15,6 +15,7 @@ type Customer struct {
 	PrefixID        string    `json:"prefix_id" query:"prefix_id" gorm:"type:varchar(2)"`
 	Firstname       string    `json:"firstname" query:"firstname" gorm:"type:varchar(200)"`
 	Lastname        string    `json:"lastname" query:"lastname" gorm:"type:varchar(200)"`
+	Middlename      string    `json:"middlename" query:"middlename" gorm:"type:varchar(200)"`
 	Birthday        time.Time `json:"birthday" query:"birthday" `
 	Avatar          string    `json:"avatar" query:"avatar" gorm:"type:varchar(500)"`
 	Email           string    `json:"email" query:"email" gorm:"type:varchar(100)"`

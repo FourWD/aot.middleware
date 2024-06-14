@@ -20,9 +20,9 @@ type Poi struct {
 	IsActive   bool    `json:"is_active" query:"is_active" gorm:"type:tinyint(1)"`
 	Latitude   float64 `json:"lat" query:"lat" gorm:"type:decimal(10,6)"`
 	Longitude  float64 `json:"long" query:"long" gorm:"type:decimal(10,6)"`
-	Image1     string  `json:"image_1"  query:"image_1" gorm:"default:null; type:varchar(200);column:image_1"`
-	Image2     string  `json:"image_2"  query:"image_2" gorm:"default:null; type:varchar(200);column:image_2"`
-	Image3     string  `json:"image_3"  query:"image_3" gorm:"default:null; type:varchar(200);column:image_3"`
-	Image4     string  `json:"image_4"  query:"image_4" gorm:"default:null; type:varchar(200);column:image_4"`
-	Image5     string  `json:"image_5"  query:"image_5" gorm:"default:null; type:varchar(200);column:image_5"`
+	Image1     string  `json:"image_1" query:"image_1" gorm:"default:null; type:varchar(200);column:image_1"`
+	Image2     string  `json:"image_2" query:"image_2" gorm:"default:null; type:varchar(200);column:image_2"`
+	Image3     string  `json:"image_3" query:"image_3" gorm:"default:null; type:varchar(200);column:image_3"`
+	Image4     string  `json:"image_4" query:"image_4" gorm:"default:null; type:varchar(200);column:image_4"`
+	Image5     string  `json:"image_5" query:"image_5" gorm:"default:null; type:varchar(200);column:image_5"`
 }
