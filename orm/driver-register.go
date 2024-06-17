@@ -16,7 +16,7 @@ type DriverRegister struct {
 	GetKeyAt          time.Time `json:"get_key_at"  query:"get_key_at" gorm:"default:null; comment:'วันเวลารับกุญแจ'"`
 	GetKeyApprover    string    `json:"get_key_approver" query:"get_key_approver" gorm:"default:null; type:varchar(50);comment:'ผู้อนุมัติรับกุญแจ' "`
 	IsReturnKey       bool      `json:"is_return_key" query:"is_return_key" gorm:"type:tinyint(1);comment:'คืนกุญแจยัง' "`
-	ReturnKeyAt       time.Time `json:"return_key_at" query:"return_key_at"`
+	ReturnKeyAt       time.Time `json:"return_key_at" query:"return_key_at" gorm:"default:null; comment:'วันเวลาคืนกุญแจ'"`
 	ReturnKeyApprover string    `json:"return_key_approver"  query:"return_key_approver" gorm:"default:null; type:varchar(36);comment:'ผู้อนุมัติคืนกุญแจ' "`
 	WorkShiftID       string    `json:"work_shift_id"  query:"work_shift_id" gorm:"default:null; type:varchar(2); "`
 }
