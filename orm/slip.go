@@ -14,9 +14,9 @@ type Slip struct {
 	ReceiptNo string `json:"receipt_no" query:"receipt_no" gorm:"type:varchar(50); index"`
 	RrNo      string `json:"rr_no" query:"rr_no" gorm:"type:varchar(50); index"`
 
-	SlipAt      string    `query:"slip_at" json:"slip_at" gorm:"default:null; type:varchar(50); comment:'วันที่ลูกค้าจ่ายตัง' "`
-	TravelAt    time.Time `json:"travel_at" query:"travel_at" gorm:"default:null;comment:'วันทีวิ่งจริง' "`
-	ReconcileAt time.Time `json:"reconcile_at" query:"reconcile_at" gorm:"default:null;comment:'วันที่คีย์ตั๋วเทียบ' "`
+	SlipAt      time.Time `query:"slip_at" json:"slip_at" gorm:"default:null; comment:'วันที่ลูกค้าจ่ายตัง' "`
+	TravelAt    time.Time `json:"travel_at" query:"travel_at" gorm:"default:null; comment:'วันทีวิ่งจริง' "`
+	ReconcileAt time.Time `json:"reconcile_at" query:"reconcile_at" gorm:"default:null; comment:'วันที่คีย์ตั๋วเทียบ' "`
 
 	SlipTypeID            string `json:"slip_type_id" query:"slip_type_id"  gorm:"type:varchar(2);"`
 	SlipSubTypeID         string `json:"slip_sub_type_id" query:"slip_sub_type_id"  gorm:"type:varchar(2);"`
