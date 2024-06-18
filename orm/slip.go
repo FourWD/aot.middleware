@@ -103,8 +103,8 @@ type Slip struct {
 	ArriveLatitude  float64   `json:"arrive_latitude" query:"arrive_latitude" firestore:"arrive_latitude" gorm:"type:decimal(10,6);comment:'จุดรับลูกค้าระยะพิกัดต้นทาง'"`
 	ArriveLongitude float64   `json:"arrive_longitude" query:"arrive_longitude" firestore:"arrive_longitude" gorm:"type:decimal(10,6);comment:'จุดรับลูกค้าระยะพิกัดปลายทาง'"`
 
-	IsComplete   bool `json:"is_complete" query:"is_complete" firestore:"is_complete" gorm:"default:0; type:bool; comment:'เสร็จสมบูรณ์'"`
-	CompleteDate bool `json:"complete_date" query:"complete_date" firestore:"complete_date"`
+	IsComplete   bool      `json:"is_complete" query:"is_complete" firestore:"is_complete" gorm:"default:0; type:bool; comment:'เสร็จสมบูรณ์'"`
+	CompleteDate time.Time `json:"complete_date" query:"complete_date" firestore:"complete_date"`
 
 	Remark string `json:"remark" query:"remark" firestore:"remark" gorm:"type:text" `
 
