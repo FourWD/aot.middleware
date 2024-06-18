@@ -10,6 +10,9 @@ type Slip struct {
 	ID string `json:"id" query:"id" gorm:"type:varchar(36);primary_key;"`
 	orm.GormModel
 
+	SlipID            string `json:"slip_id" query:"slip_id" gorm:"type:varchar(36);"`
+	AppDriverStatusID string `json:"app_driver_status_id" query:"app_driver_status_id" gorm:"type:varchar(2);"`
+
 	SlipNo    string `json:"slip_no" query:"slip_no" gorm:"type:varchar(50); index"`
 	ReceiptNo string `json:"receipt_no" query:"receipt_no" gorm:"type:varchar(50); index"`
 	RrNo      string `json:"rr_no" query:"rr_no" gorm:"type:varchar(50); index"`
@@ -95,5 +98,5 @@ type Slip struct {
 	BookingBy string    `json:"booking_by" query:"booking_by" gorm:"type:varchar(36); comment:'จองโดย'"`
 	BookingAt time.Time `json:"booking_at" query:"booking_at"`
 
-	AccepetJobDate time.Time `json:"accept_job_date" query:"accept_job_date"`
+	AcceptJobDate time.Time `json:"accept_job_date" query:"accept_job_date"`
 }
