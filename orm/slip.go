@@ -94,4 +94,6 @@ type Slip struct {
 	BookingNo string    `json:"booking_no"  query:"booking_no" gorm:"type:varchar(50); index"`
 	BookingBy string    `json:"booking_by" query:"booking_by" gorm:"type:varchar(36); comment:'จองโดย'"`
 	BookingAt time.Time `json:"booking_at" query:"booking_at"`
+
+	AccepetJobDate time.Time `json:"accept_job_date" query:"accept_job_date"`
 }
