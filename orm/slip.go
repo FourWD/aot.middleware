@@ -98,8 +98,8 @@ type Slip struct {
 	ArriveLatitude  float64   `json:"arrive_latitude" query:"arrive_latitude" gorm:"type:decimal(10,6);comment:'จุดรับลูกค้าระยะพิกัดต้นทาง'"`
 	ArriveLongitude float64   `json:"arrive_longitude" query:"arrive_longitude" gorm:"type:decimal(10,6);comment:'จุดรับลูกค้าระยะพิกัดปลายทาง'"`
 
-	IsComplete   bool `json:"is_complete" query:"is_complete" gorm:"default:0; type:bool; comment:'เสร็จสมบูรณ์' "`
-	IsCompleteAt bool `json:"is_complete_at" query:"is_complete_at" `
+	IsComplete bool `json:"is_complete" query:"is_complete" gorm:"default:0; type:bool; comment:'เสร็จสมบูรณ์' "`
+	CompleteAt bool `json:"complete_at" query:"complete_at" `
 
 	Remark string `json:"remark" query:"remark" gorm:"type:text"`
 
