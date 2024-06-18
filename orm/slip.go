@@ -98,14 +98,15 @@ type Slip struct {
 	ArriveLatitude  float64   `json:"arrive_latitude" query:"arrive_latitude" gorm:"type:decimal(10,6);comment:'จุดรับลูกค้าระยะพิกัดต้นทาง'"`
 	ArriveLongitude float64   `json:"arrive_longitude" query:"arrive_longitude" gorm:"type:decimal(10,6);comment:'จุดรับลูกค้าระยะพิกัดปลายทาง'"`
 
-	IsComplete bool   `json:"is_complete" query:"is_complete" gorm:"default:0; type:bool; comment:'เสร็จสมบูรณ์' "`
-	Remark     string `json:"remark" query:"remark" gorm:"type:text"`
+	IsComplete   bool `json:"is_complete" query:"is_complete" gorm:"default:0; type:bool; comment:'เสร็จสมบูรณ์' "`
+	IsCompleteAt bool `json:"is_complete_at" query:"is_complete_at" `
+
+	Remark string `json:"remark" query:"remark" gorm:"type:text"`
 
 	BookingNo string    `json:"booking_no"  query:"booking_no" gorm:"type:varchar(50); index"`
 	BookingBy string    `json:"booking_by" query:"booking_by" gorm:"type:varchar(36); comment:'จองโดย'"`
 	BookingAt time.Time `json:"booking_at" query:"booking_at"`
 
-	JobNo         string    `json:"job_no" query:"job_no" gorm:"type:varchar(10);"`
-	AcceptJobDate time.Time `json:"accept_job_date" query:"accept_job_date"`
-	ArrivalDate   time.Time `json:"arrival_date" query:"arrival_date"`
+	JobNo       string    `json:"job_no" query:"job_no" gorm:"type:varchar(10);"`
+	AcceptJobAt time.Time `json:"accept_job_at" query:"accept_job_at"`
 }
