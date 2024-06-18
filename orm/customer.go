@@ -28,8 +28,8 @@ type Customer struct {
 	Address         string    `json:"address" query:"address" gorm:"type:varchar(255)"`
 	AddressBranch   string    `json:"address_branch" query:"address_branch" gorm:"type:varchar(255)"`
 	AddressCustomer string    `json:"address_customer" query:"address_customer" gorm:"type:varchar(255)"`
-	IsShow          bool      `json:"is_show" query:"is_show" gorm:"type:tinyint(1); comment:'โชว์แสดงผลการค้นหาสมาชิก'"`
-	IsTax           bool      `json:"is_tax" query:"is_tax" gorm:"type:tinyint(1)"`
+	IsShow          bool      `json:"is_show" query:"is_show" gorm:"type:bool; comment:'โชว์แสดงผลการค้นหาสมาชิก'"`
+	IsTax           bool      `json:"is_tax" query:"is_tax" gorm:"type:bool"`
 	RunningNo       int       `json:"running_no" query:"running_no" gorm:"primary_key;auto_increment;not_null"`
 	PhoneNo1        string    `json:"phone_no_1" query:"phone_no_1" gorm:"type:varchar(20);column:phone_no_1"`
 	PhoneNo2        string    `json:"phone_no_2" query:"phone_no_2" gorm:"type:varchar(20);column:phone_no_2"`

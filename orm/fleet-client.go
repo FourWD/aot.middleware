@@ -22,7 +22,7 @@ type FleetClient struct {
 	MinTicket          int       `json:"min_ticket" query:"min_ticket" gorm:"type:int"`
 	Discount           float64   `json:"discount" query:"discount" gorm:"default:null;type:decimal(16,4)"`
 	Email              string    `json:"email" query:"email" gorm:"type:varchar(100)"`
-	Status             bool      `json:"status" query:"status" gorm:"type:tinyint(1)"`
+	Status             bool      `json:"status" query:"status" gorm:"type:bool"`
 	ContactPerson      string    `json:"contact_person" query:"contact_person" gorm:"type:varchar(50)"`
 	ContactPersonNo    string    `json:"contact_person_no" query:"contact_person_no" gorm:"type:varchar(10)"`
 	ContactPersonEmail string    `json:"contact_person_email" query:"contact_person_email" gorm:"type:varchar(50)"`

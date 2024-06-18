@@ -14,7 +14,7 @@ type ExpressWayBill struct { //no CRUD
 	VehicleID    string    `json:"vehicle_id" query:"vehicle_id" gorm:"default:null; type:varchar(36); "`
 	DriverID     string    `json:"driver_id" query:"driver_id" gorm:"default:null; type:varchar(36); "`
 	ExpresswayID string    `json:"expressway_id" query:"expressway_id" gorm:"type:varchar(2)"`
-	IsReturnTrip bool      `json:"is_return_trip" query:"is_return_trip" gorm:"type:tinyint(1);comment:'0 = ขาไป 1 = ขากลับ'"`
+	IsReturnTrip bool      `json:"is_return_trip" query:"is_return_trip" gorm:"type:bool;comment:'0 = ขาไป 1 = ขากลับ'"`
 	SlipID       string    `json:"slip_id" query:"slip_id" gorm:"type:varchar(36);"`
 	Price        float64   `json:"price" query:"price" gorm:"default:null; type:decimal(16,4); comment:'ราคาค่าทางด่วน' "`
 }

@@ -20,7 +20,7 @@ type SlipModel struct {
 	SlipSubTypeID         string `json:"slip_sub_type_id" query:"slip_sub_type_id" gorm:"type:varchar(2);"`
 	SlipVehicleSubModelID string `json:"slip_vehicle_model_id" query:"slip_vehicle_model_id" gorm:"type:varchar(2); comment:'ประเภทรถตามหน้าตั๋วที่ซื้อ'"`
 
-	IsPickup  bool      `json:"is_pickup" query:"is_pickup" gorm:"default:0; type:tinyint(1); comment:'รับลูกค้าหรือยัง' "`
+	IsPickup  bool      `json:"is_pickup" query:"is_pickup" gorm:"default:0; type:bool; comment:'รับลูกค้าหรือยัง' "`
 	PickupAt  time.Time `json:"pickup_at" query:"pickup_at"`
 	CounterID string    `json:"counter_id" query:"counter_id" gorm:"type:varchar(36)"`
 
@@ -36,7 +36,7 @@ type SlipModel struct {
 	Discount             float64 `json:"discount" query:"discount" gorm:"default:null; type:decimal(16,4); comment:'ส่วนลด' "`
 	Vat                  float64 `json:"vat" query:"vat" gorm:"default:null; type:decimal(16,4); comment:'ภาษี' "`
 	NetPrice             float64 `json:"net_price" query:"net_price" gorm:"default:null; type:decimal(16,4); comment:'รวมราคาค่าบริการทั้งหมด' "`
-	IsPaid               bool    `json:"is_paid" query:"is_paid" gorm:"default:0; type:tinyint(1); comment:'ลูกค้าจ่ายหรือยัง' "`
+	IsPaid               bool    `json:"is_paid" query:"is_paid" gorm:"default:0; type:bool; comment:'ลูกค้าจ่ายหรือยัง' "`
 
 	PaymentTypeID    string    `json:"payment_type_id" query:"payment_type_id" gorm:"type:varchar(2);"`
 	PaymentAt        time.Time `json:"payment_at" query:"payment_at" gorm:"default:0; comment:'วันเวลาที่จ่าย'"`
@@ -44,12 +44,12 @@ type SlipModel struct {
 	CreditCardTypeID string    `json:"credit_card_type_id" query:"credit_card_type_id" gorm:"type:varchar(2);"`
 	Latitude         float64   `json:"lat" query:"lat" gorm:"type:decimal(10,6);comment:'ระยะพิกัดต้นทาง'"`
 	Longitude        float64   `json:"long" query:"long" gorm:"type:decimal(10,6);comment:'ระยะพิกัดปลายทาง'"`
-	IsCancel         bool      `json:"is_cancel" query:"is_cancel" gorm:"default:0;type:tinyint(1); comment:'ยกเลิก?' "`
+	IsCancel         bool      `json:"is_cancel" query:"is_cancel" gorm:"default:0;type:bool; comment:'ยกเลิก?' "`
 	IsCancelTypeID   string    `json:"is_cancel_type_id" query:"is_cancel_type_id" gorm:"type:varchar(36);"`
 	CancelRemark     string    `json:"cancel_remark" query:"cancel_remark" gorm:"type:varchar(500);"`
 	CancelBy         string    `json:"cancel_by" query:"cancel_by" gorm:"type:varchar(36);"`
 	CancelAt         time.Time `json:"cancel_at" query:"cancel_at"`
-	IsVoid           bool      `json:"is_void" query:"is_void" gorm:"default:0; type:tinyint(1);comment:'ยกเลิก?' "`
+	IsVoid           bool      `json:"is_void" query:"is_void" gorm:"default:0; type:bool;comment:'ยกเลิก?' "`
 	IsVoidTypeID     string    `json:"is_void_type_id" query:"is_void_type_id" gorm:"type:varchar(36);"`
 	VoidRemark       string    `json:"void_remark" query:"void_remark" gorm:"type:varchar(500);"`
 	Voijsony         string    `json:"void_by" query:"void_by" gorm:"type:varchar(36);"`
@@ -59,7 +59,7 @@ type SlipModel struct {
 	CompanyName      string    `json:"company_name" query:"company_name" gorm:"type:varchar(150)"`
 	CompanyID        string    `json:"company_id" query:"company_id" gorm:"type:varchar(10)"`
 	BusinessTypeID   string    `json:"business_type_id" query:"business_type_id" gorm:"type:varchar(36)"`
-	IsHQ             bool      `json:"is_hq" query:"is_hq" gorm:"type:tinyint(1)"`
+	IsHQ             bool      `json:"is_hq" query:"is_hq" gorm:"type:bool"`
 	Address          string    `json:"address" query:"address" gorm:"type:text"`
 	Postcode         string    `json:"postcode" query:"postcode" gorm:"type:varchar(5)"`
 	PhoneNo          string    `json:"phone_no" query:"phone_no" gorm:"type:varchar(10)"`
@@ -75,7 +75,7 @@ type SlipModel struct {
 	AssignVehicleBy  string    `json:"assign_vehicle_by" query:"assign_vehicle_by" gorm:"type:varchar(36);"`
 	AssignDriverID   string    `json:"assign_driver_id" query:"assign_driver_id" gorm:"default:null; type:varchar(36); "`
 	ArrivedAt        time.Time `json:"arrived_at" query:"arrived_at" gorm:"default:null;comment:'วันเวลาที่มาถึง'"`
-	IsCompleted      bool      `json:"is_completed" query:"is_completed" gorm:"default:0; type:tinyint(1); comment:'เสร็จสมบูรณ์' "`
+	IsCompleted      bool      `json:"is_completed" query:"is_completed" gorm:"default:0; type:bool; comment:'เสร็จสมบูรณ์' "`
 	Remark           string    `json:"remark" query:"remark" gorm:"type:varchar(255)"`
 	BookingNo        string    `json:"booking_no"  query:"booking_no" gorm:"type:varchar(50); index"`
 	BookingBy        string    `json:"booking_by" query:"booking_by" gorm:"type:varchar(36); comment:'จองโดย'"`

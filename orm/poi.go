@@ -17,7 +17,7 @@ type Poi struct {
 	Duration   int     `json:"duration" query:"duration" gorm:"type:int"`
 	ProvinceID string  `json:"province_id" query:"province_id" gorm:"type:varchar(2)"`
 	PoiTypeID  string  `json:"poi_type_id" query:"poi_type_id" gorm:"type:varchar(2)"`
-	IsActive   bool    `json:"is_active" query:"is_active" gorm:"type:tinyint(1)"`
+	IsActive   bool    `json:"is_active" query:"is_active" gorm:"type:bool"`
 	Latitude   float64 `json:"lat" query:"lat" gorm:"type:decimal(10,6)"`
 	Longitude  float64 `json:"long" query:"long" gorm:"type:decimal(10,6)"`
 	Image1     string  `json:"image_1" query:"image_1" gorm:"default:null; type:varchar(200);column:image_1"`

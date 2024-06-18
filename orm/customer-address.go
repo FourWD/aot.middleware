@@ -10,7 +10,7 @@ type CustomerAddress struct {
 
 	CustomerID string `json:"customer_id"  query:"customer_id" gorm:"type:varchar(36); "`
 
-	IsHQ     bool   `json:"is_hq" query:"is_hq" gorm:"type:tinyint(1)"`
+	IsHQ     bool   `json:"is_hq" query:"is_hq" gorm:"type:bool"`
 	Address  string `json:"address" query:"address" gorm:"type:text"`
 	Postcode string `json:"postcode" query:"postcode" gorm:"type:varchar(5)"`
 	PhoneNo  string `json:"phone_no" query:"phone_no" gorm:"type:varchar(10)"`

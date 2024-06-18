@@ -15,13 +15,13 @@ type PDPAConsent struct {
 	PDPADetail03       string    `json:"pdpa_detail_03" query:"pdpa_detail_03" gorm:"default:null;column:pdpa_detail_03"`
 	PDPADetail04       string    `json:"pdpa_detail_04" query:"pdpa_detail_04" gorm:"default:null;column:pdpa_detail_04"`
 	PDPADetail05       string    `json:"pdpa_detail_05" query:"pdpa_detail_05" gorm:"default:null;column:pdpa_detail_05"`
-	IsAccept           bool      `json:"is_accept" query:"is_accept" gorm:"type:tinyint(1);comment:'ลูกค้าเป็นคนกดรับหรือไม่รับ'"`
+	IsAccept           bool      `json:"is_accept" query:"is_accept" gorm:"type:bool;comment:'ลูกค้าเป็นคนกดรับหรือไม่รับ'"`
 	AcceptAt           time.Time `json:"accept_at"  query:"accept_at"`
-	IsCancel01         bool      `json:"is_cancel_01" query:"is_cancel_01" gorm:"type:tinyint(1);column:is_cancel_01"`
-	IsCancel02         bool      `json:"is_cancel_02"  query:"is_cancel_02" gorm:"type:tinyint(1);column:is_cancel_02"`
-	IsCancel03         bool      `json:"is_cancel_03" query:"is_cancel_03" gorm:"type:tinyint(1);column:is_cancel_03"`
-	IsCancel04         bool      `json:"is_cancel_04"  query:"is_cancel_04" gorm:"type:tinyint(1);column:is_cancel_04"`
-	IsCancel05         bool      `json:"is_cancel_05" query:"is_cancel_05" gorm:"type:tinyint(1);column:is_cancel_05"`
+	IsCancel01         bool      `json:"is_cancel_01" query:"is_cancel_01" gorm:"type:bool;column:is_cancel_01"`
+	IsCancel02         bool      `json:"is_cancel_02"  query:"is_cancel_02" gorm:"type:bool;column:is_cancel_02"`
+	IsCancel03         bool      `json:"is_cancel_03" query:"is_cancel_03" gorm:"type:bool;column:is_cancel_03"`
+	IsCancel04         bool      `json:"is_cancel_04"  query:"is_cancel_04" gorm:"type:bool;column:is_cancel_04"`
+	IsCancel05         bool      `json:"is_cancel_05" query:"is_cancel_05" gorm:"type:bool;column:is_cancel_05"`
 	PDPACancelReason01 string    `json:"pdpa_cancel_reason_01" query:"pdpa_cancel_reason_01" gorm:"default:null;column:pdpa_cancel_reason_01"`
 	PDPACancelReason02 string    `json:"pdpa_cancel_reason_02" query:"pdpa_cancel_reason_02" gorm:"default:null;column:pdpa_cancel_reason_02"`
 	PDPACancelReason03 string    `json:"pdpa_cancel_reason_03" query:"pdpa_cancel_reason_03" gorm:"default:null;column:pdpa_cancel_reason_03"`
