@@ -29,21 +29,25 @@ type Slip struct {
 	PickupAt  time.Time `json:"pickup_at" query:"pickup_at"`
 	CounterID string    `json:"counter_id" query:"counter_id" gorm:"type:varchar(36)"`
 
-	OriginPoiID          string  `json:"origin_poi_id" query:"origin_poi_id" gorm:"type:varchar(36);"`
-	ForceOriginName      string  `json:"force_origin_name" query:"force_origin_name" gorm:"type:varchar(150) ; comment:'กรณีที่ไม่มี POI' "`
-	DestinationPoiID     string  `json:"destination_poi_id" query:"destination_poi_id" gorm:"type:varchar(36);"`
-	ForceDestinationName string  `json:"force_destination_name" query:"force_destination_name" gorm:"type:varchar(150) ; comment:'กรณีที่ไม่มี POI' "`
-	Distance             float64 `json:"distance" query:"distance" gorm:"type:decimal(16,4)"`
-	PriceRateID          string  `json:"price_rate_id" query:"price_rate_id" gorm:"type:varchar(36);"`
-	PromotionID          string  `json:"promotion_id" query:"promotion_id" gorm:"type:varchar(36);"`
-	PromotionRef         string  `json:"promotion_ref" query:"promotion_ref" gorm:"type:varchar(36); comment:'กรณี duoslip เก็บเลขที่ slip ถ้าkansaiเก็บ เลขของ kansai' "`
-	Price                float64 `json:"price" query:"price" gorm:"default:null; type:decimal(16,4); comment:'ราคาค่าบริการ' "`
-	Discount             float64 `json:"discount" query:"discount" gorm:"default:null; type:decimal(16,4); comment:'ส่วนลด' "`
-	Wht                  float64 `json:"wht" query:"wht" gorm:"default:null; type:decimal(16,4); comment:'ภาษีหัก ที่จ่าย' "`
-	Vat                  float64 `json:"vat" query:"vat" gorm:"default:null; type:decimal(16,4); comment:'ภาษี' "`
-	NetPrice             float64 `json:"net_price" query:"net_price" gorm:"default:null; type:decimal(16,4); comment:'รวมราคาค่าบริการทั้งหมด' "`
-	IsPaid               bool    `json:"is_paid" query:"is_paid" gorm:"default:0; type:bool; comment:'ลูกค้าจ่ายหรือยัง' "`
-	RefCode              string  `json:"ref_code" query:"ref_code" gorm:"type:varchar(36); comment:'refในหน้าstatusfleet'"`
+	OriginPoiID     string `json:"origin_poi_id" query:"origin_poi_id" gorm:"type:varchar(36);"`
+	ForceOriginName string `json:"force_origin_name" query:"force_origin_name" gorm:"type:varchar(150) ; comment:'กรณีที่ไม่มี POI' "`
+	OriginRemark    string `json:"origin_remark" query:"origin_remark" gorm:"type:text"`
+
+	DestinationPoiID     string `json:"destination_poi_id" query:"destination_poi_id" gorm:"type:varchar(36);"`
+	ForceDestinationName string `json:"force_destination_name" query:"force_destination_name" gorm:"type:varchar(150) ; comment:'กรณีที่ไม่มี POI' "`
+	DestinationRemark    string `json:"destination_remark" query:"destination_remark" gorm:"type:text"`
+
+	Distance     float64 `json:"distance" query:"distance" gorm:"type:decimal(16,4)"`
+	PriceRateID  string  `json:"price_rate_id" query:"price_rate_id" gorm:"type:varchar(36);"`
+	PromotionID  string  `json:"promotion_id" query:"promotion_id" gorm:"type:varchar(36);"`
+	PromotionRef string  `json:"promotion_ref" query:"promotion_ref" gorm:"type:varchar(36); comment:'กรณี duoslip เก็บเลขที่ slip ถ้าkansaiเก็บ เลขของ kansai' "`
+	Price        float64 `json:"price" query:"price" gorm:"default:null; type:decimal(16,4); comment:'ราคาค่าบริการ' "`
+	Discount     float64 `json:"discount" query:"discount" gorm:"default:null; type:decimal(16,4); comment:'ส่วนลด' "`
+	Wht          float64 `json:"wht" query:"wht" gorm:"default:null; type:decimal(16,4); comment:'ภาษีหัก ที่จ่าย' "`
+	Vat          float64 `json:"vat" query:"vat" gorm:"default:null; type:decimal(16,4); comment:'ภาษี' "`
+	NetPrice     float64 `json:"net_price" query:"net_price" gorm:"default:null; type:decimal(16,4); comment:'รวมราคาค่าบริการทั้งหมด' "`
+	IsPaid       bool    `json:"is_paid" query:"is_paid" gorm:"default:0; type:bool; comment:'ลูกค้าจ่ายหรือยัง' "`
+	RefCode      string  `json:"ref_code" query:"ref_code" gorm:"type:varchar(36); comment:'refในหน้าstatusfleet'"`
 
 	PaymentTypeID    string    `json:"payment_type_id" query:"payment_type_id" gorm:"type:varchar(2);"`
 	PaymentAt        time.Time `json:"payment_at" query:"payment_at" gorm:"default:0; comment:'วันเวลาที่จ่าย'"`
@@ -86,13 +90,16 @@ type Slip struct {
 	FuelAverage      float64 `json:"fuel_average" query:"fuel_average" gorm:"type:decimal(16,4); comment:'เก็บราคาของค่าน้ำมันเฉลี่ย '"`
 	// Hour             string  `query:"hour" json:"hour" gorm:"type:varchar(2); comment:'ระยะเวลาเช่าของระบบ Fleet '"`
 
-	AssignVehicleID string    `json:"assign_vehicle_id" query:"assign_vehicle_id" gorm:"type:varchar(36); comment:'รถที่วิ่งงานจริง'"`
-	AssignVehicleBy string    `json:"assign_vehicle_by" query:"assign_vehicle_by" gorm:"type:varchar(36);"`
-	AssignDriverID  string    `json:"assign_driver_id" query:"assign_driver_id" gorm:"default:null; type:varchar(36); "`
-	ArrivedAt       time.Time `json:"arrived_at" query:"arrived_at" gorm:"default:null;comment:'วันเวลาที่มาถึง'"`
+	AssignVehicleID string `json:"assign_vehicle_id" query:"assign_vehicle_id" gorm:"type:varchar(36); comment:'รถที่วิ่งงานจริง'"`
+	AssignVehicleBy string `json:"assign_vehicle_by" query:"assign_vehicle_by" gorm:"type:varchar(36);"`
+	AssignDriverID  string `json:"assign_driver_id" query:"assign_driver_id" gorm:"default:null; type:varchar(36); "`
 
-	IsCompleted bool   `json:"is_completed" query:"is_completed" gorm:"default:0; type:bool; comment:'เสร็จสมบูรณ์' "`
-	Remark      string `json:"remark" query:"remark" gorm:"type:varchar(255)"`
+	ArriveAt        time.Time `json:"arrive_at" query:"arrive_at" gorm:"default:null;comment:'วันเวลาที่มาถึง'"`
+	ArriveLatitude  float64   `json:"arrive_latitude" query:"arrive_latitude" gorm:"type:decimal(10,6);comment:'จุดรับลูกค้าระยะพิกัดต้นทาง'"`
+	ArriveLongitude float64   `json:"arrive_longitude" query:"arrive_longitude" gorm:"type:decimal(10,6);comment:'จุดรับลูกค้าระยะพิกัดปลายทาง'"`
+
+	IsComplete bool   `json:"is_complete" query:"is_complete" gorm:"default:0; type:bool; comment:'เสร็จสมบูรณ์' "`
+	Remark     string `json:"remark" query:"remark" gorm:"type:text"`
 
 	BookingNo string    `json:"booking_no"  query:"booking_no" gorm:"type:varchar(50); index"`
 	BookingBy string    `json:"booking_by" query:"booking_by" gorm:"type:varchar(36); comment:'จองโดย'"`

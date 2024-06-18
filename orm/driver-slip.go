@@ -71,7 +71,7 @@ type DriverSlip struct {
 	AssignVehicleBy string    `json:"assign_vehicle_by" query:"assign_vehicle_by" gorm:"type:varchar(36);"`
 	AssignDriverID  string    `json:"assign_driver_id" query:"assign_driver_id" gorm:"default:null; type:varchar(36); "`
 	ArrivedAt       time.Time `json:"arrived_at" query:"arrived_at" gorm:"default:null; comment:'วันเวลาที่มาถึง' "`
-	IsCompleted     bool      `json:"is_completed" query:"is_completed" gorm:"default:0; type:bool; comment:'เสร็จสมบูรณ์' "`
+	IsComplete      bool      `json:"is_complete" query:"is_complete" gorm:"default:0; type:bool; comment:'เสร็จสมบูรณ์' "`
 	Remark          string    `json:"remark" query:"remark" gorm:"type:varchar(150) comment:'คำอธิบาย'"`
 	BookingNo       string    `json:"booking_no"  query:"booking_no" gorm:"type:varchar(50); index"`
 	BookingBy       string    `json:"booking_by" query:"booking_by" gorm:"type:varchar(36); comment:'จองโดย'"`

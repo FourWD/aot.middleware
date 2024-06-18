@@ -20,7 +20,7 @@ type SlipModel struct {
 	SlipSubTypeID         string `json:"slip_sub_type_id" query:"slip_sub_type_id" gorm:"type:varchar(2);"`
 	SlipVehicleSubModelID string `json:"slip_vehicle_model_id" query:"slip_vehicle_model_id" gorm:"type:varchar(2); comment:'ประเภทรถตามหน้าตั๋วที่ซื้อ'"`
 
-	IsPickup  bool      `json:"is_pickup" query:"is_pickup" gorm:"default:0; type:bool; comment:'รับลูกค้าหรือยัง' "`
+	IsPickp   bool      `json:"is_pickup" query:"is_pickup" gorm:"default:0; type:bool; comment:'รับลูกค้าหรือยัง' "`
 	PickupAt  time.Time `json:"pickup_at" query:"pickup_at"`
 	CounterID string    `json:"counter_id" query:"counter_id" gorm:"type:varchar(36)"`
 
@@ -75,7 +75,7 @@ type SlipModel struct {
 	AssignVehicleBy  string    `json:"assign_vehicle_by" query:"assign_vehicle_by" gorm:"type:varchar(36);"`
 	AssignDriverID   string    `json:"assign_driver_id" query:"assign_driver_id" gorm:"default:null; type:varchar(36); "`
 	ArrivedAt        time.Time `json:"arrived_at" query:"arrived_at" gorm:"default:null;comment:'วันเวลาที่มาถึง'"`
-	IsCompleted      bool      `json:"is_completed" query:"is_completed" gorm:"default:0; type:bool; comment:'เสร็จสมบูรณ์' "`
+	IsComplete       bool      `json:"is_complete" query:"is_complete" gorm:"default:0; type:bool; comment:'เสร็จสมบูรณ์' "`
 	Remark           string    `json:"remark" query:"remark" gorm:"type:varchar(255)"`
 	BookingNo        string    `json:"booking_no"  query:"booking_no" gorm:"type:varchar(50); index"`
 	BookingBy        string    `json:"booking_by" query:"booking_by" gorm:"type:varchar(36); comment:'จองโดย'"`
