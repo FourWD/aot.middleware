@@ -83,19 +83,20 @@ type Slip struct {
 	AssignVehicleID       string    `json:"assign_vehicle_id" query:"assign_vehicle_id" firestore:"assign_vehicle_id" gorm:"type:varchar(36);comment:'รถที่วิ่งงานจริง'"`
 	AssignVehicleBy       string    `json:"assign_vehicle_by" query:"assign_vehicle_by" firestore:"assign_vehicle_by" gorm:"type:varchar(36);"`
 	AssignDriverID        string    `json:"assign_driver_id" query:"assign_driver_id" firestore:"assign_driver_id" gorm:"default:null; type:varchar(36); "`
-	IsArrive              bool      `json:"is_arrive" query:"is_arrive" firestore:"is_arrive" gorm:"default:null;"`
-	ArriveDate            time.Time `json:"arrive_date" query:"arrive_date" firestore:"arrive_date" gorm:"default:null;comment:'วันเวลาที่มาถึง'"`
-	ArriveLatitude        float64   `json:"arrive_latitude" query:"arrive_latitude" firestore:"arrive_latitude" gorm:"type:decimal(10,6);comment:'จุดรับลูกค้าระยะพิกัดต้นทาง'"`
-	ArriveLongitude       float64   `json:"arrive_longitude" query:"arrive_longitude" firestore:"arrive_longitude" gorm:"type:decimal(10,6);comment:'จุดรับลูกค้าระยะพิกัดปลายทาง'"`
-	IsComplete            bool      `json:"is_complete" query:"is_complete" firestore:"is_complete" gorm:"default:0; type:bool;comment:'เสร็จสมบูรณ์'"`
-	CompleteDate          time.Time `json:"complete_date" query:"complete_date" firestore:"complete_date"`
-	Remark                string    `json:"remark" query:"remark" firestore:"remark" gorm:"type:text" `
-	BookingNo             string    `json:"booking_no" query:"booking_no" firestore:"booking_no" gorm:"type:varchar(50);index"`
-	BookingBy             string    `json:"booking_by" query:"booking_by" firestore:"booking_by" gorm:"type:varchar(36)"`
-	BookingDate           time.Time `json:"booking_date" query:"booking_date" firestore:"booking_date"`
-	JobNo                 string    `json:"job_no" query:"job_no" firestore:"job_no" gorm:"type:varchar(10);"`
-	AcceptJobDate         time.Time `json:"accept_job_date" query:"accept_job_date" firestore:"accept_job_date"`
-	AirlineName           string    `json:"airline_name" query:"airline_name" firestore:"airline_name" gorm:"type:varchar(100)"`
+
+	IsArrive        bool      `json:"is_arrive" query:"is_arrive" firestore:"is_arrive" gorm:"default:null;"`
+	ArriveDate      time.Time `json:"arrive_date" query:"arrive_date" firestore:"arrive_date" gorm:"default:null;comment:'วันเวลาที่มาถึง'"`
+	ArriveLatitude  float64   `json:"arrive_latitude" query:"arrive_latitude" firestore:"arrive_latitude" gorm:"type:decimal(10,6);comment:'จุดรับลูกค้าระยะพิกัดต้นทาง'"`
+	ArriveLongitude float64   `json:"arrive_longitude" query:"arrive_longitude" firestore:"arrive_longitude" gorm:"type:decimal(10,6);comment:'จุดรับลูกค้าระยะพิกัดปลายทาง'"`
+	IsComplete      bool      `json:"is_complete" query:"is_complete" firestore:"is_complete" gorm:"default:0; type:bool;comment:'เสร็จสมบูรณ์'"`
+	CompleteDate    time.Time `json:"complete_date" query:"complete_date" firestore:"complete_date"`
+	Remark          string    `json:"remark" query:"remark" firestore:"remark" gorm:"type:text" `
+	BookingNo       string    `json:"booking_no" query:"booking_no" firestore:"booking_no" gorm:"type:varchar(50);index"`
+	BookingBy       string    `json:"booking_by" query:"booking_by" firestore:"booking_by" gorm:"type:varchar(36)"`
+	BookingDate     time.Time `json:"booking_date" query:"booking_date" firestore:"booking_date"`
+	JobNo           string    `json:"job_no" query:"job_no" firestore:"job_no" gorm:"type:varchar(10);"`
+	AcceptJobDate   time.Time `json:"accept_job_date" query:"accept_job_date" firestore:"accept_job_date"`
+	AirlineName     string    `json:"airline_name" query:"airline_name" firestore:"airline_name" gorm:"type:varchar(100)"`
 
 	//---FLEET--
 	FleetClientID            string    `json:"fleet_client_id" query:"fleet_client_id" firestore:"fleet_client_id" gorm:"type:varchar(10) ; default:null ; "`
