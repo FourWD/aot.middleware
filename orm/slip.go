@@ -10,7 +10,6 @@ type Slip struct {
 	ID string `json:"id" query:"id" gorm:"type:varchar(36); firestore:"id" primary_key;"`
 	orm.GormModel
 
-	SlipID                string    `json:"slip_id" query:"slip_id" firestore:"slip_id" gorm:"type:varchar(36);" `
 	AppDriverStatusID     string    `json:"app_driver_status_id" query:"app_driver_status_id" firestore:"app_driver_status_id" gorm:"type:varchar(2);"`
 	SlipNo                string    `json:"slip_no" query:"slip_no" firestore:"slip_no" gorm:"type:varchar(50);index"`
 	ReceiptNo             string    `json:"receipt_no" query:"receipt_no" firestore:"receipt_no" gorm:"type:varchar(50);index"`
