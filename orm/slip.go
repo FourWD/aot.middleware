@@ -95,6 +95,8 @@ type Slip struct {
 	BookingDate           time.Time `json:"booking_date" query:"booking_date" firestore:"booking_date"`
 	JobNo                 string    `json:"job_no" query:"job_no" firestore:"job_no" gorm:"type:varchar(10);"`
 	AcceptJobDate         time.Time `json:"accept_job_date" query:"accept_job_date" firestore:"accept_job_date"`
+	AirlineName           string    `json:"airline_name" query:"airline_name" firestore:"airline_name" gorm:"type:varchar(100)"`
+
 	//---FLEET--
 	FleetClientID            string    `json:"fleet_client_id" query:"fleet_client_id" firestore:"fleet_client_id" gorm:"type:varchar(10) ; default:null ; "`
 	BookingHour              string    `query:"booking_hour" json:"booking_hour" firestore:"booking_hour" gorm:"type:varchar(2);comment:'ระยะเวลาเช่าของระบบ Fleet '"`
