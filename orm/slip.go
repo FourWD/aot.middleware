@@ -7,11 +7,11 @@ import (
 )
 
 type Slip struct {
-	ID string `json:"id" query:"id" gorm:"type:varchar(36); firestore:"id" primary_key;"`
+	ID string `json:"id" query:"id"  firestore:"id" gorm:"type:varchar(36);  primary_key;"`
 	orm.GormModel
 
 	AppDriverStatusID     string    `json:"app_driver_status_id" query:"app_driver_status_id" firestore:"app_driver_status_id" gorm:"type:varchar(2);"`
-	SlipNo                string    `json:"slip_no" query:"slip_no" firestore:"slip_no" gorm:"type:varchar(50);index"`
+	SlipNo                string    `json:"slip_no" query:"slip_no" firestore:"slip_no" gorm:"type:varchar(36);index"`
 	ReceiptNo             string    `json:"receipt_no" query:"receipt_no" firestore:"receipt_no" gorm:"type:varchar(50);index"`
 	RrNo                  string    `json:"rr_no" query:"rr_no" firestore:"rr_no" gorm:"type:varchar(50); index"`
 	SlipDate              time.Time `query:"slip_date" json:"slip_date" firestore:"slip_date" gorm:"default:null;comment:'วันที่ลูกค้าจ่ายตัง' "`

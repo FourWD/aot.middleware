@@ -1,6 +1,6 @@
 package utils
 
-func GenSlipRCallCenter(id string) string {
+func GenSlipCallCenter(id string) string {
 
-	return "callcenter 1234"
+	return id
 }
