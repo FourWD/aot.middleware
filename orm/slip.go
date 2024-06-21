@@ -38,51 +38,53 @@ type Slip struct {
 	DeliverDate           time.Time `json:"deliver_date" query:"deliver_date" firestore:"deliver_date"`
 	DestinationRemark     string    `json:"destination_remark" query:"destination_remark" firestore:"destination_remark" gorm:"type:text"`
 	Distance              float64   `json:"distance" query:"distance" firestore:"distance" gorm:"type:decimal(16,4)"`
-	PriceRateID           string    `json:"price_rate_id" query:"price_rate_id" firestore:"price_rate_id" gorm:"type:varchar(36);"`
-	PromotionID           string    `json:"promotion_id" query:"promotion_id" firestore:"promotion_id" gorm:"type:varchar(36);"`
-	PromotionRef          string    `json:"promotion_ref" query:"promotion_ref" firestore:"promotion_ref" gorm:"type:varchar(36);comment:'กรณี duoslip เก็บเลขที่ slip ถ้าkansaiเก็บ เลขของ kansai' "`
-	Price                 float64   `json:"price" query:"price" firestore:"price" gorm:"default:null; type:decimal(16,4);comment:'ราคาค่าบริการ' "`
-	Discount              float64   `json:"discount" query:"discount" firestore:"discount" gorm:"default:null; type:decimal(16,4);comment:'ส่วนลด' "`
-	Wht                   float64   `json:"wht" query:"wht" firestore:"wht" gorm:"default:null; type:decimal(16,4);comment:'ภาษีหัก ที่จ่าย' "`
-	Vat                   float64   `json:"vat" query:"vat" firestore:"vat" gorm:"default:null; type:decimal(16,4);comment:'ภาษี' "`
-	NetPrice              float64   `json:"net_price" query:"net_price" firestore:"net_price" gorm:"default:null; type:decimal(16,4);comment:'รวมราคาค่าบริการทั้งหมด' "`
-	IsPaid                bool      `json:"is_paid" query:"is_paid" firestore:"is_paid" gorm:"default:0; type:bool;comment:'ลูกค้าจ่ายหรือยัง' "`
-	RefCode               string    `json:"ref_code" query:"ref_code" firestore:"ref_code" gorm:"type:varchar(36);comment:'refในหน้าstatusfleet'"`
-	PaymentTypeID         string    `json:"payment_type_id" query:"payment_type_id" firestore:"payment_type_id" gorm:"type:varchar(2);"`
-	PaymentDate           time.Time `json:"payment_date" query:"payment_date" firestore:"payment_date" gorm:"default:0;comment:'วันเวลาที่จ่าย'"`
-	CreditCardNo          string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
-	CreditCardTypeID      string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
-	BankRefNo             string    `query:"bank_ref_number" json:"bank_ref_number" firestore:"bank_ref_number" gorm:"default:null; type:varchar(20);"`
-	IsVoid                bool      `json:"is_void" query:"is_void" firestore:"is_void" gorm:"default:0; type:bool;comment:'ยกเลิก?' "`
-	IsVoidTypeID          string    `json:"is_void_type_id" query:"is_void_type_id" firestore:"is_void_type_id" gorm:"type:varchar(36);"`
-	VoidRemark            string    `json:"void_remark" query:"void_remark" firestore:"void_remark" gorm:"type:varchar(500);"`
-	VoidBy                string    `json:"void_by" query:"void_by" firestore:"void_by" gorm:"type:varchar(36);"`
-	VoidDate              time.Time `json:"void_date" query:"void_date" firestore:"void_date"`
-	IsCancel              bool      `json:"is_cancel" query:"is_cancel" firestore:"is_cancel" gorm:"default:0;type:bool;comment:'ยกเลิก?' "`
-	IsCancelTypeID        string    `json:"is_cancel_type_id" query:"is_cancel_type_id" firestore:"is_cancel_type_id" gorm:"type:varchar(36);"`
-	CancelRemark          string    `json:"cancel_remark" query:"cancel_remark" firestore:"cancel_remark" gorm:"type:varchar(500);"`
-	CancelBy              string    `json:"cancel_by" query:"cancel_by" firestore:"cancel_by" gorm:"type:varchar(36);"`
-	CancelDate            time.Time `json:"cancel_date" query:"cancel_date" firestore:"cancel_date"`
-	IsNewCustomer         bool      `json:"is_new_customer" query:"is_new_customer" firestore:"is_new_customer" gorm:"type:bool"`
-	CustomerID            string    `json:"customer_id" query:"customer_id" firestore:"customer_id" gorm:"type:varchar(36);"`
-	Code                  string    `json:"code" query:"code" firestore:"code" gorm:"type:varchar(20) ; dafault:null ; index"`
-	CompanyName           string    `json:"company_name" query:"company_name" firestore:"company_name" gorm:"type:varchar(150)"`
-	TaxNo                 string    `json:"tax_no" query:"tax_no" firestore:"tax_no" gorm:"type:varchar(20)"`
-	IsTax                 bool      `json:"is_tax" query:"is_tax" firestore:"is_tax" gorm:"type:bool"`
-	IsHQ                  bool      `json:"is_hq" query:"is_hq" firestore:"is_hq" gorm:"type:bool"`
-	Address               string    `json:"address" query:"address" firestore:"address" gorm:"type:text"`
-	Postcode              string    `json:"postcode" query:"postcode" firestore:"postcode" gorm:"type:varchar(5)"`
-	PhoneNo               string    `json:"phone_no" query:"phone_no" firestore:"phone_no" gorm:"type:varchar(10)"`
-	FlightNo              string    `json:"flight_no" query:"flight_no" firestore:"flight_no" gorm:"type:varchar(20)"`
-	FlightDate            time.Time `json:"flight_date" query:"flight_date" firestore:"flight_date"`
-	RentalRateID          string    `json:"rental_rate_id" query:"rental_rate_id" firestore:"rental_rate_id" gorm:"type:varchar(36)"`
-	RentalPrice           float64   `json:"rental_price" query:"rental_price" firestore:"rental_price" gorm:"type:decimal(16,4)"`
-	RentalFuelRateID      string    `json:"rental_fuel_rate_id" query:"rental_fuel_rate_id" firestore:"rental_fuel_rate_id" gorm:"type:varchar(20)"`
-	RentalFuelLitre       float64   `json:"rental_fuel_litre" query:"rental_fuel_litre" firestore:"rental_fuel_litre" gorm:"type:decimal(16,4)"`
-	FuelAverage           float64   `json:"fuel_average" query:"fuel_average" firestore:"fuel_average" gorm:"type:decimal(16,4);comment:'เก็บราคาของค่าน้ำมันเฉลี่ย '"`
-	AssignVehicleID       string    `json:"assign_vehicle_id" query:"assign_vehicle_id" firestore:"assign_vehicle_id" gorm:"type:varchar(36);comment:'รถที่วิ่งงานจริง'"`
-	AssignVehicleBy       string    `json:"assign_vehicle_by" query:"assign_vehicle_by" firestore:"assign_vehicle_by" gorm:"type:varchar(36);"`
-	AssignDriverID        string    `json:"assign_driver_id" query:"assign_driver_id" firestore:"assign_driver_id" gorm:"default:null; type:varchar(36); "`
+	TripDuration          int       `json:"trip_duration" query:"trip_duration" firestore:"trip_duration" gorm:"type:int"`
+
+	PriceRateID      string    `json:"price_rate_id" query:"price_rate_id" firestore:"price_rate_id" gorm:"type:varchar(36);"`
+	PromotionID      string    `json:"promotion_id" query:"promotion_id" firestore:"promotion_id" gorm:"type:varchar(36);"`
+	PromotionRef     string    `json:"promotion_ref" query:"promotion_ref" firestore:"promotion_ref" gorm:"type:varchar(36);comment:'กรณี duoslip เก็บเลขที่ slip ถ้าkansaiเก็บ เลขของ kansai' "`
+	Price            float64   `json:"price" query:"price" firestore:"price" gorm:"default:null; type:decimal(16,4);comment:'ราคาค่าบริการ' "`
+	Discount         float64   `json:"discount" query:"discount" firestore:"discount" gorm:"default:null; type:decimal(16,4);comment:'ส่วนลด' "`
+	Wht              float64   `json:"wht" query:"wht" firestore:"wht" gorm:"default:null; type:decimal(16,4);comment:'ภาษีหัก ที่จ่าย' "`
+	Vat              float64   `json:"vat" query:"vat" firestore:"vat" gorm:"default:null; type:decimal(16,4);comment:'ภาษี' "`
+	NetPrice         float64   `json:"net_price" query:"net_price" firestore:"net_price" gorm:"default:null; type:decimal(16,4);comment:'รวมราคาค่าบริการทั้งหมด' "`
+	IsPaid           bool      `json:"is_paid" query:"is_paid" firestore:"is_paid" gorm:"default:0; type:bool;comment:'ลูกค้าจ่ายหรือยัง' "`
+	RefCode          string    `json:"ref_code" query:"ref_code" firestore:"ref_code" gorm:"type:varchar(36);comment:'refในหน้าstatusfleet'"`
+	PaymentTypeID    string    `json:"payment_type_id" query:"payment_type_id" firestore:"payment_type_id" gorm:"type:varchar(2);"`
+	PaymentDate      time.Time `json:"payment_date" query:"payment_date" firestore:"payment_date" gorm:"default:0;comment:'วันเวลาที่จ่าย'"`
+	CreditCardNo     string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
+	CreditCardTypeID string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
+	BankRefNo        string    `query:"bank_ref_number" json:"bank_ref_number" firestore:"bank_ref_number" gorm:"default:null; type:varchar(20);"`
+	IsVoid           bool      `json:"is_void" query:"is_void" firestore:"is_void" gorm:"default:0; type:bool;comment:'ยกเลิก?' "`
+	IsVoidTypeID     string    `json:"is_void_type_id" query:"is_void_type_id" firestore:"is_void_type_id" gorm:"type:varchar(36);"`
+	VoidRemark       string    `json:"void_remark" query:"void_remark" firestore:"void_remark" gorm:"type:varchar(500);"`
+	VoidBy           string    `json:"void_by" query:"void_by" firestore:"void_by" gorm:"type:varchar(36);"`
+	VoidDate         time.Time `json:"void_date" query:"void_date" firestore:"void_date"`
+	IsCancel         bool      `json:"is_cancel" query:"is_cancel" firestore:"is_cancel" gorm:"default:0;type:bool;comment:'ยกเลิก?' "`
+	IsCancelTypeID   string    `json:"is_cancel_type_id" query:"is_cancel_type_id" firestore:"is_cancel_type_id" gorm:"type:varchar(36);"`
+	CancelRemark     string    `json:"cancel_remark" query:"cancel_remark" firestore:"cancel_remark" gorm:"type:varchar(500);"`
+	CancelBy         string    `json:"cancel_by" query:"cancel_by" firestore:"cancel_by" gorm:"type:varchar(36);"`
+	CancelDate       time.Time `json:"cancel_date" query:"cancel_date" firestore:"cancel_date"`
+	IsNewCustomer    bool      `json:"is_new_customer" query:"is_new_customer" firestore:"is_new_customer" gorm:"type:bool"`
+	CustomerID       string    `json:"customer_id" query:"customer_id" firestore:"customer_id" gorm:"type:varchar(36);"`
+	Code             string    `json:"code" query:"code" firestore:"code" gorm:"type:varchar(20) ; dafault:null ; index"`
+	CompanyName      string    `json:"company_name" query:"company_name" firestore:"company_name" gorm:"type:varchar(150)"`
+	TaxNo            string    `json:"tax_no" query:"tax_no" firestore:"tax_no" gorm:"type:varchar(20)"`
+	IsTax            bool      `json:"is_tax" query:"is_tax" firestore:"is_tax" gorm:"type:bool"`
+	IsHQ             bool      `json:"is_hq" query:"is_hq" firestore:"is_hq" gorm:"type:bool"`
+	Address          string    `json:"address" query:"address" firestore:"address" gorm:"type:text"`
+	Postcode         string    `json:"postcode" query:"postcode" firestore:"postcode" gorm:"type:varchar(5)"`
+	PhoneNo          string    `json:"phone_no" query:"phone_no" firestore:"phone_no" gorm:"type:varchar(10)"`
+	FlightNo         string    `json:"flight_no" query:"flight_no" firestore:"flight_no" gorm:"type:varchar(20)"`
+	FlightDate       time.Time `json:"flight_date" query:"flight_date" firestore:"flight_date"`
+	RentalRateID     string    `json:"rental_rate_id" query:"rental_rate_id" firestore:"rental_rate_id" gorm:"type:varchar(36)"`
+	RentalPrice      float64   `json:"rental_price" query:"rental_price" firestore:"rental_price" gorm:"type:decimal(16,4)"`
+	RentalFuelRateID string    `json:"rental_fuel_rate_id" query:"rental_fuel_rate_id" firestore:"rental_fuel_rate_id" gorm:"type:varchar(20)"`
+	RentalFuelLitre  float64   `json:"rental_fuel_litre" query:"rental_fuel_litre" firestore:"rental_fuel_litre" gorm:"type:decimal(16,4)"`
+	FuelAverage      float64   `json:"fuel_average" query:"fuel_average" firestore:"fuel_average" gorm:"type:decimal(16,4);comment:'เก็บราคาของค่าน้ำมันเฉลี่ย '"`
+	AssignVehicleID  string    `json:"assign_vehicle_id" query:"assign_vehicle_id" firestore:"assign_vehicle_id" gorm:"type:varchar(36);comment:'รถที่วิ่งงานจริง'"`
+	AssignVehicleBy  string    `json:"assign_vehicle_by" query:"assign_vehicle_by" firestore:"assign_vehicle_by" gorm:"type:varchar(36);"`
+	AssignDriverID   string    `json:"assign_driver_id" query:"assign_driver_id" firestore:"assign_driver_id" gorm:"default:null; type:varchar(36); "`
 
 	IsArrive        bool      `json:"is_arrive" query:"is_arrive" firestore:"is_arrive" gorm:"default:null;"`
 	ArriveDate      time.Time `json:"arrive_date" query:"arrive_date" firestore:"arrive_date" gorm:"default:null;comment:'วันเวลาที่มาถึง'"`
@@ -90,7 +92,7 @@ type Slip struct {
 	ArriveLongitude float64   `json:"arrive_longitude" query:"arrive_longitude" firestore:"arrive_longitude" gorm:"type:decimal(10,6);comment:'จุดรับลูกค้าระยะพิกัดปลายทาง'"`
 	IsComplete      bool      `json:"is_complete" query:"is_complete" firestore:"is_complete" gorm:"default:0; type:bool;comment:'เสร็จสมบูรณ์'"`
 	CompleteDate    time.Time `json:"complete_date" query:"complete_date" firestore:"complete_date"`
-	Remark          string    `json:"remark" query:"remark" firestore:"remark" gorm:"type:text" `
+	Remark          string    `json:"remark" query:"remark" firestore:"remark" gorm:"type:text"`
 	BookingNo       string    `json:"booking_no" query:"booking_no" firestore:"booking_no" gorm:"type:varchar(50);index"`
 	BookingBy       string    `json:"booking_by" query:"booking_by" firestore:"booking_by" gorm:"type:varchar(36)"`
 	BookingDate     time.Time `json:"booking_date" query:"booking_date" firestore:"booking_date"`
