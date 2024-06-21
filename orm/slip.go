@@ -38,7 +38,7 @@ type Slip struct {
 	DeliverDate           time.Time `json:"deliver_date" query:"deliver_date" firestore:"deliver_date"`
 	DestinationRemark     string    `json:"destination_remark" query:"destination_remark" firestore:"destination_remark" gorm:"type:text"`
 	Distance              float64   `json:"distance" query:"distance" firestore:"distance" gorm:"type:decimal(16,4)"`
-	TripDuration          int       `json:"trip_duration" query:"trip_duration" firestore:"trip_duration" gorm:"type:int"`
+	Duration              int       `json:"duration" query:"duration" firestore:"duration" gorm:"type:int"`
 
 	PriceRateID      string    `json:"price_rate_id" query:"price_rate_id" firestore:"price_rate_id" gorm:"type:varchar(36);"`
 	PromotionID      string    `json:"promotion_id" query:"promotion_id" firestore:"promotion_id" gorm:"type:varchar(36);"`
