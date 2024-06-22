@@ -9,7 +9,7 @@ import (
 	"github.com/FourWD/middleware/common"
 )
 
-func GenCustomerCode(id string) string {
+func UpdateCustomerCode(id string) string {
 
 	var customer orm.Customer
 

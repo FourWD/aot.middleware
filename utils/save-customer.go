@@ -3,8 +3,6 @@ package utils
 import (
 	// "aot.limousine-service/utils"
 
-	"time"
-
 	"github.com/FourWD/aot.middleware/orm"
 	"github.com/FourWD/middleware/common"
 	"github.com/google/uuid"
@@ -12,35 +10,33 @@ import (
 
 func SaveCustomer(payload PayloadCustomer) (bool, string) {
 	Customer := new(orm.Customer)
+	CustomerAddress := new(orm.CustomerAddress)
+
 	Customer.ID = uuid.NewString()
 	Customer.Code = ""
 	Customer.Firstname = payload.Firstname
 	Customer.Lastname = payload.Lastname
-	Customer.CompanyName = payload.CompanyName
+	CustomerAddress.CompanyName = payload.CompanyName
 	Customer.PrefixID = payload.PrefixID
 
 	if payload.BirthDay.IsZero() {
-		Customer.Birthday = time.Now()
-	} else {
-		Customer.Birthday = payload.BirthDay
+		Customer.Birthday = common.NilDate()
 	}
 
 	Customer.IDCardNo = payload.IDCardNo
 	Customer.PassportNo = payload.PassportNo
-	Customer.CompanyName = payload.CompanyName
-	Customer.TaxNo = payload.TaxNo
+	CustomerAddress.CompanyName = payload.CompanyName
+	CustomerAddress.TaxNo = payload.TaxNo
 	Customer.PhoneNo1 = payload.Telephone
 	if payload.IsTax {
-		Customer.IsTax = true
-		Customer.CompanyName = payload.CompanyName
-		Customer.Address = payload.AddressCompany
-		Customer.Postcode = payload.PostCodeCompany
-		Customer.TaxNo = payload.TaxNo
-		Customer.PhoneNo1 = payload.PhoneCompany
+		CustomerAddress.CompanyName = payload.CompanyName
+		CustomerAddress.Address = payload.AddressCompany
+		CustomerAddress.Postcode = payload.PostCodeCompany
+		CustomerAddress.TaxNo = payload.TaxNo
 	}
 
 	common.Database.Create(&Customer)
-	GenCustomerCode(Customer.ID)
+	UpdateCustomerCode(Customer.ID)
 
 	return true, Customer.ID
 }
