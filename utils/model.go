@@ -29,3 +29,22 @@ type PayloadCustomer struct {
 	PhoneCompany    string    `json:"phone_company"`
 	BookingDate     string    `json:"booking_date"`
 }
+
+type SlipPDF struct {
+	ID                    string  `json:"id"`
+	SlipNo                string  `json:"slip_no"`
+	ReceiptNo             string  `json:"receipt_no"`
+	SlipVehicleTypeID     string  `json:"slip_vehicle_type_id"`
+	SlipVehicleSubModelID string  `json:"slip_vehicle_sub_model_id"`
+	PaymentTypeID         string  `json:"payment_type_id"`
+	OriginPoiID           string  `json:"origin_poi_id"`
+	ForceOriginName       string  `json:"force_origin_name"`
+	DestinationPoiID      string  `json:"destination_poi_id"`
+	ForceDestinationName  string  `json:"force_destination_name"`
+	Distance              float64 `json:"distance"`
+	DistanceRoundTrip     float64 `json:"distance_round_trip"`
+	Price                 float64 `json:"price"`
+	Discount              float64 `json:"discount"`
+	NetPrice              float64 `json:"net_price"`
+	Litre                 float64 `json:"rental_fuel_litre"`
+}
