@@ -8,12 +8,12 @@ import (
 	"github.com/jung-kurt/gofpdf"
 )
 
-func Print(c *fiber.Ctx) error {
+func Print(c *fiber.Ctx) string {
 	ID := c.Params("id")
 	slip := prepareData(ID)
 	filepath := printSlip(slip)
 
-	return c.JSON(fiber.Map{"status": 1, "message": "success", "data": filepath})
+	return filepath
 
 }
 
