@@ -83,8 +83,8 @@ type Slip struct {
 	IsTax            bool      `json:"is_tax" query:"is_tax" firestore:"is_tax" gorm:"type:bool"`
 	IsHQ             bool      `json:"is_hq" query:"is_hq" firestore:"is_hq" gorm:"type:bool"`
 	Address          string    `json:"address" query:"address" firestore:"address" gorm:"type:text"`
-	Postcode         string    `json:"postcode" query:"postcode" firestore:"postcode" gorm:"type:varchar(5)"`
-	PhoneNo          string    `json:"phone_no" query:"phone_no" firestore:"phone_no" gorm:"type:varchar(10)"`
+	Postcode         string    `json:"postcode" query:"postcode" firestore:"postcode" gorm:"type:varchar(30)"`
+	PhoneNo          string    `json:"phone_no" query:"phone_no" firestore:"phone_no" gorm:"type:varchar(30)"`
 	FlightNo         string    `json:"flight_no" query:"flight_no" firestore:"flight_no" gorm:"type:varchar(20)"`
 	FlightDate       time.Time `json:"flight_date" query:"flight_date" firestore:"flight_date"`
 	RentalRateID     string    `json:"rental_rate_id" query:"rental_rate_id" firestore:"rental_rate_id" gorm:"type:varchar(36)"`
