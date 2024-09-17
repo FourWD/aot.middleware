@@ -21,12 +21,19 @@ type GetPriceModel struct {
 
 func GetPrice(fleetName string, distance float64) []GetPriceModel {
 	var byDistance orm.PriceByDistance
+	var prices []GetPriceModel
+
 	sql := `SELECT * FROM price_by_distances
 	    WHERE fleet_client_id = ? AND distance >= ? ORDER BY distance LIMIT 1`
-	// /log.Println(sql)
-	common.Database.Raw(sql, fleetName, distance).Debug().Scan(&byDistance)
+	result := common.Database.Raw(sql, fleetName, distance).Debug().Scan(&byDistance)
 
-	var prices []GetPriceModel
+	if result.RowsAffected == 0 {
+		sql = `SELECT * FROM price_by_distances
+		    WHERE fleet_client_id = ? AND distance >= ? ORDER BY distance LIMIT 1`
+		common.Database.Raw(sql, "RETAIL", distance).Scan(&byDistance)
+	}
+
+	// Append the prices for different vehicle models
 	prices = append(prices, GetPriceModel{VehicleModelID: "01", Price: byDistance.ByVehicleModelID01})
 	prices = append(prices, GetPriceModel{VehicleModelID: "02", Price: byDistance.ByVehicleModelID02})
 	prices = append(prices, GetPriceModel{VehicleModelID: "03", Price: byDistance.ByVehicleModelID03})
