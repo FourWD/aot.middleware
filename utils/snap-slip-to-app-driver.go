@@ -35,7 +35,6 @@ func SnapSlipToAppDriver(slipID string, appDriverStatusID string) *orm.AppDriver
 	appDriver.ID = slipID
 	appDriver.Duration = slipPayload.Duration
 	appDriver.CustomerID = slipPayload.CustomerID
-	println(appDriver.CustomerID, "sspkdaskdoakdopaskd")
 	appDriver.AppDriverStatusID = appDriverStatusID
 	appDriver.OriginName = slipPayload.OriginName
 	appDriver.ForceOriginName = slipPayload.ForceOriginName
