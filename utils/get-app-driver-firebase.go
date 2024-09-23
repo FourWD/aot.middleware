@@ -12,16 +12,15 @@ import (
 
 func GetAppDriverFirebase(driverID string) (orm.AppDriver, error) {
 	docPath := fmt.Sprintf("drivers/%s", driverID)
-	println(docPath, "dddddpoaskdopasjiokdjansiplldijlnkasijlndnalsijldajsk;da")
 	docRef := common.FirebaseClient.Doc(docPath)
 	snap, err := docRef.Get(context.Background())
 	if err != nil {
-		return orm.AppDriver{}, errors.New("cannot get app driver")
+		return orm.AppDriver{}, errors.New("cannot get : " + docPath)
 	}
 
 	var appDriver orm.AppDriver
 	if err := snap.DataTo(&appDriver); err != nil {
-		return orm.AppDriver{}, errors.New("cannot get app driver")
+		return orm.AppDriver{}, errors.New("cannot snap : " + docPath)
 	}
 
 	fmt.Printf("CustomerID AppDriver: %+v\n", appDriver.CustomerID)

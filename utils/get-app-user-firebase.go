@@ -14,12 +14,12 @@ func GetAppUserFirebase(userID string) (orm.AppUser, error) {
 	docRef := common.FirebaseClient.Doc(docPath)
 	snap, err := docRef.Get(context.Background())
 	if err != nil {
-		return orm.AppUser{}, errors.New("cannot get app user")
+		return orm.AppUser{}, errors.New("cannot get : " + docPath)
 	}
 
 	var appUser orm.AppUser
 	if err := snap.DataTo(&appUser); err != nil {
-		return orm.AppUser{}, errors.New("cannot get app user")
+		return orm.AppUser{}, errors.New("cannot snap : " + docPath)
 	}
 
 	return appUser, nil

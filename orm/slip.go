@@ -74,10 +74,11 @@ type Slip struct {
 	IsCancel         bool      `json:"is_cancel" query:"is_cancel" firestore:"is_cancel" gorm:"default:0;type:bool;comment:'ยกเลิก?' "`
 	IsCancelTypeID   string    `json:"is_cancel_type_id" query:"is_cancel_type_id" firestore:"is_cancel_type_id" gorm:"type:varchar(36);"`
 	CancelRemark     string    `json:"cancel_remark" query:"cancel_remark" firestore:"cancel_remark" gorm:"type:varchar(500);"`
-	CancelBy         string    `json:"cancel_by" query:"cancel_by" firestore:"cancel_by" gorm:"type:varchar(36);"`
-	CancelDate       time.Time `json:"cancel_date" query:"cancel_date" firestore:"cancel_date"`
-	IsNewCustomer    bool      `json:"is_new_customer" query:"is_new_customer" firestore:"is_new_customer" gorm:"type:bool"`
-	CustomerID       string    `json:"customer_id" query:"customer_id" firestore:"customer_id" gorm:"type:varchar(36);"`
+
+	CancelBy      string    `json:"cancel_by" query:"cancel_by" firestore:"cancel_by" gorm:"type:varchar(36);"`
+	CancelDate    time.Time `json:"cancel_date" query:"cancel_date" firestore:"cancel_date"`
+	IsNewCustomer bool      `json:"is_new_customer" query:"is_new_customer" firestore:"is_new_customer" gorm:"type:bool"`
+	CustomerID    string    `json:"customer_id" query:"customer_id" firestore:"customer_id" gorm:"type:varchar(36);"`
 	// Code             string    `json:"code" query:"code" firestore:"code" gorm:"type:varchar(20) ; dafault:null ; index"`
 	CompanyName      string    `json:"company_name" query:"company_name" firestore:"company_name" gorm:"type:varchar(150)"`
 	TaxNo            string    `json:"tax_no" query:"tax_no" firestore:"tax_no" gorm:"type:varchar(20)"`
