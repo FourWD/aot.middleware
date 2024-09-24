@@ -21,13 +21,12 @@ type Driver struct {
 	DriverLicenseExpireDate time.Time `json:"driver_license_expire_date" query:"driver_license_expire_date" gorm:"type:varchar(50)"`
 	PhoneNo                 string    `json:"phone_no" query:"phone_no" gorm:"type:varchar(10)"`
 	Address                 string    `json:"address" query:"address" gorm:"type:varchar(150)"`
-	WorkingStartDate        time.Time `json:"working_start_date" query:"working_start_date" `
-	WorkingEndDate          time.Time `json:"working_end_date" query:"working_end_date" `
+	WorkingStartDate        time.Time `json:"working_start_date" query:"working_start_date"`
+	WorkingEndDate          time.Time `json:"working_end_date" query:"working_end_date"`
 	Remark                  string    `json:"remark" query:"remark" gorm:"type:varchar(200)"`
 	DriverImagePath         string    `json:"driver_image_path" query:"driver_image_path" gorm:"type:varchar(200)"`
 	DefaultVehicleID        string    `json:"default_vehicle_id" query:"default_vehicle_id" gorm:"default:null;type:varchar(36);"`
 	CurrentVehicleID        string    `json:"current_vehicle_id" query:"current_vehicle_id" gorm:"default:null;type:varchar(36);"`
 	SlipID                  string    `json:"slip_id" query:"slip_id" gorm:"type:varchar(36); comment:'รับงานอะไรอยู่'"`
 	IsOnline                bool      `json:"is_online" query:"is_online" gorm:"type:bool"` //เช็คสถานะออนไลน์ของ driver
-
 }
