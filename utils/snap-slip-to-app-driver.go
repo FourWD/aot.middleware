@@ -32,7 +32,7 @@ func SnapSlipToAppDriver(slipID string, appDriverStatusID string) *orm.AppDriver
 	common.Database.Raw(sql, slipID).Debug().Scan(&slipPayload)
 
 	appDriver := new(orm.AppDriver)
-	appDriver.ID = slipID
+	appDriver.ID = slipPayload.AssignDriverID
 	appDriver.Duration = slipPayload.Duration
 	appDriver.CustomerID = slipPayload.CustomerID
 	appDriver.AppDriverStatusID = appDriverStatusID

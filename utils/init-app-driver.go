@@ -22,6 +22,7 @@ func InitAppDriver(driverID string) error {
 	// }
 
 	appDriver := new(orm.AppDriver)
+	appDriver.ID = driverID
 	appDriver.AppDriverStatusID = config.APP_DRIVER_STATUS.AVAILABLE
 	_, err := common.FirebaseClient.Collection("drivers").Doc(driverID).Set(common.FirebaseCtx, appDriver)
 
