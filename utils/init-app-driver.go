@@ -34,19 +34,19 @@ func InitAppDriver(driverID string) error {
 	left join vehicles v on d.current_vehicle_id = v.id where d.id = ?`
 	common.Database.Raw(sql, driverID).Scan(driver)
 
-	_, err := GetAppDriverFirebase(driverID)
-	if err != nil {
-		updateData := map[string]interface{}{
-			"vehicle_model_id": driver.VehicleModelID,
-		}
-		docPath := fmt.Sprintf("drivers/%s", driverID)
-		if err := common.FirebaseUpdate(common.FirebaseClient, docPath, updateData); err != nil {
-			return err
-		}
-
+	// _, err := GetAppDriverFirebase(driverID)
+	// if err != nil {
+	updateData := map[string]interface{}{
+		"vehicle_model_id": driver.VehicleModelID,
+	}
+	docPath := fmt.Sprintf("drivers/%s", driverID)
+	if err := common.FirebaseUpdate(common.FirebaseClient, docPath, updateData); err != nil {
+		return err
 	}
 
-	_, err = common.FirebaseClient.Collection("drivers").Doc(driverID).Set(common.FirebaseCtx, appDriver)
+	// }
+
+	_, err := common.FirebaseClient.Collection("drivers").Doc(driverID).Set(common.FirebaseCtx, appDriver)
 
 	clearDriverSlip(driverID)
 
