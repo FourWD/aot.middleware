@@ -11,8 +11,8 @@ type Slip struct {
 	orm.GormModel
 	RunningNo int `json:"running_no" query:"running_no" firestore:"running_no" gorm:"primary_key;auto_increment;not_null"`
 
-	AppDriverStatusID string `json:"app_driver_status_id" query:"app_driver_status_id" firestore:"app_driver_status_id" gorm:"-"`
-	AppUserStatusID   string `json:"app_user_status_id" query:"app_user_status_id" firestore:"app_user_status_id" gorm:"-"`
+	AppDriverStatusID string `json:"app_driver_status_id" query:"app_driver_status_id" firestore:"app_driver_status_id" gorm:"type:varchar(2);"`
+	AppUserStatusID   string `json:"app_user_status_id" query:"app_user_status_id" firestore:"app_user_status_id" gorm:"type:varchar(2);"`
 	// AppJobTypeID      string `json:"app_job_type_id" query:"app_job_type_id" firestore:"app_job_type_id" gorm:"type:varchar(2);"`
 
 	SlipNo             string    `json:"slip_no" query:"slip_no" firestore:"slip_no" gorm:"type:varchar(36);index"`
