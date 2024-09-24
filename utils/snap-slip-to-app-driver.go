@@ -12,7 +12,7 @@ type Payload struct {
 	VehicleCode string `json:"vehicle_code"`
 }
 
-func SnapSlipToAppDriver(slipID string, appDriverStatusID string) *orm.AppDriver {
+func SnapSlipToAppDriver(slipID string, driverID string, appDriverStatusID string) *orm.AppDriver {
 	type Payload struct {
 		orm.Slip
 		DriverCode  string `json:"driver_code"`
@@ -32,7 +32,8 @@ func SnapSlipToAppDriver(slipID string, appDriverStatusID string) *orm.AppDriver
 	common.Database.Raw(sql, slipID).Debug().Scan(&slipPayload)
 
 	appDriver := new(orm.AppDriver)
-	appDriver.ID = slipPayload.AssignDriverID
+	appDriver.ID = driverID
+	appDriver.SlipID = slipID
 	appDriver.Duration = slipPayload.Duration
 	appDriver.CustomerID = slipPayload.CustomerID
 	appDriver.AppDriverStatusID = appDriverStatusID
