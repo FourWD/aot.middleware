@@ -34,6 +34,7 @@ func GetAppDriverFirebase(driverID string) (orm.AppDriver, error) {
 	deliverDate, _ := snap.Data()["deliver_date"].(time.Time)
 	completeDate, _ := snap.Data()["complete_date"].(time.Time)
 
+	appDriver.ID = driverID
 	appDriver.ArriveDate = common.UTCToThailandTime(arriveDate.Truncate(time.Second))
 	appDriver.PickupDate = common.UTCToThailandTime(pickupDate.Truncate(time.Second))
 	appDriver.DropOffDate1 = common.UTCToThailandTime(dropOffDate1.Truncate(time.Second))

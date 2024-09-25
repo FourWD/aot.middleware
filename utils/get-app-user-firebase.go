@@ -21,6 +21,7 @@ func GetAppUserFirebase(userID string) (orm.AppUser, error) {
 	if err := snap.DataTo(&appUser); err != nil {
 		return orm.AppUser{}, errors.New("cannot snap : " + docPath)
 	}
+	appUser.ID = userID
 
 	return appUser, nil
 }
