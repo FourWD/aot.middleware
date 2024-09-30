@@ -131,7 +131,8 @@ type Slip struct {
 	ContactPersonPrefixID  string `json:"contact_person_prefix_id" query:"contact_person_prefix_id" firestore:"contact_person_prefix_id" gorm:"type:varchar(10);"`
 	ContactPersonFirstName string `json:"contact_person_firstname" query:"contact_person_name" firestore:"contact_person_name" gorm:"type:varchar(200);"`
 	ContactPersonLastname  string `json:"contact_person_lastname" query:"contact_person_lastname" firestore:"contact_person_lastname" gorm:"type:varchar(200);"`
-	ContactPersonPhone     string `json:" contact_person_phone " query:"contact_person_phone" firestore:"contact_person_phone" gorm:"type:varchar(20)"`
+	ContactPersonPhone     string `json:"contact_person_phone " query:"contact_person_phone" firestore:"contact_person_phone" gorm:"type:varchar(20)"`
+	ContactPersonEmail     string `json:"contact_person_email" query:"contact_person_email" firestore:"contact_person_email" gorm:"type:varchar(255)"`
 
 	SubPassengerFirstname1   string `json:"sub_passenger_firstname_1" query:"sub_passenger_firstname_1" firestore:"sub_passenger_firstname_1" gorm:"type:varchar(255);column:sub_passenger_name_1;"`
 	SubPassengerLastname1    string `json:"sub_passenger_lastname_1" query:"sub_passenger_lastname_1" firestore:"sub_passenger_lastname_1" gorm:"type:varchar(255);column:sub_passenger_lastname_1;"`
