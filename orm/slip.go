@@ -53,7 +53,7 @@ type Slip struct {
 	Discount     float64 `json:"discount" query:"discount" firestore:"discount" gorm:"default:0; type:decimal(16,4);comment:'ส่วนลด' "`
 	Wht          float64 `json:"wht" query:"wht" firestore:"wht" gorm:"default:0; type:decimal(16,4);comment:'ภาษีหัก ที่จ่าย' "`
 	Vat          float64 `json:"vat" query:"vat" firestore:"vat" gorm:"default:0; type:decimal(16,4);comment:'ภาษี' "`
-	DropOffPrice float64 `json:"drop_off_price" query:"drop_off_price" firestore:"drop_off_price" gorm:"default:0; type:decimal(16,4);comment:'ราคา dropoff' "`
+	DropOffPrice float64 `json:"drop_off_price" query:"drop_off_price" firestore:"drop_off_price" gorm:"default:0; type:decimal(16,4);comment:'รวมราคา dropoff' "`
 	NetPrice     float64 `json:"net_price" query:"net_price" firestore:"net_price" gorm:"default:0; type:decimal(16,4);comment:'รวมราคาค่าบริการทั้งหมด' "`
 	IsPaid       bool    `json:"is_paid" query:"is_paid" firestore:"is_paid" gorm:"default:0; type:bool;comment:'ลูกค้าจ่ายหรือยัง' "`
 	PaidBy       string  `json:"paid_by" query:"paid_by" firestore:"paid_by" gorm:"type:varchar(36);"`
