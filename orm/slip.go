@@ -49,11 +49,12 @@ type Slip struct {
 	PriceRateID  string  `json:"price_rate_id" query:"price_rate_id" firestore:"price_rate_id" gorm:"type:varchar(36);"`
 	PromotionID  string  `json:"promotion_id" query:"promotion_id" firestore:"promotion_id" gorm:"type:varchar(36);"`
 	PromotionRef string  `json:"promotion_ref" query:"promotion_ref" firestore:"promotion_ref" gorm:"type:varchar(36);comment:'กรณี duoslip เก็บเลขที่ slip ถ้าkansaiเก็บ เลขของ kansai' "`
-	Price        float64 `json:"price" query:"price" firestore:"price" gorm:"default:null; type:decimal(16,4);comment:'ราคาค่าบริการ' "`
-	Discount     float64 `json:"discount" query:"discount" firestore:"discount" gorm:"default:null; type:decimal(16,4);comment:'ส่วนลด' "`
-	Wht          float64 `json:"wht" query:"wht" firestore:"wht" gorm:"default:null; type:decimal(16,4);comment:'ภาษีหัก ที่จ่าย' "`
-	Vat          float64 `json:"vat" query:"vat" firestore:"vat" gorm:"default:null; type:decimal(16,4);comment:'ภาษี' "`
-	NetPrice     float64 `json:"net_price" query:"net_price" firestore:"net_price" gorm:"default:null; type:decimal(16,4);comment:'รวมราคาค่าบริการทั้งหมด' "`
+	Price        float64 `json:"price" query:"price" firestore:"price" gorm:"default:0; type:decimal(16,4);comment:'ราคาค่าบริการ' "`
+	Discount     float64 `json:"discount" query:"discount" firestore:"discount" gorm:"default:0; type:decimal(16,4);comment:'ส่วนลด' "`
+	Wht          float64 `json:"wht" query:"wht" firestore:"wht" gorm:"default:0; type:decimal(16,4);comment:'ภาษีหัก ที่จ่าย' "`
+	Vat          float64 `json:"vat" query:"vat" firestore:"vat" gorm:"default:0; type:decimal(16,4);comment:'ภาษี' "`
+	DropOffPrice float64 `json:"drop_off_price" query:"drop_off_price" firestore:"drop_off_price" gorm:"default:0; type:decimal(16,4);comment:'ราคา dropoff' "`
+	NetPrice     float64 `json:"net_price" query:"net_price" firestore:"net_price" gorm:"default:0; type:decimal(16,4);comment:'รวมราคาค่าบริการทั้งหมด' "`
 	IsPaid       bool    `json:"is_paid" query:"is_paid" firestore:"is_paid" gorm:"default:0; type:bool;comment:'ลูกค้าจ่ายหรือยัง' "`
 	PaidBy       string  `json:"paid_by" query:"paid_by" firestore:"paid_by" gorm:"type:varchar(36);"`
 
