@@ -99,6 +99,7 @@ type Slip struct {
 	AssignVehicleID  string    `json:"assign_vehicle_id" query:"assign_vehicle_id" firestore:"assign_vehicle_id" gorm:"type:varchar(36);comment:'รถที่วิ่งงานจริง'"`
 	AssignVehicleBy  string    `json:"assign_vehicle_by" query:"assign_vehicle_by" firestore:"assign_vehicle_by" gorm:"type:varchar(36);"`
 	AssignDriverID   string    `json:"assign_driver_id" query:"assign_driver_id" firestore:"assign_driver_id" gorm:"default:null; type:varchar(36); "`
+	JobAssignStatus  bool      `json:"job_assign_status" query:"job_assign_status" firestore:"job_assign_status" gorm:"default:0; type:varchar(36);"`
 
 	IsArrive        bool      `json:"is_arrive" query:"is_arrive" firestore:"is_arrive" gorm:"default:null;"`
 	ArriveDate      time.Time `json:"arrive_date" query:"arrive_date" firestore:"arrive_date" gorm:"default:null;comment:'วันเวลาที่มาถึง'"`
@@ -176,8 +177,6 @@ type Slip struct {
 
 	IsCarSeat    bool   `json:"is_car_seat" query:"is_car_seat" firestore:"is_car_seat" gorm:"default:0; type:bool;column:is_car_seat;"`
 	RemarkDriver string `json:"remark_driver" query:"remark_driver" firestore:"remark_driver" gorm:"type:text;"`
-
-	IsAssign bool `json:"is_assign" query:"is_assign" firestore:"is_assign" gorm:"default:0; type:bool;column:is_assign;"`
 
 	IsOperationApprove   bool      `json:"is_operation_approve" query:"is_operation_approve" firestore:"is_operation_approve" gorm:"type:bool; default:false;"`
 	OperationApproveBy   string    `json:"operation_approve_by" query:"operation_approve_by" firestore:"operation_approve_by" gorm:"type:varchar(36)"`
