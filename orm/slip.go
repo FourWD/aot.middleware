@@ -82,24 +82,24 @@ type Slip struct {
 	IsNewCustomer bool      `json:"is_new_customer" query:"is_new_customer" firestore:"is_new_customer" gorm:"type:bool"`
 	CustomerID    string    `json:"customer_id" query:"customer_id" firestore:"customer_id" gorm:"type:varchar(36);"`
 	// Code             string    `json:"code" query:"code" firestore:"code" gorm:"type:varchar(20) ; dafault:null ; index"`
-	CompanyName      string    `json:"company_name" query:"company_name" firestore:"company_name" gorm:"type:varchar(150)"`
-	TaxNo            string    `json:"tax_no" query:"tax_no" firestore:"tax_no" gorm:"type:varchar(20)"`
-	IsTax            bool      `json:"is_tax" query:"is_tax" firestore:"is_tax" gorm:"type:bool"`
-	IsHQ             bool      `json:"is_hq" query:"is_hq" firestore:"is_hq" gorm:"type:bool"`
-	Address          string    `json:"address" query:"address" firestore:"address" gorm:"type:text"`
-	Postcode         string    `json:"postcode" query:"postcode" firestore:"postcode" gorm:"type:varchar(30)"`
-	PhoneNo          string    `json:"phone_no" query:"phone_no" firestore:"phone_no" gorm:"type:varchar(30)"`
-	FlightNo         string    `json:"flight_no" query:"flight_no" firestore:"flight_no" gorm:"type:varchar(20)"`
-	FlightDate       time.Time `json:"flight_date" query:"flight_date" firestore:"flight_date"`
-	RentalRateID     string    `json:"rental_rate_id" query:"rental_rate_id" firestore:"rental_rate_id" gorm:"type:varchar(36)"`
-	RentalPrice      float64   `json:"rental_price" query:"rental_price" firestore:"rental_price" gorm:"type:decimal(16,4)"`
-	RentalFuelRateID string    `json:"rental_fuel_rate_id" query:"rental_fuel_rate_id" firestore:"rental_fuel_rate_id" gorm:"type:varchar(20)"`
-	RentalFuelLitre  float64   `json:"rental_fuel_litre" query:"rental_fuel_litre" firestore:"rental_fuel_litre" gorm:"type:decimal(16,4)"`
-	FuelAverage      float64   `json:"fuel_average" query:"fuel_average" firestore:"fuel_average" gorm:"type:decimal(16,4);comment:'เก็บราคาของค่าน้ำมันเฉลี่ย '"`
-	AssignVehicleID  string    `json:"assign_vehicle_id" query:"assign_vehicle_id" firestore:"assign_vehicle_id" gorm:"type:varchar(36);comment:'รถที่วิ่งงานจริง'"`
-	AssignVehicleBy  string    `json:"assign_vehicle_by" query:"assign_vehicle_by" firestore:"assign_vehicle_by" gorm:"type:varchar(36);"`
-	AssignDriverID   string    `json:"assign_driver_id" query:"assign_driver_id" firestore:"assign_driver_id" gorm:"default:null; type:varchar(36); "`
-	JobAssignStatus  bool      `json:"job_assign_status" query:"job_assign_status" firestore:"job_assign_status" gorm:"default:0; type:varchar(36);"`
+	CompanyName       string    `json:"company_name" query:"company_name" firestore:"company_name" gorm:"type:varchar(150)"`
+	TaxNo             string    `json:"tax_no" query:"tax_no" firestore:"tax_no" gorm:"type:varchar(20)"`
+	IsTax             bool      `json:"is_tax" query:"is_tax" firestore:"is_tax" gorm:"type:bool"`
+	IsHQ              bool      `json:"is_hq" query:"is_hq" firestore:"is_hq" gorm:"type:bool"`
+	Address           string    `json:"address" query:"address" firestore:"address" gorm:"type:text"`
+	Postcode          string    `json:"postcode" query:"postcode" firestore:"postcode" gorm:"type:varchar(30)"`
+	PhoneNo           string    `json:"phone_no" query:"phone_no" firestore:"phone_no" gorm:"type:varchar(30)"`
+	FlightNo          string    `json:"flight_no" query:"flight_no" firestore:"flight_no" gorm:"type:varchar(20)"`
+	FlightDate        time.Time `json:"flight_date" query:"flight_date" firestore:"flight_date"`
+	RentalRateID      string    `json:"rental_rate_id" query:"rental_rate_id" firestore:"rental_rate_id" gorm:"type:varchar(36)"`
+	RentalPrice       float64   `json:"rental_price" query:"rental_price" firestore:"rental_price" gorm:"type:decimal(16,4)"`
+	RentalFuelRateID  string    `json:"rental_fuel_rate_id" query:"rental_fuel_rate_id" firestore:"rental_fuel_rate_id" gorm:"type:varchar(20)"`
+	RentalFuelLitre   float64   `json:"rental_fuel_litre" query:"rental_fuel_litre" firestore:"rental_fuel_litre" gorm:"type:decimal(16,4)"`
+	FuelAverage       float64   `json:"fuel_average" query:"fuel_average" firestore:"fuel_average" gorm:"type:decimal(16,4);comment:'เก็บราคาของค่าน้ำมันเฉลี่ย '"`
+	AssignVehicleID   string    `json:"assign_vehicle_id" query:"assign_vehicle_id" firestore:"assign_vehicle_id" gorm:"type:varchar(36);comment:'รถที่วิ่งงานจริง'"`
+	AssignVehicleBy   string    `json:"assign_vehicle_by" query:"assign_vehicle_by" firestore:"assign_vehicle_by" gorm:"type:varchar(36);"`
+	AssignDriverID    string    `json:"assign_driver_id" query:"assign_driver_id" firestore:"assign_driver_id" gorm:"default:null; type:varchar(36); "`
+	JobAssignStatusID bool      `json:"job_assign_status_id" query:"job_assign_status_id" firestore:"job_assign_status_id" gorm:"default:0; type:varchar(36);"`
 
 	IsArrive        bool      `json:"is_arrive" query:"is_arrive" firestore:"is_arrive" gorm:"default:null;"`
 	ArriveDate      time.Time `json:"arrive_date" query:"arrive_date" firestore:"arrive_date" gorm:"default:null;comment:'วันเวลาที่มาถึง'"`
