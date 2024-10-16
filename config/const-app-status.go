@@ -33,11 +33,11 @@ type appJobTypeID struct {
 }
 
 type appSlipTypeID struct {
-	JOB_RETAIL     string
-	JOB_CALLCENTER string
-	JOB_FLEET      string
-	JOB_WEBSITE    string
-	JOB_APP        string
+	RETAIL     string
+	CALLCENTER string
+	FLEET      string
+	WEBSITE    string
+	APP        string
 }
 
 var APP_DRIVER_STATUS = appDriverStatus{
@@ -55,9 +55,9 @@ var APP_JOB_DRIVER_TYPE = appJobTypeID{
 }
 
 var APP_SLIP_TYPE = appSlipTypeID{
-	JOB_RETAIL:     "01", // คีย์ตั๋วจาก retai;
-	JOB_CALLCENTER: "02", // คีย์ตั๋วจาก callcenter;
-	JOB_FLEET:      "03", // คีย์ตั๋วจาก fleet;
-	JOB_WEBSITE:    "04", // คีย์ตั๋วจาก website;
-	JOB_APP:        "05", // คีย์ตั๋วจาก app;
+	RETAIL:     "01", // คีย์ตั๋วจาก retai;
+	CALLCENTER: "02", // คีย์ตั๋วจาก callcenter;
+	FLEET:      "03", // คีย์ตั๋วจาก fleet;
+	WEBSITE:    "04", // คีย์ตั๋วจาก website;
+	APP:        "05", // คีย์ตั๋วจาก app;
 }
