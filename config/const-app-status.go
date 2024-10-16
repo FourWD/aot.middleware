@@ -32,6 +32,14 @@ type appJobTypeID struct {
 	JOB_SEARCH   string
 }
 
+type appSlipTypeID struct {
+	JOB_RETAIL     string
+	JOB_CALLCENTER string
+	JOB_FLEET      string
+	JOB_WEBSITE    string
+	JOB_APP        string
+}
+
 var APP_DRIVER_STATUS = appDriverStatus{
 	AVAILABLE:    "00", // ว่าง
 	ON_JOB:       "01", // มีงาน
@@ -44,4 +52,12 @@ var APP_JOB_DRIVER_TYPE = appJobTypeID{
 	JOB_MANUAL:   "01", // คีย์งานตั๋วเอง
 	JOB_DISPATCH: "02", // ส่วนกลางเรียกให้รับงาน (บังคับรับงาน)
 	JOB_SEARCH:   "03", // ยูสเซอร์เรียก
+}
+
+var APP_SLIP_TYPE = appSlipTypeID{
+	JOB_RETAIL:     "01", // คีย์ตั๋วจาก retai;
+	JOB_CALLCENTER: "02", // คีย์ตั๋วจาก callcenter;
+	JOB_FLEET:      "03", // คีย์ตั๋วจาก fleet;
+	JOB_WEBSITE:    "04", // คีย์ตั๋วจาก website;
+	JOB_APP:        "05", // คีย์ตั๋วจาก app;
 }
