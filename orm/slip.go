@@ -68,13 +68,11 @@ type Slip struct {
 	CreditCardNo     string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
 	CreditCardTypeID string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
 	BankRefNo        string    `json:"bank_ref_number" query:"bank_ref_number" firestore:"bank_ref_number" gorm:"default:null; type:varchar(20);"`
-	IsVoid           bool      `json:"is_void" query:"is_void" firestore:"is_void" gorm:"default:0; type:bool;comment:'ยกเลิก?' "`
-	IsVoidTypeID     string    `json:"is_void_type_id" query:"is_void_type_id" firestore:"is_void_type_id" gorm:"type:varchar(36);"`
+	SlipVoidTypeID   string    `json:"slip_void_type_id" query:"slip_void_type_id" firestore:"slip_void_type_id" gorm:"type:varchar(2);"`
 	VoidRemark       string    `json:"void_remark" query:"void_remark" firestore:"void_remark" gorm:"type:varchar(500);"`
 	VoidBy           string    `json:"void_by" query:"void_by" firestore:"void_by" gorm:"type:varchar(36);"`
 	VoidDate         time.Time `json:"void_date" query:"void_date" firestore:"void_date"`
-	IsCancel         bool      `json:"is_cancel" query:"is_cancel" firestore:"is_cancel" gorm:"default:0;type:bool;comment:'ยกเลิก?' "`
-	IsCancelTypeID   string    `json:"is_cancel_type_id" query:"is_cancel_type_id" firestore:"is_cancel_type_id" gorm:"type:varchar(36);"`
+	SlipCancelTypeID string    `json:"slip_cancel_type_id" query:"slip_cancel_type_id" firestore:"slip_cancel_type_id" gorm:"type:varchar(2);"`
 	CancelRemark     string    `json:"cancel_remark" query:"cancel_remark" firestore:"cancel_remark" gorm:"type:varchar(500);"`
 
 	CancelBy      string    `json:"cancel_by" query:"cancel_by" firestore:"cancel_by" gorm:"type:varchar(36);"`
