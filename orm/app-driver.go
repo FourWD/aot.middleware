@@ -6,7 +6,7 @@ type AppDriver struct {
 	VehicleModelID  string `json:"vehicle_model_id"  firestore:"vehicle_model_id" gorm:"-"`
 	SlipID          string `json:"slip_id" firestore:"slip_id" query:"slip_id" gorm:"-"`
 	VehicleName     string `json:"vehicle_name" firestore:"vehicle_name" query:"vehicle_name" gorm:"-"`
-	IsOriginAirport string `json:"is_origin_airport" firestore:"is_origin_airport" query:"is_origin_airport" gorm:"-"`
+	IsOriginAirport bool   `json:"is_origin_airport" firestore:"is_origin_airport" query:"is_origin_airport" gorm:"-"`
 	// Name                string `json:"name"  firestore:"name" `
 	// VehicleID           string `json:"vehicle_id"  firestore:"driver_register_id" `
 	// VehicleCode         string `json:"vehicle_code"  firestore:"vehicle_id"`
