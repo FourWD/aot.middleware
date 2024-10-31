@@ -68,11 +68,11 @@ type Slip struct {
 	CreditCardNo     string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
 	CreditCardTypeID string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
 	BankRefNo        string    `json:"bank_ref_number" query:"bank_ref_number" firestore:"bank_ref_number" gorm:"default:null; type:varchar(20);"`
-	SlipVoidTypeID   string    `json:"slip_void_type_id" query:"slip_void_type_id" firestore:"slip_void_type_id" gorm:"default:00; type:varchar(36)";`
+	SlipVoidTypeID   string    `json:"slip_void_type_id" query:"slip_void_type_id" firestore:"slip_void_type_id" gorm:"default:'00'; type:varchar(36)";`
 	VoidRemark       string    `json:"void_remark" query:"void_remark" firestore:"void_remark" gorm:"type:varchar(500);"`
 	VoidBy           string    `json:"void_by" query:"void_by" firestore:"void_by" gorm:"type:varchar(36);"`
 	VoidDate         time.Time `json:"void_date" query:"void_date" firestore:"void_date"`
-	SlipCancelTypeID string    `json:"slip_cancel_type_id" query:"slip_cancel_type_id" firestore:"slip_cancel_type_id" gorm:"default:0; type:varchar(36)";`
+	SlipCancelTypeID string    `json:"slip_cancel_type_id" query:"slip_cancel_type_id" firestore:"slip_cancel_type_id" gorm:"default:'00'; type:varchar(36)";`
 	CancelRemark     string    `json:"cancel_remark" query:"cancel_remark" firestore:"cancel_remark" gorm:"type:varchar(500);"`
 
 	CancelBy      string    `json:"cancel_by" query:"cancel_by" firestore:"cancel_by" gorm:"type:varchar(36);"`
@@ -97,7 +97,7 @@ type Slip struct {
 	AssignVehicleID   string    `json:"assign_vehicle_id" query:"assign_vehicle_id" firestore:"assign_vehicle_id" gorm:"type:varchar(36);comment:'รถที่วิ่งงานจริง'"`
 	AssignVehicleBy   string    `json:"assign_vehicle_by" query:"assign_vehicle_by" firestore:"assign_vehicle_by" gorm:"type:varchar(36);"`
 	AssignDriverID    string    `json:"assign_driver_id" query:"assign_driver_id" firestore:"assign_driver_id" gorm:"default:null; type:varchar(36); "`
-	JobAssignStatusID string    `json:"job_assign_status_id" query:"job_assign_status_id" firestore:"job_assign_status_id" gorm:"default:0; type:varchar(36)"`
+	JobAssignStatusID string    `json:"job_assign_status_id" query:"job_assign_status_id" firestore:"job_assign_status_id" gorm:"default:'00'; type:varchar(36)"`
 
 	IsArrive        bool      `json:"is_arrive" query:"is_arrive" firestore:"is_arrive" gorm:"default:null;"`
 	ArriveDate      time.Time `json:"arrive_date" query:"arrive_date" firestore:"arrive_date" gorm:"default:null;comment:'วันเวลาที่มาถึง'"`
