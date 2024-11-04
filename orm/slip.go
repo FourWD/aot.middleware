@@ -16,15 +16,15 @@ type Slip struct {
 	// AppJobTypeID      string `json:"app_job_type_id" query:"app_job_type_id" firestore:"app_job_type_id" gorm:"type:varchar(2);"`
 	HashData string `json:"hash_data" query:"hash_data" firestore:"hash_data" gorm:"type:text"`
 
-	SlipNo             string    `json:"slip_no" query:"slip_no" firestore:"slip_no" gorm:"type:varchar(36);index"`
-	ReceiptNo          string    `json:"receipt_no" query:"receipt_no" firestore:"receipt_no" gorm:"type:varchar(50);index"`
-	RrNo               string    `json:"rr_no" query:"rr_no" firestore:"rr_no" gorm:"type:varchar(50); index"`
-	SlipDate           time.Time `json:"slip_date" query:"slip_date" firestore:"slip_date" gorm:"default:null;comment:'วันที่ลูกค้าจ่ายตัง' "`
-	TravelDate         time.Time `json:"travel_date" query:"travel_date" firestore:"travel_date" gorm:"default:null;comment:'วันทีวิ่งจริง' "`
-	ReconcileDate      time.Time `json:"reconcile_date" query:"reconcile_date" firestore:"reconcile_date" gorm:"default:null;comment:'วันที่คีย์ตั๋วเทียบ' "`
-	SlipTypeID         string    `json:"slip_type_id" query:"slip_type_id" firestore:"slip_type_id" gorm:"type:varchar(2);"`
-	SlipSubTypeID      string    `json:"slip_sub_type_id" query:"slip_sub_type_id" firestore:"slip_sub_type_id" gorm:"type:varchar(2);"`
-	SlipVehicleModelID string    `json:"slip_vehicle_model_id" query:"slip_vehicle_model_id" firestore:"slip_vehicle_model_id" gorm:"type:varchar(2);comment:'ประเภทรถตามหน้าตั๋วที่ซื้อ'"`
+	SlipNo               string    `json:"slip_no" query:"slip_no" firestore:"slip_no" gorm:"type:varchar(36);index"`
+	ReceiptNo            string    `json:"receipt_no" query:"receipt_no" firestore:"receipt_no" gorm:"type:varchar(50);index"`
+	RrNo                 string    `json:"rr_no" query:"rr_no" firestore:"rr_no" gorm:"type:varchar(50); index"`
+	SlipDate             time.Time `json:"slip_date" query:"slip_date" firestore:"slip_date" gorm:"default:null;comment:'วันที่ลูกค้าจ่ายตัง' "`
+	TravelDate           time.Time `json:"travel_date" query:"travel_date" firestore:"travel_date" gorm:"default:null;comment:'วันทีวิ่งจริง' "`
+	ReconcileDate        time.Time `json:"reconcile_date" query:"reconcile_date" firestore:"reconcile_date" gorm:"default:null;comment:'วันที่คีย์ตั๋วเทียบ' "`
+	SlipTypeID           string    `json:"slip_type_id" query:"slip_type_id" firestore:"slip_type_id" gorm:"type:varchar(2);"`
+	SlipSubTypeID        string    `json:"slip_sub_type_id" query:"slip_sub_type_id" firestore:"slip_sub_type_id" gorm:"type:varchar(2);"`
+	SlipVehicleSubTypeID string    `json:"slip_vehicle_sub_type_id" query:"slip_vehicle_sub_type_id" firestore:"slip_vehicle_sub_type_id" gorm:"type:varchar(2);comment:'ประเภทรถตามหน้าตั๋วที่ซื้อ'"`
 	// SlipVehicleSubModelID string    `json:"slip_vehicle_submodel_id" query:"slip_vehicle_submodel_id" firestore:"slip_vehicle_submodel_id" gorm:"type:varchar(2);comment:'ประเภทรถตามหน้าตั๋วที่ซื้อ'"`
 	IsPickup             bool      `json:"is_pickup" query:"is_pickup" firestore:"is_pickup" gorm:"default:0; type:bool;comment:'รับลูกค้าหรือยัง' "`
 	PickupDate           time.Time `json:"pickup_date" query:"pickup_date" firestore:"pickup_date"`
@@ -68,11 +68,11 @@ type Slip struct {
 	CreditCardNo     string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
 	CreditCardTypeID string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
 	BankRefNo        string    `json:"bank_ref_number" query:"bank_ref_number" firestore:"bank_ref_number" gorm:"default:null; type:varchar(20);"`
-	SlipVoidTypeID   string    `json:"slip_void_type_id" query:"slip_void_type_id" firestore:"slip_void_type_id" gorm:"default:'00'; type:varchar(36)";`
+	SlipVoidTypeID   string    `json:"slip_void_type_id" query:"slip_void_type_id" firestore:"slip_void_type_id" gorm:"default:'00'; type:varchar(36)"`
 	VoidRemark       string    `json:"void_remark" query:"void_remark" firestore:"void_remark" gorm:"type:varchar(500);"`
 	VoidBy           string    `json:"void_by" query:"void_by" firestore:"void_by" gorm:"type:varchar(36);"`
 	VoidDate         time.Time `json:"void_date" query:"void_date" firestore:"void_date"`
-	SlipCancelTypeID string    `json:"slip_cancel_type_id" query:"slip_cancel_type_id" firestore:"slip_cancel_type_id" gorm:"default:'00'; type:varchar(36)";`
+	SlipCancelTypeID string    `json:"slip_cancel_type_id" query:"slip_cancel_type_id" firestore:"slip_cancel_type_id" gorm:"default:'00';type:varchar(36)"`
 	CancelRemark     string    `json:"cancel_remark" query:"cancel_remark" firestore:"cancel_remark" gorm:"type:varchar(500);"`
 
 	CancelBy      string    `json:"cancel_by" query:"cancel_by" firestore:"cancel_by" gorm:"type:varchar(36);"`
