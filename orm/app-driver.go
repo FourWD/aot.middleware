@@ -14,4 +14,4 @@ type AppDriver struct {
 	VehicleImage       bool   `json:"vehicle_image" firestore:"vehicle_image" query:"vehicle_image" gorm:"-"`
 	VehicleColorName   bool   `json:"vehicle_color_name" firestore:"vehicle_color_name" query:"vehicle_color_name" gorm:"-"`
 	LicensePlate       bool   `json:"license_plate" firestore:"license_plate" query:"license_plate" gorm:"-"`
-}
+} //
