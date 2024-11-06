@@ -16,10 +16,10 @@ type AppDriver struct {
 	VehicleModelID     string `json:"vehicle_model_id" firestore:"vehicle_model_id" query:"vehicle_model_id" gorm:"-"`
 	VehicleModelName   string `json:"vehicle_model_name" firestore:"vehicle_model_name" query:"vehicle_model_name" gorm:"-"`
 	IsOriginAirport    bool   `json:"is_origin_airport" firestore:"is_origin_airport" query:"is_origin_airport" gorm:"-"`
-	DriverName         bool   `json:"driver_name" firestore:"driver_name" query:"driver_name" gorm:"-"`
-	VehicleCode        bool   `json:"vehicle_code" firestore:"vehicle_code" query:"vehicle_code" gorm:"-"`
-	DriverImage        bool   `json:"driver_image" firestore:"driver_image" query:"driver_image" gorm:"-"`
-	VehicleImage       bool   `json:"vehicle_image" firestore:"vehicle_image" query:"vehicle_image" gorm:"-"`
-	VehicleColorName   bool   `json:"vehicle_color_name" firestore:"vehicle_color_name" query:"vehicle_color_name" gorm:"-"`
-	LicensePlate       bool   `json:"license_plate" firestore:"license_plate" query:"license_plate" gorm:"-"`
+	DriverName         string `json:"driver_name" firestore:"driver_name" query:"driver_name" gorm:"-"`
+	VehicleCode        string `json:"vehicle_code" firestore:"vehicle_code" query:"vehicle_code" gorm:"-"`
+	DriverImage        string `json:"driver_image" firestore:"driver_image" query:"driver_image" gorm:"-"`
+	VehicleImage       string `json:"vehicle_image" firestore:"vehicle_image" query:"vehicle_image" gorm:"-"`
+	VehicleColorName   string `json:"vehicle_color_name" firestore:"vehicle_color_name" query:"vehicle_color_name" gorm:"-"`
+	LicensePlate       string `json:"license_plate" firestore:"license_plate" query:"license_plate" gorm:"-"`
 }
