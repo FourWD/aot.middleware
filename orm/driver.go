@@ -28,6 +28,6 @@ type Driver struct {
 	DefaultVehicleID        string    `json:"default_vehicle_id" query:"default_vehicle_id" gorm:"default:null;type:varchar(36);"`
 	CurrentVehicleID        string    `json:"current_vehicle_id" query:"current_vehicle_id" gorm:"default:null;type:varchar(36);"`
 	SlipID                  string    `json:"slip_id" query:"slip_id" gorm:"type:varchar(36); comment:'รับงานอะไรอยู่'"`
-	IsOnline                bool      `json:"is_online" query:"is_online" gorm:"type:bool"` //เช็คสถานะออนไลน์ของ driver
+	IsOnline                bool      `json:"is_online" query:"is_online" gorm:"type:bool"`
 	LastOnlineDate          time.Time `json:"last_online_date" query:"last_online_date"`
 }
