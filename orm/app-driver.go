@@ -24,4 +24,4 @@ type AppDriver struct {
 
 	DriverName  string `json:"driver_name" firestore:"driver_name" query:"driver_name"`
 	DriverImage string `json:"driver_image" firestore:"driver_image" query:"driver_image"`
-}
+} //
