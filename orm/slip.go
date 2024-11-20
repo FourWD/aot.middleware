@@ -44,7 +44,7 @@ type Slip struct {
 	DeliverDate          time.Time `json:"deliver_date" query:"deliver_date" firestore:"deliver_date"`
 	DestinationRemark    string    `json:"destination_remark" query:"destination_remark" firestore:"destination_remark" gorm:"type:text"`
 	Distance             float64   `json:"distance" query:"distance" firestore:"distance" gorm:"type:decimal(16,4)"`
-	ActualDistance       bool      `json:"actual_distance" query:"actual_distance" firestore:"actual_distance" gorm:"default:0; type:bool;comment:'รอรับค่าจากพี่เพชร'"`
+	ActualDistance       float64   `json:"actual_distance" query:"actual_distance" firestore:"actual_distance" gorm:"type:decimal(16,4)"`
 	Duration             int       `json:"duration" query:"duration" firestore:"duration" gorm:"type:int"`
 
 	PriceRateID  string  `json:"price_rate_id" query:"price_rate_id" firestore:"price_rate_id" gorm:"type:varchar(36);"`
