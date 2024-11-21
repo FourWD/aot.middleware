@@ -30,4 +30,5 @@ type Driver struct {
 	SlipID                  string    `json:"slip_id" query:"slip_id" gorm:"type:varchar(36); comment:'รับงานอะไรอยู่'"`
 	IsOnline                bool      `json:"is_online" query:"is_online" gorm:"type:bool"`
 	LastOnlineDate          time.Time `json:"last_online_date" query:"last_online_date"`
+	QueueDate               time.Time `json:"queue_date" query:"queue_date"`
 }
