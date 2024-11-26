@@ -10,8 +10,8 @@ type AppDriver struct {
 	LoginVehicleModelID     string `json:"login_vehicle_model_id" firestore:"login_vehicle_model_id" query:"login_vehicle_model_id"`
 	LoginVehicleModelName   string `json:"login_vehicle_model_name" firestore:"login_vehicle_model_name" query:"login_vehicle_model_name"`
 
-	SlipID          string `json:"slip_id" firestore:"slip_id" query:"slip_id"`
-	IsOriginAirport bool   `json:"is_origin_airport" firestore:"is_origin_airport" query:"is_origin_airport"`
+	SlipID          *string `json:"slip_id" firestore:"slip_id" query:"slip_id"`
+	IsOriginAirport bool    `json:"is_origin_airport" firestore:"is_origin_airport" query:"is_origin_airport"`
 
 	LicensePlate       string `json:"license_plate" firestore:"license_plate" query:"license_plate"`
 	VehicleCode        string `json:"vehicle_code" firestore:"vehicle_code" query:"vehicle_code"`
