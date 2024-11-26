@@ -26,6 +26,7 @@ type Driver struct {
 	Remark                  string    `json:"remark" query:"remark" gorm:"type:varchar(200)"`
 	DriverImagePath         string    `json:"driver_image_path" query:"driver_image_path" gorm:"type:varchar(200)"`
 	DefaultVehicleID        string    `json:"default_vehicle_id" query:"default_vehicle_id" gorm:"default:null;type:varchar(36);"`
+	DefaultVehicleSubTypeID string    `json:"default_vehicle_sub_type_id" query:"default_vehicle_sub_type_id" gorm:"default:null;type:varchar(36);"`
 	CurrentVehicleID        string    `json:"current_vehicle_id" query:"current_vehicle_id" gorm:"default:null;type:varchar(36);"`
 	SlipID                  string    `json:"slip_id" query:"slip_id" gorm:"type:varchar(36); comment:'รับงานอะไรอยู่'"`
 	IsOnline                bool      `json:"is_online" query:"is_online" gorm:"type:bool"`
