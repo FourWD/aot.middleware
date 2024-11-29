@@ -32,6 +32,12 @@ type appJobTypeID struct {
 	JOB_SEARCH   string
 }
 
+type appSlipCancelTypeID struct {
+	NOT_CANCEL       string
+	CANCEL_BY_USER   string
+	NOT_FOUND_DRIVER string
+}
+
 type appSlipTypeID struct {
 	RETAIL     string
 	CALLCENTER string
@@ -55,9 +61,15 @@ var APP_JOB_DRIVER_TYPE = appJobTypeID{
 }
 
 var APP_SLIP_TYPE = appSlipTypeID{
-	RETAIL:     "01", // คีย์ตั๋วจาก retai;
-	CALLCENTER: "02", // คีย์ตั๋วจาก callcenter;
-	FLEET:      "03", // คีย์ตั๋วจาก fleet;
-	WEBSITE:    "04", // คีย์ตั๋วจาก website;
-	APP:        "05", // คีย์ตั๋วจาก app;
+	RETAIL:     "01",
+	CALLCENTER: "02",
+	FLEET:      "03",
+	WEBSITE:    "04",
+	APP:        "05",
+}
+
+var APP_SLIP_CANCEL_TYPE = appSlipCancelTypeID{
+	NOT_CANCEL:       "00",
+	CANCEL_BY_USER:   "01",
+	NOT_FOUND_DRIVER: "03",
 }
