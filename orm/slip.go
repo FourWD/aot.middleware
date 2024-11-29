@@ -63,18 +63,19 @@ type Slip struct {
 	ConfirmBy   string    `json:"confirm_by" query:"confirm_by" firestore:"confirm_by" gorm:"type:varchar(36);"`
 	ConfirmDate time.Time `json:"confirm_date" query:"confirm_date" firestore:"confirm_date"`
 
-	RefCode          string    `json:"ref_code" query:"ref_code" firestore:"ref_code" gorm:"type:varchar(36);comment:'refในหน้าstatusfleet'"`
-	PaymentTypeID    string    `json:"payment_type_id" query:"payment_type_id" firestore:"payment_type_id" gorm:"type:varchar(2);"`
-	PaymentDate      time.Time `json:"payment_date" query:"payment_date" firestore:"payment_date" gorm:"default:0;comment:'วันเวลาที่จ่าย'"`
-	CreditCardNo     string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
-	CreditCardTypeID string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
-	BankRefNo        string    `json:"bank_ref_number" query:"bank_ref_number" firestore:"bank_ref_number" gorm:"default:null; type:varchar(20);"`
-	SlipVoidTypeID   string    `json:"slip_void_type_id" query:"slip_void_type_id" firestore:"slip_void_type_id" gorm:"default:'00'; type:varchar(36)"`
-	VoidRemark       string    `json:"void_remark" query:"void_remark" firestore:"void_remark" gorm:"type:varchar(500);"`
-	VoidBy           string    `json:"void_by" query:"void_by" firestore:"void_by" gorm:"type:varchar(36);"`
-	VoidDate         time.Time `json:"void_date" query:"void_date" firestore:"void_date"`
-	SlipCancelTypeID string    `json:"slip_cancel_type_id" query:"slip_cancel_type_id" firestore:"slip_cancel_type_id" gorm:"default:'00';type:varchar(36)"`
-	CancelRemark     string    `json:"cancel_remark" query:"cancel_remark" firestore:"cancel_remark" gorm:"type:varchar(500);"`
+	RefCode              string    `json:"ref_code" query:"ref_code" firestore:"ref_code" gorm:"type:varchar(36);comment:'refในหน้าstatusfleet'"`
+	PaymentTypeID        string    `json:"payment_type_id" query:"payment_type_id" firestore:"payment_type_id" gorm:"type:varchar(2);"`
+	PaymentDate          time.Time `json:"payment_date" query:"payment_date" firestore:"payment_date" gorm:"default:0;comment:'วันเวลาที่จ่าย'"`
+	CreditCardNo         string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
+	CreditCardTypeID     string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
+	BankRefNo            string    `json:"bank_ref_number" query:"bank_ref_number" firestore:"bank_ref_number" gorm:"default:null; type:varchar(20);"`
+	SlipVoidTypeID       string    `json:"slip_void_type_id" query:"slip_void_type_id" firestore:"slip_void_type_id" gorm:"default:'00'; type:varchar(2)"`
+	VoidRemark           string    `json:"void_remark" query:"void_remark" firestore:"void_remark" gorm:"type:varchar(500);"`
+	VoidBy               string    `json:"void_by" query:"void_by" firestore:"void_by" gorm:"type:varchar(36);"`
+	VoidDate             time.Time `json:"void_date" query:"void_date" firestore:"void_date"`
+	SlipCancelTypeID     string    `json:"slip_cancel_type_id" query:"slip_cancel_type_id" firestore:"slip_cancel_type_id" gorm:"default:'00';type:varchar(2)"`
+	SlipUserCancelTypeID string    `json:"slip_user_cancel_type_id" query:"slip_user_cancel_type_id" firestore:"slip_user_cancel_type_id" gorm:"default:'00';type:varchar(2)"`
+	CancelRemark         string    `json:"cancel_remark" query:"cancel_remark" firestore:"cancel_remark" gorm:"type:varchar(500);"`
 
 	CancelBy      string    `json:"cancel_by" query:"cancel_by" firestore:"cancel_by" gorm:"type:varchar(36);"`
 	CancelDate    time.Time `json:"cancel_date" query:"cancel_date" firestore:"cancel_date"`
