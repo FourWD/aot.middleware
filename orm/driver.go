@@ -29,6 +29,7 @@ type Driver struct {
 	DefaultVehicleSubTypeID string    `json:"default_vehicle_sub_type_id" query:"default_vehicle_sub_type_id" gorm:"default:null;type:varchar(36);"`
 	CurrentVehicleID        string    `json:"current_vehicle_id" query:"current_vehicle_id" gorm:"default:null;type:varchar(36);"`
 	SlipID                  string    `json:"slip_id" query:"slip_id" gorm:"type:varchar(36); comment:'รับงานอะไรอยู่'"`
+	GenderID                string    `json:"gender_id" query:"gender_id" gorm:"type:varchar(2); comment:'รับงานอะไรอยู่'"`
 	IsOnline                bool      `json:"is_online" query:"is_online" gorm:"type:bool"`
 	LastOnlineDate          time.Time `json:"last_online_date" query:"last_online_date"`
 	QueueDate               time.Time `json:"queue_date" query:"queue_date"`
