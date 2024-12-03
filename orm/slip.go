@@ -9,7 +9,6 @@ import (
 type Slip struct {
 	ID string `json:"id" query:"id" firestore:"ID" gorm:"type:varchar(36);unique;"`
 	orm.GormModel
-	RunningNo int `json:"running_no" query:"running_no" firestore:"running_no" gorm:"primary_key;auto_increment;not_null"`
 
 	AppDriverStatusID string `json:"app_driver_status_id" query:"app_driver_status_id" firestore:"app_driver_status_id" gorm:"type:varchar(2);"`
 	AppUserStatusID   string `json:"app_user_status_id" query:"app_user_status_id" firestore:"app_user_status_id" gorm:"type:varchar(2);"`
