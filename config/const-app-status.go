@@ -1,5 +1,7 @@
 package config
 
+const AIRPORT_POI_ID = "99999999-9999-9999-9999-999999999999"
+
 type appUserStatus struct {
 	AVAILABLE      string
 	SEARCH_VEHICLE string
