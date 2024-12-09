@@ -3,6 +3,7 @@ package orm
 type AppDriver struct {
 	Slip
 	LoginDriverName         string `json:"login_driver_name" firestore:"login_driver_name" query:"login_driver_name"`
+	LoginDriverImage        string `json:"login_driver_image" firestore:"login_driver_image" query:"login_driver_image"`
 	LoginVehicleTypeID      string `json:"login_vehicle_type_id" firestore:"login_vehicle_type_id" query:"login_vehicle_type_id"`
 	LoginVehicleTypeName    string `json:"login_vehicle_type_name" firestore:"login_vehicle_type_name" query:"login_vehicle_type_name"`
 	LoginVehicleSubTypeID   string `json:"login_vehicle_sub_type_id" firestore:"login_vehicle_sub_type_id" query:"login_vehicle_sub_type_id"`
