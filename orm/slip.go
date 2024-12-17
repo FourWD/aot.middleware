@@ -182,12 +182,12 @@ type Slip struct {
 	OperationApproveDate time.Time `json:"operation_approve_date" query:"operation_approve_date" firestore:"operation_approve_date"`
 
 	IsRequestEdit          bool      `json:"is_request_edit " query:"is_request_edit" firestore:"is_request_edit" gorm:"type:bool; default:false;"`
-	RequestEditDate        time.Time `json:"request_edit_date" query:"request_edit_date" firestore:"request_edit_date"`
+	RequestEditDate        time.Time `json:"request_edit_date" query:"request_edit_date" firestore:"request_edit_date" gorm:"default:null"`
 	RequestEditApproveBy   string    `json:"request_edit_approve_by" query:"request_edit_approve_by" firestore:"request_edit_approve_by" gorm:"type:varchar(36)"`
-	RequestEditApproveDate time.Time `json:"request_edit_approve_date" query:"request_edit_approve_date" firestore:"request_edit_approve_date"`
+	RequestEditApproveDate time.Time `json:"request_edit_approve_date" query:"request_edit_approve_date" firestore:"request_edit_approve_date" gorm:"default:null"`
 
 	IsRequestCancel   bool      `json:"is_request_cancel " query:"is_request_cancel" firestore:"is_request_cancel" gorm:"type:bool; default:false;"`
-	RequestCancelDate time.Time `json:"request_cancel_date" query:"request_cancel_date" firestore:"request_cancel_date"`
+	RequestCancelDate time.Time `json:"request_cancel_date" query:"request_cancel_date" firestore:"request_cancel_date" gorm:"default:null"`
 
 	AddressTax         string `json:"address_tax" query:"address_tax" gorm:"type:text"`                  //ที่อยู่ใบกำกับภาษี
 	CompanyTaxName     string `json:"company_tax_name" query:"company_tax_name" gorm:"type:varchar(50)"` //ที่อยู่ใบกำกับภาษี
