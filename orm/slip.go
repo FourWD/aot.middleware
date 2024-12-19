@@ -197,4 +197,5 @@ type Slip struct {
 	PostcodeTax        string `json:"postcode_tax" query:"postcode_tax" gorm:"type:varchar(10)"`
 	CountryTaxID       string `json:"country_tax_id" query:"country_tax_id" gorm:"type:varchar(10)"`
 	CompanyPhoneTax    string `json:"company_phone_tax" query:"company_phone_tax" gorm:"type:varchar(50)"`
+	RunningNo          int    `json:"running_no" query:"running_no" firestore:"running_no" gorm:"primary_key;auto_increment;not_null"`
 }
