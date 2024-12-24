@@ -121,7 +121,7 @@ type Slip struct {
 	NumberOfLuggage int    `json:"number_of_luggage" query:"number_of_luggage" firestore:"number_of_luggage" gorm:"type:int"`
 
 	PassengerPrefixID  string `json:"passenger_prefix_id" query:"passenger_prefix_id" firestore:"passenger_prefix_id" gorm:"type:varchar(2);"`
-	PassengerFirstname string `json:"passenger_firstname" query:"passenger_firstname" firestore:"passenger_firstname" gorm:"type:varchar(50);"`
+	PassengerFirstname string `json:"passenger_firstname" query:"passenger_firstname" firestore:"passenger_firstname" gorm:"type:varchar(200);"`
 	PassengerLastname  string `json:"passenger_lastname" query:"passenger_lastname" firestore:"passenger_lastname" gorm:"type:varchar(200);"`
 	// PassengerCountryID     string `json:"passenger_country_id" query:"passenger_country_id" firestore:"passenger_country_id" gorm:"type:varchar(10);"`
 	PassengerGenderID      string `json:"passenger_gender_id" query:"passenger_gender_id" firestore:"passenger_gender_id" gorm:"type:varchar(10);"`
