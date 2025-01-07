@@ -55,6 +55,7 @@ type Slip struct {
 	Vat           float64 `json:"vat" query:"vat" firestore:"vat" gorm:"default:0; type:decimal(16,4);"`
 	DropOffPrice  float64 `json:"drop_off_price" query:"drop_off_price" firestore:"drop_off_price" gorm:"default:0; type:decimal(16,4);"`
 	NetPrice      float64 `json:"net_price" query:"net_price" firestore:"net_price" gorm:"default:0; type:decimal(16,4);"`
+	WaitingCharge float64 `json:"waiting_charge" query:"waiting_charge" firestore:"waiting_charge" gorm:"default:0; type:decimal(16,4);"`
 	IsPaid        bool    `json:"is_paid" query:"is_paid" firestore:"is_paid" gorm:"default:0; type:bool;"`
 	PaidBy        string  `json:"paid_by" query:"paid_by" firestore:"paid_by" gorm:"type:varchar(36);"`
 
