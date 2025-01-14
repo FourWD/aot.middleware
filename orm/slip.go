@@ -26,7 +26,7 @@ type Slip struct {
 	SlipVehicleSubTypeID string    `json:"slip_vehicle_sub_type_id" query:"slip_vehicle_sub_type_id" firestore:"slip_vehicle_sub_type_id" gorm:"type:varchar(2);"`
 	// SlipVehicleSubModelID string    `json:"slip_vehicle_submodel_id" query:"slip_vehicle_submodel_id" firestore:"slip_vehicle_submodel_id" gorm:"type:varchar(2);"`
 	IsPickup             bool      `json:"is_pickup" query:"is_pickup" firestore:"is_pickup" gorm:"default:0; type:bool;"`
-	PickupDate           time.Time `json:"pickup_date" query:"pickup_date" firestore:"pickup_date"`
+	PickupDate           time.Time `json:"pickup_date" query:"pickup_date" firestore:"pickup_date" gorm:"default:null;"`
 	CounterID            string    `json:"counter_id" query:"counter_id" firestore:"counter_id" gorm:"type:varchar(36)"`
 	OriginPoiID          string    `json:"origin_poi_id" query:"origin_poi_id" firestore:"origin_poi_id" gorm:"type:varchar(36);"`
 	OriginName           string    `json:"origin_name" query:"origin_name" firestore:"origin_name" gorm:"type:varchar(150);"`
@@ -40,7 +40,7 @@ type Slip struct {
 	DestinationLatitude  float64   `json:"destination_latitude" query:"destination_latitude" firestore:"destination_latitude" gorm:"type:decimal(10,6)"`
 	DestinationLongitude float64   `json:"destination_longitude" query:"destination_longitude" firestore:"destination_longitude" gorm:"type:decimal(10,6)"`
 	IsDeliver            bool      `json:"is_deliver" query:"is_deliver" firestore:"is_deliver" gorm:"type:bool"`
-	DeliverDate          time.Time `json:"deliver_date" query:"deliver_date" firestore:"deliver_date"`
+	DeliverDate          time.Time `json:"deliver_date" query:"deliver_date" firestore:"deliver_date" gorm:"default:null;"`
 	DestinationRemark    string    `json:"destination_remark" query:"destination_remark" firestore:"destination_remark" gorm:"type:text"`
 	Distance             float64   `json:"distance" query:"distance" firestore:"distance" gorm:"type:decimal(16,4)"`
 	ActualDistance       float64   `json:"actual_distance" query:"actual_distance" firestore:"actual_distance" gorm:"type:decimal(16,4)"`
@@ -61,24 +61,24 @@ type Slip struct {
 
 	IsConfirm   bool      `json:"is_confirm" query:"is_confirm" firestore:"is_confirm" gorm:"default:0; type:bool;"`
 	ConfirmBy   string    `json:"confirm_by" query:"confirm_by" firestore:"confirm_by" gorm:"type:varchar(36);"`
-	ConfirmDate time.Time `json:"confirm_date" query:"confirm_date" firestore:"confirm_date"`
+	ConfirmDate time.Time `json:"confirm_date" query:"confirm_date" firestore:"confirm_date" gorm:"default:null;"`
 
 	RefCode              string    `json:"ref_code" query:"ref_code" firestore:"ref_code" gorm:"type:varchar(36);"`
 	PaymentTypeID        string    `json:"payment_type_id" query:"payment_type_id" firestore:"payment_type_id" gorm:"type:varchar(2);"`
-	PaymentDate          time.Time `json:"payment_date" query:"payment_date" firestore:"payment_date" gorm:"default:0;"`
+	PaymentDate          time.Time `json:"payment_date" query:"payment_date" firestore:"payment_date" gorm:"default:null;"`
 	CreditCardNo         string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
 	CreditCardTypeID     string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
 	BankRefNo            string    `json:"bank_ref_number" query:"bank_ref_number" firestore:"bank_ref_number" gorm:"default:null; type:varchar(20);"`
 	SlipVoidTypeID       string    `json:"slip_void_type_id" query:"slip_void_type_id" firestore:"slip_void_type_id" gorm:"default:'00'; type:varchar(2)"`
 	VoidRemark           string    `json:"void_remark" query:"void_remark" firestore:"void_remark" gorm:"type:varchar(500);"`
 	VoidBy               string    `json:"void_by" query:"void_by" firestore:"void_by" gorm:"type:varchar(36);"`
-	VoidDate             time.Time `json:"void_date" query:"void_date" firestore:"void_date"`
+	VoidDate             time.Time `json:"void_date" query:"void_date" firestore:"void_date" gorm:"default:null;"`
 	SlipCancelTypeID     string    `json:"slip_cancel_type_id" query:"slip_cancel_type_id" firestore:"slip_cancel_type_id" gorm:"default:'00';type:varchar(2)"`
 	SlipUserCancelTypeID string    `json:"slip_user_cancel_type_id" query:"slip_user_cancel_type_id" firestore:"slip_user_cancel_type_id" gorm:"default:'00';type:varchar(2)"`
 	CancelRemark         string    `json:"cancel_remark" query:"cancel_remark" firestore:"cancel_remark" gorm:"type:varchar(500);"`
 
 	CancelBy      string    `json:"cancel_by" query:"cancel_by" firestore:"cancel_by" gorm:"type:varchar(36);"`
-	CancelDate    time.Time `json:"cancel_date" query:"cancel_date" firestore:"cancel_date"`
+	CancelDate    time.Time `json:"cancel_date" query:"cancel_date" firestore:"cancel_date" gorm:"default:null;"`
 	IsNewCustomer bool      `json:"is_new_customer" query:"is_new_customer" firestore:"is_new_customer" gorm:"type:bool"`
 	CustomerID    string    `json:"customer_id" query:"customer_id" firestore:"customer_id" gorm:"type:varchar(36);"`
 	// Code             string    `json:"code" query:"code" firestore:"code" gorm:"type:varchar(20) ; dafault:null ; index"`
@@ -90,7 +90,7 @@ type Slip struct {
 	Postcode       string    `json:"postcode" query:"postcode" firestore:"postcode" gorm:"type:varchar(30)"`
 	PhoneNo        string    `json:"phone_no" query:"phone_no" firestore:"phone_no" gorm:"type:varchar(30)"`
 	FlightNo       string    `json:"flight_no" query:"flight_no" firestore:"flight_no" gorm:"type:varchar(20)"`
-	FlightDate     time.Time `json:"flight_date" query:"flight_date" firestore:"flight_date"`
+	FlightDate     time.Time `json:"flight_date" query:"flight_date" firestore:"flight_date" gorm:"default:null;"`
 	FuelByDistance float64   `json:"fuel_by_distance" query:"fuel_by_distance" firestore:"fuel_by_distance" gorm:"type:decimal(10,6)"` // จำนวน ลิตร
 	CostByDistance float64   `json:"cost_by_distance" query:"cost_by_distance" firestore:"cost_by_distance" gorm:"type:decimal(10,6)"` // จำนวน บาท
 	// RentalRateID      string    `json:"rental_rate_id" query:"rental_rate_id" firestore:"rental_rate_id" gorm:"type:varchar(36)"`
@@ -108,17 +108,17 @@ type Slip struct {
 	ArriveLatitude  float64   `json:"arrive_latitude" query:"arrive_latitude" firestore:"arrive_latitude" gorm:"type:decimal(10,6);"`
 	ArriveLongitude float64   `json:"arrive_longitude" query:"arrive_longitude" firestore:"arrive_longitude" gorm:"type:decimal(10,6);"`
 	IsComplete      bool      `json:"is_complete" query:"is_complete" firestore:"is_complete" gorm:"default:0; type:bool;"`
-	CompleteDate    time.Time `json:"complete_date" query:"complete_date" firestore:"complete_date"`
+	CompleteDate    time.Time `json:"complete_date" query:"complete_date" firestore:"complete_date" gorm:"default:null;"`
 	Remark          string    `json:"remark" query:"remark" firestore:"remark" gorm:"type:text"`
 	BookingNo       string    `json:"booking_no" query:"booking_no" firestore:"booking_no" gorm:"type:varchar(50);index"`
 	BookingBy       string    `json:"booking_by" query:"booking_by" firestore:"booking_by" gorm:"type:varchar(36)"`
-	BookingDate     time.Time `json:"booking_date" query:"booking_date" firestore:"booking_date"`
+	BookingDate     time.Time `json:"booking_date" query:"booking_date" firestore:"booking_date" gorm:"default:null;"`
 	JobNo           string    `json:"job_no" query:"job_no" firestore:"job_no" gorm:"type:varchar(20);"`
-	AcceptJobDate   time.Time `json:"accept_job_date" query:"accept_job_date" firestore:"accept_job_date"`
+	AcceptJobDate   time.Time `json:"accept_job_date" query:"accept_job_date" firestore:"accept_job_date" gorm:"default:null;"`
 	AirlineName     string    `json:"airline_name" query:"airline_name" firestore:"airline_name" gorm:"type:varchar(100)"`
 
 	//---FLEET--
-	FleetClientID   string `json:"fleet_client_id" query:"fleet_client_id" firestore:"fleet_client_id" gorm:"type:varchar(10) ; default:null ; "`
+	FleetClientID   string `json:"fleet_client_id" query:"fleet_client_id" firestore:"fleet_client_id" gorm:"type:varchar(10); default:null;"`
 	BookingHour     string `json:"booking_hour" query:"booking_hour" firestore:"booking_hour" gorm:"type:varchar(2);"`
 	Passenger       int    `json:"passenger" query:"passenger" firestore:"passenger" gorm:"type:int"`
 	NumberOfLuggage int    `json:"number_of_luggage" query:"number_of_luggage" firestore:"number_of_luggage" gorm:"type:int"`
@@ -156,7 +156,7 @@ type Slip struct {
 	DropOffLongitude1 float64   `json:"drop_off_longitude_1" query:"drop_off_longitude_1" firestore:"drop_off_longitude_1" gorm:"type:decimal(10,6);column:drop_off_longitude_1"`
 	IsDropOff1        bool      `json:"is_drop_off_1" query:"is_drop_off_1" firestore:"is_drop_off_1" gorm:"type:bool;column:is_drop_off_1"`
 	IsCharge1         bool      `json:"is_charge_1" query:"is_charge_1" firestore:"is_charge_1" gorm:"default:0; type:bool;column:is_charge_1;"`
-	DropOffDate1      time.Time `json:"drop_off_date_1" query:"drop_off_date_1" firestore:"drop_off_date_1" gorm:"column:drop_off_date_1"`
+	DropOffDate1      time.Time `json:"drop_off_date_1" query:"drop_off_date_1" firestore:"drop_off_date_1" gorm:"default:null; column:drop_off_date_1;"`
 	DropOffRemark1    string    `json:"drop_off_remark_1" query:"drop_off_remark_1" firestore:"drop_off_remark_1" gorm:"type:text;column:drop_off_remark_1"`
 
 	DropOff2          string    `json:"drop_off_2" query:"drop_off_2" firestore:"drop_off_2" gorm:"varchar(255);column:drop_off_2"`
@@ -164,7 +164,7 @@ type Slip struct {
 	DropOffLongitude2 float64   `json:"drop_off_longitude_2" query:"drop_off_longitude_2" firestore:"drop_off_longitude_2" gorm:"type:decimal(10,6);column:drop_off_longitude_2"`
 	IsDropOff2        bool      `json:"is_drop_off_2" query:"is_drop_off_2" firestore:"is_drop_off_2" gorm:"type:bool;column:is_drop_off_2"`
 	IsCharge2         bool      `json:"is_charge_2" query:"is_charge_2" firestore:"is_charge_2" gorm:"default:0; type:bool;column:is_charge_2;"`
-	DropOffDate2      time.Time `json:"drop_off_date_2" query:"drop_off_date_2" firestore:"drop_off_date_2" gorm:"column:drop_off_date_2"`
+	DropOffDate2      time.Time `json:"drop_off_date_2" query:"drop_off_date_2" firestore:"drop_off_date_2" gorm:"default:null; column:drop_off_date_2;"`
 	DropOffRemark2    string    `json:"drop_off_remark_2" query:"drop_off_remark_2" firestore:"drop_off_remark_2" gorm:"type:text;column:drop_off_remark_2"`
 
 	DropOff3          string    `json:"drop_off_3" query:"drop_off_3" firestore:"drop_off_3" gorm:"varchar(255);column:drop_off_3"`
@@ -172,7 +172,7 @@ type Slip struct {
 	DropOffLongitude3 float64   `json:"drop_off_longitude_3" query:"drop_off_longitude_3" firestore:"drop_off_longitude_3" gorm:"type:decimal(10,6);column:drop_off_longitude_3"`
 	IsDropOff3        bool      `json:"is_drop_off_3" query:"is_drop_off_3" firestore:"is_drop_off_3" gorm:"type:bool;column:is_drop_off_3"`
 	IsCharge3         bool      `json:"is_charge_3" query:"is_charge_3" firestore:"is_charge_3" gorm:"default:0;type:bool;column:is_charge_3;"`
-	DropOffDate3      time.Time `json:"drop_off_date_3" query:"drop_off_date_3" firestore:"drop_off_date_3" gorm:"column:drop_off_date_3"`
+	DropOffDate3      time.Time `json:"drop_off_date_3" query:"drop_off_date_3" firestore:"drop_off_date_3" gorm:"default:null; column:drop_off_date_3;"`
 	DropOffRemark3    string    `json:"drop_off_remark_3" query:"drop_off_remark_3" firestore:"drop_off_remark_3" gorm:"type:text;column:drop_off_remark_3"`
 
 	IsDuo     bool   `json:"is_duo" query:"is_duo" firestore:"is_duo" gorm:"default:0;type:bool;"`            //  ตั๋วไปกลับ
@@ -183,12 +183,12 @@ type Slip struct {
 
 	IsOperationApprove   bool      `json:"is_operation_approve" query:"is_operation_approve" firestore:"is_operation_approve" gorm:"type:bool; default:false;"`
 	OperationApproveBy   string    `json:"operation_approve_by" query:"operation_approve_by" firestore:"operation_approve_by" gorm:"type:varchar(36)"`
-	OperationApproveDate time.Time `json:"operation_approve_date" query:"operation_approve_date" firestore:"operation_approve_date"`
+	OperationApproveDate time.Time `json:"operation_approve_date" query:"operation_approve_date" firestore:"operation_approve_date" gorm:"default:null;"`
 
 	IsRequestEdit          bool      `json:"is_request_edit " query:"is_request_edit" firestore:"is_request_edit" gorm:"type:bool; default:false;"`
-	RequestEditDate        time.Time `json:"request_edit_date" query:"request_edit_date" firestore:"request_edit_date" gorm:"default:null"`
+	RequestEditDate        time.Time `json:"request_edit_date" query:"request_edit_date" firestore:"request_edit_date" gorm:"default:null;"`
 	RequestEditApproveBy   string    `json:"request_edit_approve_by" query:"request_edit_approve_by" firestore:"request_edit_approve_by" gorm:"type:varchar(36)"`
-	RequestEditApproveDate time.Time `json:"request_edit_approve_date" query:"request_edit_approve_date" firestore:"request_edit_approve_date" gorm:"default:null"`
+	RequestEditApproveDate time.Time `json:"request_edit_approve_date" query:"request_edit_approve_date" firestore:"request_edit_approve_date" gorm:"default:null;"`
 
 	IsRequestCancel   bool      `json:"is_request_cancel " query:"is_request_cancel" firestore:"is_request_cancel" gorm:"type:bool; default:false;"`
 	RequestCancelDate time.Time `json:"request_cancel_date" query:"request_cancel_date" firestore:"request_cancel_date" gorm:"default:null;"`
