@@ -52,6 +52,7 @@ type Slip struct {
 	Price         float64 `json:"price" query:"price" firestore:"price" gorm:"default:0; type:decimal(16,4);"`
 	Discount      float64 `json:"discount" query:"discount" firestore:"discount" gorm:"default:0; type:decimal(16,4);"`
 	Wht           float64 `json:"wht" query:"wht" firestore:"wht" gorm:"default:0; type:decimal(16,4);"`
+	IsWht         bool    `json:"is_wht" query:"is_wht" firestore:"is_wht" gorm:"type:bool; default:false;"`
 	Vat           float64 `json:"vat" query:"vat" firestore:"vat" gorm:"default:0; type:decimal(16,4);"`
 	DropOffPrice  float64 `json:"drop_off_price" query:"drop_off_price" firestore:"drop_off_price" gorm:"default:0; type:decimal(16,4);"`
 	NetPrice      float64 `json:"net_price" query:"net_price" firestore:"net_price" gorm:"default:0; type:decimal(16,4);"`
