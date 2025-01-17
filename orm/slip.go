@@ -89,7 +89,7 @@ type Slip struct {
 	IsHQ           bool      `json:"is_hq" query:"is_hq" firestore:"is_hq" gorm:"type:bool"`
 	Address        string    `json:"address" query:"address" firestore:"address" gorm:"type:text"`
 	Postcode       string    `json:"postcode" query:"postcode" firestore:"postcode" gorm:"type:varchar(30)"`
-	PhoneNo        string    `json:"phone_no" query:"phone_no" firestore:"phone_no" gorm:"type:varchar(30)"`
+	PhoneNo        string    `json:"phone_no" query:"phone_no" firestore:"phone_no" gorm:"type:varchar(50)"`
 	FlightNo       string    `json:"flight_no" query:"flight_no" firestore:"flight_no" gorm:"type:varchar(20)"`
 	FlightDate     time.Time `json:"flight_date" query:"flight_date" firestore:"flight_date" gorm:"default:null;"`
 	FuelByDistance float64   `json:"fuel_by_distance" query:"fuel_by_distance" firestore:"fuel_by_distance" gorm:"type:decimal(10,6)"` // จำนวน ลิตร
@@ -131,13 +131,13 @@ type Slip struct {
 	PassengerGenderID      string `json:"passenger_gender_id" query:"passenger_gender_id" firestore:"passenger_gender_id" gorm:"type:varchar(10);"`
 	PassengerNationalityID string `json:"passenger_nationality_id" query:"passenger_nationality_id" firestore:"passenger_nationality_id" gorm:"type:varchar(10);"`
 	PassengerEmail         string `json:"passenger_email" query:"passenger_email" firestore:"passenger_email" gorm:"type:varchar(255);"`
-	PassengerPhone         string `json:"passenger_phone" query:"passenger_phone" firestore:"passenger_phone" gorm:"type:varchar(20);"`
+	PassengerPhone         string `json:"passenger_phone" query:"passenger_phone" firestore:"passenger_phone" gorm:"type:varchar(50);"`
 	PassengerPassport      string `json:"passenger_passport" query:"passenger_passport" firestore:"passenger_passport" gorm:"type:varchar(30);"`
 
 	ContactPersonPrefixID  string `json:"contact_person_prefix_id" query:"contact_person_prefix_id" firestore:"contact_person_prefix_id" gorm:"type:varchar(10);"`
 	ContactPersonFirstname string `json:"contact_person_firstname" query:"contact_person_firstname" firestore:"contact_person_firstname" gorm:"type:varchar(200);"`
 	ContactPersonLastname  string `json:"contact_person_lastname" query:"contact_person_lastname" firestore:"contact_person_lastname" gorm:"type:varchar(200);"`
-	ContactPersonPhone     string `json:"contact_person_phone " query:"contact_person_phone" firestore:"contact_person_phone" gorm:"type:varchar(20)"`
+	ContactPersonPhone     string `json:"contact_person_phone " query:"contact_person_phone" firestore:"contact_person_phone" gorm:"type:varchar(50)"`
 	ContactPersonEmail     string `json:"contact_person_email" query:"contact_person_email" firestore:"contact_person_email" gorm:"type:varchar(255)"`
 
 	SubPassengerFirstname1   string `json:"sub_passenger_firstname_1" query:"sub_passenger_firstname_1" firestore:"sub_passenger_firstname_1" gorm:"type:varchar(255);column:sub_passenger_name_1;"`
