@@ -19,7 +19,7 @@ type Driver struct {
 	IDCardNo                string    `json:"idcard_no" query:"idcard_no" gorm:"type:varchar(13)"`
 	DriverLicenseNo         string    `json:"driver_license_no" query:"driver_license_no" gorm:"type:varchar(13)"`
 	DriverLicenseExpireDate time.Time `json:"driver_license_expire_date" query:"driver_license_expire_date" gorm:"type:varchar(50)"`
-	PhoneNo                 string    `json:"phone_no" query:"phone_no" gorm:"type:varchar(10)"`
+	PhoneNo                 string    `json:"phone_no" query:"phone_no" gorm:"type:varchar(50)"`
 	Address                 string    `json:"address" query:"address" gorm:"type:varchar(150)"`
 	WorkingStartDate        time.Time `json:"working_start_date" query:"working_start_date"`
 	WorkingEndDate          time.Time `json:"working_end_date" query:"working_end_date"`
