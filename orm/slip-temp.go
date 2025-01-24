@@ -19,9 +19,9 @@ type SlipTemp struct {
 	SlipDate             time.Time `json:"slip_date" query:"slip_date" firestore:"slip_date" gorm:"default:null;"`
 	TravelDate           time.Time `json:"travel_date" query:"travel_date" firestore:"travel_date" gorm:"default:null;"`
 	ReconcileDate        time.Time `json:"reconcile_date" query:"reconcile_date" firestore:"reconcile_date" gorm:"default:null;"`
-	SlipTypeID           string    `json:"slip_type_id" query:"slip_type_id" firestore:"slip_type_id" gorm:"type:varchar(2);"`
+	SlipTypeID           string    `json:"slip_type_id" query:"slip_type_id" firestore:"slip_type_id" gorm:"type:varchar(2);index"`
 	SlipSubTypeID        string    `json:"slip_sub_type_id" query:"slip_sub_type_id" firestore:"slip_sub_type_id" gorm:"type:varchar(2);"`
-	SlipVehicleSubTypeID string    `json:"slip_vehicle_sub_type_id" query:"slip_vehicle_sub_type_id" firestore:"slip_vehicle_sub_type_id" gorm:"type:varchar(2);"`
+	SlipVehicleSubTypeID string    `json:"slip_vehicle_sub_type_id" query:"slip_vehicle_sub_type_id" firestore:"slip_vehicle_sub_type_id" gorm:"type:varchar(2);index"`
 
 	IsPickup             bool      `json:"is_pickup" query:"is_pickup" firestore:"is_pickup" gorm:"default:0; type:bool;"`
 	PickupDate           time.Time `json:"pickup_date" query:"pickup_date" firestore:"pickup_date" gorm:"default:null;"`
@@ -32,7 +32,7 @@ type SlipTemp struct {
 	OriginLatitude       float64   `json:"origin_latitude" query:"origin_latitude" firestore:"origin_latitude" gorm:"type:decimal(10,6)"`
 	OriginLongitude      float64   `json:"origin_longitude" query:"origin_longitude" firestore:"origin_longitude" gorm:"type:decimal(10,6)"`
 	OriginRemark         string    `json:"origin_remark" query:"origin_remark" firestore:"origin_remark" gorm:"type:text"`
-	DestinationPoiID     string    `json:"destination_poi_id" query:"destination_poi_id" firestore:"destination_poi_id" gorm:"type:varchar(36);"`
+	DestinationPoiID     string    `json:"destination_poi_id" query:"destination_poi_id" firestore:"destination_poi_id" gorm:"type:varchar(36);index"`
 	DestinationName      string    `json:"destination_name" query:"destination_name" firestore:"destination_name" gorm:"type:varchar(150);"`
 	ForceDestinationName string    `json:"force_destination_name" query:"force_destination_name" firestore:"force_destination_name" gorm:"type:text;"`
 	DestinationLatitude  float64   `json:"destination_latitude" query:"destination_latitude" firestore:"destination_latitude" gorm:"type:decimal(10,6)"`
@@ -68,11 +68,11 @@ type SlipTemp struct {
 	CreditCardNo         string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
 	CreditCardTypeID     string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
 	BankRefNo            string    `json:"bank_ref_number" query:"bank_ref_number" firestore:"bank_ref_number" gorm:"default:null; type:varchar(20);"`
-	SlipVoidTypeID       string    `json:"slip_void_type_id" query:"slip_void_type_id" firestore:"slip_void_type_id" gorm:"default:'00'; type:varchar(2)"`
+	SlipVoidTypeID       string    `json:"slip_void_type_id" query:"slip_void_type_id" firestore:"slip_void_type_id" gorm:"default:'00'; type:varchar(2);index"`
 	VoidRemark           string    `json:"void_remark" query:"void_remark" firestore:"void_remark" gorm:"type:varchar(500);"`
 	VoidBy               string    `json:"void_by" query:"void_by" firestore:"void_by" gorm:"type:varchar(36);"`
 	VoidDate             time.Time `json:"void_date" query:"void_date" firestore:"void_date" gorm:"default:null;"`
-	SlipCancelTypeID     string    `json:"slip_cancel_type_id" query:"slip_cancel_type_id" firestore:"slip_cancel_type_id" gorm:"default:'00';type:varchar(2)"`
+	SlipCancelTypeID     string    `json:"slip_cancel_type_id" query:"slip_cancel_type_id" firestore:"slip_cancel_type_id" gorm:"default:'00';type:varchar(2);index"`
 	SlipUserCancelTypeID string    `json:"slip_user_cancel_type_id" query:"slip_user_cancel_type_id" firestore:"slip_user_cancel_type_id" gorm:"default:'00';type:varchar(2)"`
 	CancelRemark         string    `json:"cancel_remark" query:"cancel_remark" firestore:"cancel_remark" gorm:"type:varchar(500);"`
 
@@ -101,7 +101,7 @@ type SlipTemp struct {
 	FuelAverage     float64 `json:"fuel_average" query:"fuel_average" firestore:"fuel_average" gorm:"type:decimal(16,4);"`
 	AssignVehicleID string  `json:"assign_vehicle_id" query:"assign_vehicle_id" firestore:"assign_vehicle_id" gorm:"type:varchar(36);"`
 	AssignVehicleBy string  `json:"assign_vehicle_by" query:"assign_vehicle_by" firestore:"assign_vehicle_by" gorm:"type:varchar(36);"`
-	AssignDriverID  string  `json:"assign_driver_id" query:"assign_driver_id" firestore:"assign_driver_id" gorm:"default:null; type:varchar(36); "`
+	AssignDriverID  string  `json:"assign_driver_id" query:"assign_driver_id" firestore:"assign_driver_id" gorm:"default:null; type:varchar(36); index"`
 	// JobAssignStatusID string  `json:"job_assign_status_id" query:"job_assign_status_id" firestore:"job_assign_status_id" gorm:"default:'00'; type:varchar(36)"`
 
 	IsArrive        bool      `json:"is_arrive" query:"is_arrive" firestore:"is_arrive" gorm:"default:null;"`
