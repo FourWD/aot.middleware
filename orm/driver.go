@@ -34,4 +34,5 @@ type Driver struct {
 	LastOnlineDate          time.Time `json:"last_online_date" query:"last_online_date"`
 	QueueNo                 string    `json:"queue_no" query:"queue_no" gorm:"type:varchar(10)"` // stamp from running_nos
 	QueueDate               time.Time `json:"queue_date" query:"queue_date"`
+	GateID                  string    `json:"gate_id" query:"gate_id" gorm:"type:varchar(2)"`
 }
