@@ -180,6 +180,7 @@ type SlipTemp struct {
 	DuoSlipID string `json:"duo_slip_id" query:"duo_slip_id" firestore:"duo_slip_id" gorm:"type:varchar(36)"` // ตั๋วขาแรก
 
 	IsCarSeat    bool   `json:"is_car_seat" query:"is_car_seat" firestore:"is_car_seat" gorm:"default:0; type:bool;column:is_car_seat;"`
+	CarSeat      int    `json:"car_seat" query:"car_seat" firestore:"car_seat" gorm:"default:0; type:int;column:car_seat;"`
 	RemarkDriver string `json:"remark_driver" query:"remark_driver" firestore:"remark_driver" gorm:"type:text;"`
 
 	IsOperationApprove   bool      `json:"is_operation_approve" query:"is_operation_approve" firestore:"is_operation_approve" gorm:"type:bool; default:false;"`
