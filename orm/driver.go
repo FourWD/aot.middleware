@@ -37,4 +37,5 @@ type Driver struct {
 	QueueDate               time.Time `json:"queue_date" query:"queue_date"`
 	TerminalQueueDate       time.Time `json:"terminal_queue_date" query:"terminal_queue_date" gorm:"default:null"`
 	GateID                  string    `json:"gate_id" query:"gate_id" gorm:"type:varchar(2)"`
+	StopLocationID          int       `json:"stop_location_id" query:"stop_location_id" gorm:"default:null; type:int; "`
 }
