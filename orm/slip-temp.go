@@ -140,7 +140,7 @@ type SlipTemp struct {
 	ContactPersonPhone     string `json:"contact_person_phone " query:"contact_person_phone" firestore:"contact_person_phone" gorm:"type:varchar(50)"`
 	ContactPersonEmail     string `json:"contact_person_email" query:"contact_person_email" firestore:"contact_person_email" gorm:"type:varchar(255)"`
 
-	SubPassengerFirstname1   string `json:"sub_passenger_firstname_1" query:"sub_passenger_firstname_1" firestore:"sub_passenger_firstname_1" gorm:"type:varchar(255);column:sub_passenger_name_1;"`
+	SubPassengerFirstname1   string `json:"sub_passenger_firstname_1" query:"sub_passenger_firstname_1" firestore:"sub_passenger_firstname_1" gorm:"type:varchar(255);column:sub_passenger_firstname_1;"`
 	SubPassengerLastname1    string `json:"sub_passenger_lastname_1" query:"sub_passenger_lastname_1" firestore:"sub_passenger_lastname_1" gorm:"type:varchar(255);column:sub_passenger_lastname_1;"`
 	SubPassengerDestination1 string `json:"sub_passenger_destination_1" query:"sub_passenger_destination_1" firestore:"sub_passenger_destination_1" gorm:"type:varchar(255);column:sub_passenger_destination_1;"`
 
@@ -148,7 +148,7 @@ type SlipTemp struct {
 	SubPassengerLastname2    string `json:"sub_passenger_lastname_2" query:"sub_passenger_lastname_2" firestore:"sub_passenger_lastname_2" gorm:"type:varchar(255);column:sub_passenger_lastname_2;"`
 	SubPassengerDestination2 string `json:"sub_passenger_destination_2" query:"sub_passenger_destination_2" firestore:"sub_passenger_destination_2" gorm:"type:varchar(255);column:sub_passenger_destination_2;"`
 
-	SubPassengerFirstname3   string `json:"sub_passenger_firstname_3" query:"sub_passenger_firstname_3" firestore:"sub_passenger_firstname_3" gorm:"type:varchar(255);column:sub_passenger_name_3;"`
+	SubPassengerFirstname3   string `json:"sub_passenger_firstname_3" query:"sub_passenger_firstname_3" firestore:"sub_passenger_firstname_3" gorm:"type:varchar(255);column:sub_passenger_firstname_3;"`
 	SubPassengerLastname3    string `json:"sub_passenger_lastname_3" query:"sub_passenger_lastname_3" firestore:"sub_passenger_lastname_3" gorm:"type:varchar(255);column:sub_passenger_lastname_3;"`
 	SubPassengerDestination3 string `json:"sub_passenger_destination_3" query:"sub_passenger_destination_3" firestore:"sub_passenger_destination_3" gorm:"type:varchar(255);column:sub_passenger_destination_3;"`
 
