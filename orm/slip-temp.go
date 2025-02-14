@@ -195,8 +195,8 @@ type SlipTemp struct {
 	IsRequestCancel   bool      `json:"is_request_cancel " query:"is_request_cancel" firestore:"is_request_cancel" gorm:"type:bool; default:false;"`
 	RequestCancelDate time.Time `json:"request_cancel_date" query:"request_cancel_date" firestore:"request_cancel_date" gorm:"default:null;"`
 
-	AddressTax         string `json:"address_tax" query:"address_tax" firestore:"address_tax" gorm:"type:text"`                       //ที่อยู่ใบกำกับภาษี
-	CompanyTaxName     string `json:"company_tax_name" query:"company_tax_name" firestore:"company_tax_name" gorm:"type:varchar(50)"` //ที่อยู่ใบกำกับภาษี
+	AddressTax         string `json:"address_tax" query:"address_tax" firestore:"address_tax" gorm:"type:text"`                        //ที่อยู่ใบกำกับภาษี
+	CompanyTaxName     string `json:"company_tax_name" query:"company_tax_name" firestore:"company_tax_name" gorm:"type:varchar(200)"` //ที่อยู่ใบกำกับภาษี
 	DistrictTaxName    string `json:"district_tax_name" query:"district_tax_name" firestore:"district_tax_name" gorm:"type:varchar(200)"`
 	SubDistrictTaxName string `json:"sub_district_tax_name" query:"sub_district_tax_name" firestore:"sub_district_tax_name" gorm:"type:varchar(200)"`
 	ProvinceTaxName    string `json:"province_tax_name" query:"province_tax_name" firestore:"province_tax_name" gorm:"type:varchar(200)"`
