@@ -25,7 +25,7 @@ type Driver struct {
 	WorkingEndDate          time.Time `json:"working_end_date" query:"working_end_date"`
 	Remark                  string    `json:"remark" query:"remark" gorm:"type:varchar(200)"`
 	DriverImagePath         string    `json:"driver_image_path" query:"driver_image_path" gorm:"type:varchar(200)"`
-	DefaultVehicleModelID   string    `json:"default_vehicle_model_id" query:"default_vehicle_model_id" gorm:"default:null;type:varchar(36);"`
+	DefaultVehicleModelID   string    `json:"default_vehicle_model_id" query:"default_vehicle_model_id" gorm:"default:null;type:varchar(2);"`
 	CurrentVehicleID        string    `json:"current_vehicle_id" query:"current_vehicle_id" gorm:"default:null;type:varchar(36);"`
 	SlipID                  string    `json:"slip_id" query:"slip_id" gorm:"type:varchar(36); comment:'รับงานอะไรอยู่'"`
 	GenderID                string    `json:"gender_id" query:"gender_id" gorm:"type:varchar(2); comment:'รับงานอะไรอยู่'"`
