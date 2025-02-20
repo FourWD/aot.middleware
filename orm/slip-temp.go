@@ -102,6 +102,7 @@ type SlipTemp struct {
 	AssignVehicleID string    `json:"assign_vehicle_id" query:"assign_vehicle_id" firestore:"assign_vehicle_id" gorm:"type:varchar(36);"`
 	AssignVehicleBy string    `json:"assign_vehicle_by" query:"assign_vehicle_by" firestore:"assign_vehicle_by" gorm:"type:varchar(36);"`
 	AssignDriverID  string    `json:"assign_driver_id" query:"assign_driver_id" firestore:"assign_driver_id" gorm:"default:null; type:varchar(36); index"`
+	AssignBy        string    `json:"assign_by" query:"assign_by" firestore:"assign_by" gorm:"type:varchar(36);"`
 	AssignDate      time.Time `json:"assign_date" query:"assign_date" firestore:"assign_date" gorm:"default:null;"`
 	// JobAssignStatusID string  `json:"job_assign_status_id" query:"job_assign_status_id" firestore:"job_assign_status_id" gorm:"default:'00'; type:varchar(36)"`
 
