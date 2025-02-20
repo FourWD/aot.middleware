@@ -7,6 +7,10 @@ import (
 )
 
 func InitAppUser(userID string) error {
+	if userID == "" {
+		return nil
+	}
+
 	appUser := new(orm.AppUser)
 	appUser.ID = userID
 
