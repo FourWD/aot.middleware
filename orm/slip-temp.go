@@ -117,7 +117,7 @@ type SlipTemp struct {
 	BookingNo       string    `json:"booking_no" query:"booking_no" firestore:"booking_no" gorm:"type:varchar(50);index"`
 	BookingBy       string    `json:"booking_by" query:"booking_by" firestore:"booking_by" gorm:"type:varchar(36)"`
 	BookingDate     time.Time `json:"booking_date" query:"booking_date" firestore:"booking_date" gorm:"default:null;"`
-	JobNo           string    `json:"job_no" query:"job_no" firestore:"job_no" gorm:"type:varchar(20);"`
+	JobNo           string    `json:"job_no" query:"job_no" firestore:"job_no" gorm:"type:varchar(36);unique"`
 	AcceptJobDate   time.Time `json:"accept_job_date" query:"accept_job_date" firestore:"accept_job_date" gorm:"default:null;"`
 	AirlineName     string    `json:"airline_name" query:"airline_name" firestore:"airline_name" gorm:"type:varchar(100)"`
 
