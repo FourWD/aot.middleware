@@ -188,8 +188,9 @@ type SlipTemp struct {
 	IsOperationApprove   bool      `json:"is_operation_approve" query:"is_operation_approve" firestore:"is_operation_approve" gorm:"type:bool; default:false;"`
 	OperationApproveBy   string    `json:"operation_approve_by" query:"operation_approve_by" firestore:"operation_approve_by" gorm:"type:varchar(36)"`
 	OperationApproveDate time.Time `json:"operation_approve_date" query:"operation_approve_date" firestore:"operation_approve_date" gorm:"default:null;"`
-	UpdateApproveBy      string    `json:"update_approve_by" query:"update_approve_by" firestore:"update_approve_by" gorm:"type:varchar(36)"`
-	UpdateApproveDate    time.Time `json:"update_approve_date" query:"update_approve_date" firestore:"update_approve_date" gorm:"default:null;"`
+
+	UpdateApproveBy   string    `json:"update_approve_by" query:"update_approve_by" firestore:"update_approve_by" gorm:"type:varchar(36)"`
+	UpdateApproveDate time.Time `json:"update_approve_date" query:"update_approve_date" firestore:"update_approve_date" gorm:"default:null;"`
 
 	IsRequestEdit          bool      `json:"is_request_edit " query:"is_request_edit" firestore:"is_request_edit" gorm:"type:bool; default:false;"`
 	RequestEditDate        time.Time `json:"request_edit_date" query:"request_edit_date" firestore:"request_edit_date" gorm:"default:null;"`
