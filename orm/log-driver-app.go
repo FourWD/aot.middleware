@@ -14,7 +14,7 @@ type LogDriverApp struct {
 	SlipID string `json:"slip_id" query:"slip_id" gorm:"type:varchar(36)"`
 
 	IsAccept     bool      `json:"is_accept" query:"is_accept" gorm:"type:bool"`
-	AppceptDate  time.Time `json:"appcept_date" query:"appcept_date" `
+	AcceptDate   time.Time `json:"accept_date" query:"accept_date" `
 	IsPickup     bool      `json:"is_pickup" query:"is_pickup" gorm:"type:bool"`
 	PickDate     time.Time `json:"pick_date" query:"pick_date" `
 	IsArrival    bool      `json:"is_arrival" query:"is_arrival" gorm:"type:bool"`
