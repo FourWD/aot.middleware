@@ -170,7 +170,7 @@ type SlipTemp struct {
 	UpdateApproveBy      string    `json:"update_approve_by" query:"update_approve_by" firestore:"update_approve_by" gorm:"type:varchar(36)"`
 	UpdateApproveDate    time.Time `json:"update_approve_date" query:"update_approve_date" firestore:"update_approve_date" gorm:"default:null;"`
 
-	ReconcileDate time.Time `json:"reconcile_date" query:"reconcile_date" firestore:"reconcile_date" gorm:"default:null;"`
+	// ReconcileDate time.Time `json:"reconcile_date" query:"reconcile_date" firestore:"reconcile_date" gorm:"default:null;"`
 	// ========================================================================================
 	IsRequestEdit          bool      `json:"is_request_edit " query:"is_request_edit" firestore:"is_request_edit" gorm:"type:bool; default:false;"`
 	RequestEditDate        time.Time `json:"request_edit_date" query:"request_edit_date" firestore:"request_edit_date" gorm:"default:null;"`
@@ -188,8 +188,8 @@ type SlipTemp struct {
 	// JobAssignStatusID string  `json:"job_assign_status_id" query:"job_assign_status_id" firestore:"job_assign_status_id" gorm:"default:'00'; type:varchar(36)"`
 	// ========================================================================================
 	// AcceptJobDate time.Time `json:"accept_job_date" query:"accept_job_date" firestore:"accept_job_date" gorm:"default:null;"`
-	IsAccept        bool      `json:"is_accept" query:"is_accept" gorm:"type:bool"`
-	AcceptDate      time.Time `json:"accept_date" query:"accept_date"`
+	IsAccept        bool      `json:"is_accept" query:"is_accept" firestore:"is_accept" gorm:"type:bool"`
+	AcceptDate      time.Time `json:"accept_date" query:"accept_date" firestore:"accept_date" gorm:"default:null;"`
 	AcceptLatitude  float64   `json:"accept_latitude" query:"accept_latitude" firestore:"accept_latitude" gorm:"type:decimal(10,6);"`
 	AcceptLongitude float64   `json:"accept_longitude" query:"accept_longitude" firestore:"accept_longitude" gorm:"type:decimal(10,6);"`
 
