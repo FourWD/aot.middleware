@@ -28,6 +28,13 @@ type SlipTemp struct {
 	// ========================================================================================
 	IsPaid bool   `json:"is_paid" query:"is_paid" firestore:"is_paid" gorm:"default:0; type:bool;"`
 	PaidBy string `json:"paid_by" query:"paid_by" firestore:"paid_by" gorm:"type:varchar(36);"`
+
+	PaymentTypeID    string    `json:"payment_type_id" query:"payment_type_id" firestore:"payment_type_id" gorm:"type:varchar(2);"`
+	PaymentDate      time.Time `json:"payment_date" query:"payment_date" firestore:"payment_date" gorm:"default:null;"`
+	PaymentSlip      string    `json:"payment_slip" query:"payment_slip" firestore:"payment_slip" gorm:"type:varchar(256);"`
+	CreditCardNo     string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
+	CreditCardTypeID string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
+	BankRefNo        string    `json:"bank_ref_number" query:"bank_ref_number" firestore:"bank_ref_number" gorm:"default:null; type:varchar(20);"`
 	// ========================================================================================
 	IsConfirm   bool      `json:"is_confirm" query:"is_confirm" firestore:"is_confirm" gorm:"default:0; type:bool;"`
 	ConfirmBy   string    `json:"confirm_by" query:"confirm_by" firestore:"confirm_by" gorm:"type:varchar(36);"`
@@ -71,13 +78,7 @@ type SlipTemp struct {
 	NetPrice      float64 `json:"net_price" query:"net_price" firestore:"net_price" gorm:"default:0; type:decimal(16,4);"`
 	WaitingCharge float64 `json:"waiting_charge" query:"waiting_charge" firestore:"waiting_charge" gorm:"default:0; type:decimal(16,4);"`
 
-	RefCode          string    `json:"ref_code" query:"ref_code" firestore:"ref_code" gorm:"type:varchar(36);"`
-	PaymentTypeID    string    `json:"payment_type_id" query:"payment_type_id" firestore:"payment_type_id" gorm:"type:varchar(2);"`
-	PaymentDate      time.Time `json:"payment_date" query:"payment_date" firestore:"payment_date" gorm:"default:null;"`
-	PaymentSlip      string    `json:"payment_slip" query:"payment_slip" firestore:"payment_slip" gorm:"type:varchar(256);"`
-	CreditCardNo     string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
-	CreditCardTypeID string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
-	BankRefNo        string    `json:"bank_ref_number" query:"bank_ref_number" firestore:"bank_ref_number" gorm:"default:null; type:varchar(20);"`
+	RefCode string `json:"ref_code" query:"ref_code" firestore:"ref_code" gorm:"type:varchar(36);"`
 
 	// IsNewCustomer bool      `json:"is_new_customer" query:"is_new_customer" firestore:"is_new_customer" gorm:"type:bool"`
 	CustomerID string `json:"customer_id" query:"customer_id" firestore:"customer_id" gorm:"type:varchar(36);"`
@@ -164,11 +165,11 @@ type SlipTemp struct {
 	// RentalFuelLitre   float64   `json:"rental_fuel_litre" query:"rental_fuel_litre" firestore:"rental_fuel_litre" gorm:"type:decimal(16,4)"`
 	FuelAverage float64 `json:"fuel_average" query:"fuel_average" firestore:"fuel_average" gorm:"type:decimal(16,4);"`
 	// ========================================================================================
-	IsOperationApprove   bool      `json:"is_operation_approve" query:"is_operation_approve" firestore:"is_operation_approve" gorm:"type:bool; default:false;"`
-	OperationApproveBy   string    `json:"operation_approve_by" query:"operation_approve_by" firestore:"operation_approve_by" gorm:"type:varchar(36)"`
-	OperationApproveDate time.Time `json:"operation_approve_date" query:"operation_approve_date" firestore:"operation_approve_date" gorm:"default:null;"`
-	UpdateApproveBy      string    `json:"update_approve_by" query:"update_approve_by" firestore:"update_approve_by" gorm:"type:varchar(36)"`
-	UpdateApproveDate    time.Time `json:"update_approve_date" query:"update_approve_date" firestore:"update_approve_date" gorm:"default:null;"`
+	// IsOperationApprove   bool      `json:"is_operation_approve" query:"is_operation_approve" firestore:"is_operation_approve" gorm:"type:bool; default:false;"`
+	// OperationApproveBy   string    `json:"operation_approve_by" query:"operation_approve_by" firestore:"operation_approve_by" gorm:"type:varchar(36)"`
+	// OperationApproveDate time.Time `json:"operation_approve_date" query:"operation_approve_date" firestore:"operation_approve_date" gorm:"default:null;"`
+	// UpdateApproveBy      string    `json:"update_approve_by" query:"update_approve_by" firestore:"update_approve_by" gorm:"type:varchar(36)"`
+	// UpdateApproveDate    time.Time `json:"update_approve_date" query:"update_approve_date" firestore:"update_approve_date" gorm:"default:null;"`
 
 	// ReconcileDate time.Time `json:"reconcile_date" query:"reconcile_date" firestore:"reconcile_date" gorm:"default:null;"`
 	// ========================================================================================
