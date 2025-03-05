@@ -29,12 +29,13 @@ type SlipTemp struct {
 	IsPaid bool   `json:"is_paid" query:"is_paid" firestore:"is_paid" gorm:"default:0; type:bool;"`
 	PaidBy string `json:"paid_by" query:"paid_by" firestore:"paid_by" gorm:"type:varchar(36);"`
 
-	PaymentTypeID    string    `json:"payment_type_id" query:"payment_type_id" firestore:"payment_type_id" gorm:"type:varchar(2);"`
-	PaymentDate      time.Time `json:"payment_date" query:"payment_date" firestore:"payment_date" gorm:"default:null;"`
-	PaymentSlip      string    `json:"payment_slip" query:"payment_slip" firestore:"payment_slip" gorm:"type:varchar(256);"`
-	CreditCardNo     string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
-	CreditCardTypeID string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
-	BankRefNo        string    `json:"bank_ref_number" query:"bank_ref_number" firestore:"bank_ref_number" gorm:"default:null; type:varchar(20);"`
+	PaymentTypeID     string    `json:"payment_type_id" query:"payment_type_id" firestore:"payment_type_id" gorm:"type:varchar(2);"`
+	PaymentDate       time.Time `json:"payment_date" query:"payment_date" firestore:"payment_date" gorm:"default:null;"`
+	PaymentSlip       string    `json:"payment_slip" query:"payment_slip" firestore:"payment_slip" gorm:"type:varchar(256);"`
+	CreditCardNo      string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
+	CreditCardTypeID  string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
+	CustomerPaymentID string    `json:"customer_payment_id" query:"customer_payment_id" firestore:"customer_payment_id" gorm:"default:null; type:varchar(36);"`
+	BankRefNo         string    `json:"bank_ref_number" query:"bank_ref_number" firestore:"bank_ref_number" gorm:"default:null; type:varchar(20);"`
 	// ========================================================================================
 	IsConfirm   bool      `json:"is_confirm" query:"is_confirm" firestore:"is_confirm" gorm:"default:0; type:bool;"`
 	ConfirmBy   string    `json:"confirm_by" query:"confirm_by" firestore:"confirm_by" gorm:"type:varchar(36);"`
