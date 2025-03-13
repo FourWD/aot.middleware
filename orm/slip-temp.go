@@ -45,6 +45,7 @@ type SlipTemp struct {
 	VoidRemark     string    `json:"void_remark" query:"void_remark" firestore:"void_remark" gorm:"type:varchar(500);"`
 	VoidBy         string    `json:"void_by" query:"void_by" firestore:"void_by" gorm:"type:varchar(36);"`
 	VoidDate       time.Time `json:"void_date" query:"void_date" firestore:"void_date" gorm:"default:null;"`
+	IsVoidSlip     bool      `json:"is_void_slip" query:"is_void_slip" firestore:"is_void_slip" gorm:"default:0; type:bool;"`
 	// ========================================================================================
 	SlipCancelTypeID     string    `json:"slip_cancel_type_id" query:"slip_cancel_type_id" firestore:"slip_cancel_type_id" gorm:"default:'00';type:varchar(2);index"`
 	SlipUserCancelTypeID string    `json:"slip_user_cancel_type_id" query:"slip_user_cancel_type_id" firestore:"slip_user_cancel_type_id" gorm:"default:'00';type:varchar(2)"`
