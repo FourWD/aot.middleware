@@ -53,7 +53,7 @@ type SlipTemp struct {
 	CancelBy             string    `json:"cancel_by" query:"cancel_by" firestore:"cancel_by" gorm:"type:varchar(36);"`
 	CancelDate           time.Time `json:"cancel_date" query:"cancel_date" firestore:"cancel_date" gorm:"default:null;"`
 	// ========================================================================================
-	CounterID            string  `json:"counter_id" query:"counter_id" firestore:"counter_id" gorm:"type:varchar(36)"`
+	CounterID            string  `json:"counter_id" query:"counter_id" firestore:"counter_id" gorm:"type:varchar(5)"`
 	OriginPoiID          string  `json:"origin_poi_id" query:"origin_poi_id" firestore:"origin_poi_id" gorm:"type:varchar(36);"`
 	OriginName           string  `json:"origin_name" query:"origin_name" firestore:"origin_name" gorm:"type:varchar(150);"`
 	ForceOriginName      string  `json:"force_origin_name" query:"force_origin_name" firestore:"force_origin_name" gorm:"type:text;"`
@@ -191,7 +191,7 @@ type SlipTemp struct {
 	// JobAssignStatusID string  `json:"job_assign_status_id" query:"job_assign_status_id" firestore:"job_assign_status_id" gorm:"default:'00'; type:varchar(36)"`
 	// ========================================================================================
 	// AcceptJobDate time.Time `json:"accept_job_date" query:"accept_job_date" firestore:"accept_job_date" gorm:"default:null;"`
-	IsAccept        bool      `json:"is_accept" query:"is_accept" firestore:"is_accept" gorm:"type:bool"`
+	IsAccept        bool      `json:"is_accept" query:"is_accept" firestore:"is_accept" gorm:"default:0; type:bool;"`
 	AcceptDate      time.Time `json:"accept_date" query:"accept_date" firestore:"accept_date" gorm:"default:null;"`
 	AcceptLatitude  float64   `json:"accept_latitude" query:"accept_latitude" firestore:"accept_latitude" gorm:"type:decimal(10,6);"`
 	AcceptLongitude float64   `json:"accept_longitude" query:"accept_longitude" firestore:"accept_longitude" gorm:"type:decimal(10,6);"`
@@ -201,7 +201,7 @@ type SlipTemp struct {
 	PickupLatitude  float64   `json:"pickup_latitude" query:"arrive_latitude" firestore:"arrive_latitude" gorm:"type:decimal(10,6);"`
 	PickupLongitude float64   `json:"pickup_longitude" query:"arrive_longitude" firestore:"arrive_longitude" gorm:"type:decimal(10,6);"`
 
-	IsArrive        bool      `json:"is_arrive" query:"is_arrive" firestore:"is_arrive" gorm:"default:null;"`
+	IsArrive        bool      `json:"is_arrive" query:"is_arrive" firestore:"is_arrive" gorm:"default:0; type:bool;"`
 	ArriveDate      time.Time `json:"arrive_date" query:"arrive_date" firestore:"arrive_date" gorm:"default:null;"`
 	ArriveLatitude  float64   `json:"arrive_latitude" query:"arrive_latitude" firestore:"arrive_latitude" gorm:"type:decimal(10,6);"`
 	ArriveLongitude float64   `json:"arrive_longitude" query:"arrive_longitude" firestore:"arrive_longitude" gorm:"type:decimal(10,6);"`
@@ -221,7 +221,7 @@ type SlipTemp struct {
 	DropOffLatitude3  float64   `json:"drop_off_latitude_3" query:"drop_off_latitude_3" firestore:"drop_off_latitude_3" gorm:"type:decimal(10,6);column:drop_off_latitude_3"`
 	DropOffLongitude3 float64   `json:"drop_off_longitude_3" query:"drop_off_longitude_3" firestore:"drop_off_longitude_3" gorm:"type:decimal(10,6);column:drop_off_longitude_3"`
 
-	IsDeliver        bool      `json:"is_deliver" query:"is_deliver" firestore:"is_deliver" gorm:"type:bool"`
+	IsDeliver        bool      `json:"is_deliver" query:"is_deliver" firestore:"is_deliver" gorm:"default:0; type:bool;"`
 	DeliverDate      time.Time `json:"deliver_date" query:"deliver_date" firestore:"deliver_date" gorm:"default:null;"`
 	DeliverLatitude  float64   `json:"deliver_latitude" query:"deliver_latitude" firestore:"deliver_latitude" gorm:"type:decimal(10,6);"`
 	DeliverLongitude float64   `json:"deliver_longitude" query:"deliver_longitude" firestore:"deliver_longitude" gorm:"type:decimal(10,6);"`
