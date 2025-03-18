@@ -26,8 +26,11 @@ type SlipTemp struct {
 	DuoSlipID            string `json:"duo_slip_id" query:"duo_slip_id" firestore:"duo_slip_id" gorm:"type:varchar(36)"` // ตั๋วขาแรก
 	SlipStatusID         string `json:"slip_status_id" query:"slip_status_id" firestore:"slip_status_id" gorm:"type:varchar(2);default:'00'"`
 	// ========================================================================================
-	IsPaid bool   `json:"is_paid" query:"is_paid" firestore:"is_paid" gorm:"default:0; type:bool;"`
-	PaidBy string `json:"paid_by" query:"paid_by" firestore:"paid_by" gorm:"type:varchar(36);"`
+	IsPaid          bool      `json:"is_paid" query:"is_paid" firestore:"is_paid" gorm:"default:0; type:bool;"`
+	PaidBy          string    `json:"paid_by" query:"paid_by" firestore:"paid_by" gorm:"type:varchar(36);"`
+	IsConfirmPaid   bool      `json:"is_confirm_paid" query:"is_confirm_paid" firestore:"is_confirm_paid" gorm:"default:0; type:bool;"`
+	ConfirmPaidBy   string    `json:"confirm_paid_by" query:"confirm_paid_by" firestore:"confirm_paid_by" gorm:"type:varchar(36);"`
+	ConfirmPaidDate time.Time `json:"confirm_paid_date" query:"confirm_paid_date" firestore:"confirm_paid_date" gorm:"default:null;"`
 
 	PaymentTypeID     string    `json:"payment_type_id" query:"payment_type_id" firestore:"payment_type_id" gorm:"type:varchar(2);"`
 	PaymentDate       time.Time `json:"payment_date" query:"payment_date" firestore:"payment_date" gorm:"default:null;"`
