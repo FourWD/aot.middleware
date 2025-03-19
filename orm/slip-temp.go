@@ -234,5 +234,7 @@ type SlipTemp struct {
 
 	ActualDistance float64 `json:"actual_distance" query:"actual_distance" firestore:"actual_distance" gorm:"type:decimal(16,4)"`
 	Duration       int     `json:"duration" query:"duration" firestore:"duration" gorm:"type:int"`
+
+	SlipExtraTypeID string `json:"slip_extra_type_id" query:"slip_extra_type_id" firestore:"slip_extra_type_id" gorm:"type:varchar(2); default:'00';"`
 	// ========================================================================================
 }
