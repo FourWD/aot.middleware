@@ -30,7 +30,7 @@ func GetAppDriverFirebase(driverID string) (orm.AppDriver, error) {
 	pickupDate, _ := snap.Data()["pickup_date"].(time.Time)
 	dropOffDate1, _ := snap.Data()["drop_off_date_1"].(time.Time)
 	dropOffDate2, _ := snap.Data()["drop_off_date_2"].(time.Time)
-	dropOffDate3, _ := snap.Data()["drop_off_date_3"].(time.Time)
+	// dropOffDate3, _ := snap.Data()["drop_off_date_3"].(time.Time)
 	deliverDate, _ := snap.Data()["deliver_date"].(time.Time)
 	completeDate, _ := snap.Data()["complete_date"].(time.Time)
 
@@ -39,7 +39,7 @@ func GetAppDriverFirebase(driverID string) (orm.AppDriver, error) {
 	appDriver.PickupDate = common.UTCToThailandTime(pickupDate.Truncate(time.Second))
 	appDriver.DropOffDate1 = common.UTCToThailandTime(dropOffDate1.Truncate(time.Second))
 	appDriver.DropOffDate2 = common.UTCToThailandTime(dropOffDate2.Truncate(time.Second))
-	appDriver.DropOffDate3 = common.UTCToThailandTime(dropOffDate3.Truncate(time.Second))
+	// appDriver.DropOffDate3 = common.UTCToThailandTime(dropOffDate3.Truncate(time.Second))
 	appDriver.DeliverDate = common.UTCToThailandTime(deliverDate.Truncate(time.Second))
 	appDriver.CompleteDate = common.UTCToThailandTime(completeDate.Truncate(time.Second))
 
