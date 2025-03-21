@@ -150,8 +150,8 @@ type SlipTemp struct {
 	// IsCharge3      bool   `json:"is_charge_3" query:"is_charge_3" firestore:"is_charge_3" gorm:"default:0;type:bool;column:is_charge_3;"`
 	// DropOffRemark3 string `json:"drop_off_remark_3" query:"drop_off_remark_3" firestore:"drop_off_remark_3" gorm:"type:text;column:drop_off_remark_3"`
 	// ========================================================================================
-	CarSeat      int    `json:"car_seat" query:"car_seat" firestore:"car_seat" gorm:"default:0; type:int;column:car_seat;"`
-	RemarkDriver string `json:"remark_driver" query:"remark_driver" firestore:"remark_driver" gorm:"type:text;"`
+	CarSeat int `json:"car_seat" query:"car_seat" firestore:"car_seat" gorm:"default:0; type:int;column:car_seat;"`
+	// RemarkDriver string `json:"remark_driver" query:"remark_driver" firestore:"remark_driver" gorm:"type:text;"`
 	// ========================================================================================
 	AddressTax         string `json:"address_tax" query:"address_tax" firestore:"address_tax" gorm:"type:text"`                        //ที่อยู่ใบกำกับภาษี
 	CompanyTaxName     string `json:"company_tax_name" query:"company_tax_name" firestore:"company_tax_name" gorm:"type:varchar(200)"` //ที่อยู่ใบกำกับภาษี
