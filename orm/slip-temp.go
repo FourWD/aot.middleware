@@ -13,10 +13,10 @@ type SlipTemp struct {
 	AppUserStatusID   string `json:"app_user_status_id" query:"app_user_status_id" firestore:"app_user_status_id" gorm:"type:varchar(2);"`
 	HashData          string `json:"hash_data" query:"hash_data" firestore:"hash_data" gorm:"type:text"`
 
-	SlipNo    string `json:"slip_no" query:"slip_no" firestore:"slip_no" gorm:"type:varchar(36);index"`
-	ReceiptNo string `json:"receipt_no" query:"receipt_no" firestore:"receipt_no" gorm:"type:varchar(50);index"`
-	RrNo      string `json:"rr_no" query:"rr_no" firestore:"rr_no" gorm:"type:varchar(50); index"`
-	// SlipDate   time.Time `json:"slip_date" query:"slip_date" firestore:"slip_date" gorm:"default:null;"`
+	SlipNo     string    `json:"slip_no" query:"slip_no" firestore:"slip_no" gorm:"type:varchar(36);index"`
+	ReceiptNo  string    `json:"receipt_no" query:"receipt_no" firestore:"receipt_no" gorm:"type:varchar(50);index"`
+	RrNo       string    `json:"rr_no" query:"rr_no" firestore:"rr_no" gorm:"type:varchar(50); index"`
+	SlipDate   time.Time `json:"slip_date" query:"slip_date" firestore:"slip_date" gorm:"default:null;"`
 	TravelDate time.Time `json:"travel_date" query:"travel_date" firestore:"travel_date" gorm:"default:null;"`
 
 	SlipTypeID           string `json:"slip_type_id" query:"slip_type_id" firestore:"slip_type_id" gorm:"type:varchar(2);index"`
