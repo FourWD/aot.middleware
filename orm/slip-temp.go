@@ -179,7 +179,7 @@ type SlipTemp struct {
 
 	// ReconcileDate time.Time `json:"reconcile_date" query:"reconcile_date" firestore:"reconcile_date" gorm:"default:null;"`
 	// ========================================================================================
-	IsRequestEdit          bool      `json:"is_request_edit " query:"is_request_edit" firestore:"is_request_edit" gorm:"type:bool; default:false;"`
+	IsRequestEdit          bool      `json:"is_request_edit" query:"is_request_edit" firestore:"is_request_edit" gorm:"type:bool; default:false;"`
 	RequestEditDate        time.Time `json:"request_edit_date" query:"request_edit_date" firestore:"request_edit_date" gorm:"default:null;"`
 	RequestEditApproveBy   string    `json:"request_edit_approve_by" query:"request_edit_approve_by" firestore:"request_edit_approve_by" gorm:"type:varchar(36)"`
 	RequestEditApproveDate time.Time `json:"request_edit_approve_date" query:"request_edit_approve_date" firestore:"request_edit_approve_date" gorm:"default:null;"`
@@ -236,6 +236,7 @@ type SlipTemp struct {
 	ActualDistance float64 `json:"actual_distance" query:"actual_distance" firestore:"actual_distance" gorm:"type:decimal(16,4)"`
 	Duration       int     `json:"duration" query:"duration" firestore:"duration" gorm:"type:int"`
 
-	SlipExtraTypeID string `json:"slip_extra_type_id" query:"slip_extra_type_id" firestore:"slip_extra_type_id" gorm:"type:varchar(2); default:'00';"`
+	SlipExtraTypeID     string `json:"slip_extra_type_id" query:"slip_extra_type_id" firestore:"slip_extra_type_id" gorm:"type:varchar(2); default:'00';"`
+	IsRequestLadyDriver bool   `json:"is_request_lady_driver" query:"is_request_lady_driver" firestore:"is_request_lady_driver" gorm:"type:bool; default:false;"`
 	// ========================================================================================
 }
