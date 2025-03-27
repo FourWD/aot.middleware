@@ -72,7 +72,7 @@ type SlipTemp struct {
 	// DestinationRemark    string  `json:"destination_remark" query:"destination_remark" firestore:"destination_remark" gorm:"type:text"`
 	Distance float64 `json:"distance" query:"distance" firestore:"distance" gorm:"type:decimal(16,4)"`
 
-	PriceRateID   string  `json:"price_rate_id" query:"price_rate_id" firestore:"price_rate_id" gorm:"type:varchar(36);"`
+	// PriceRateID   string  `json:"price_rate_id" query:"price_rate_id" firestore:"price_rate_id" gorm:"type:varchar(36);"`
 	PromotionID   string  `json:"promotion_id" query:"promotion_id" firestore:"promotion_id" gorm:"type:varchar(36);"`
 	PromotionCode string  `json:"promotion_code" query:"promotion_code" firestore:"promotion_code" gorm:"type:varchar(36);"`
 	Price         float64 `json:"price" query:"price" firestore:"price" gorm:"default:0; type:decimal(16,4);"`
