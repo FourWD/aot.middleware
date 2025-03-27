@@ -4,7 +4,7 @@ import (
 	"github.com/FourWD/middleware/common"
 )
 
-func SendNotiToDriver(driverID, slipID, typeID string) {
+func SendNotiToDriver(driverID, slipID, typeID string) error {
 	logData := map[string]interface{}{
 		"driverID": driverID,
 		"slipID":   slipID,
@@ -17,4 +17,5 @@ func SendNotiToDriver(driverID, slipID, typeID string) {
 	}
 
 	common.SendMessageToSubscriber(driverID, "NOTI", "", data)
+	return nil
 }
