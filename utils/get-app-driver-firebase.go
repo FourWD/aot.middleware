@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/FourWD/aot.middleware/orm"
@@ -15,11 +16,13 @@ func GetAppDriverFirebase(driverID string) (orm.AppDriver, error) {
 	docRef := common.FirebaseClient.Doc(docPath)
 	snap, err := docRef.Get(context.Background())
 	if err != nil {
+		log.Println(err)
 		return orm.AppDriver{}, errors.New("cannot get : " + docPath)
 	}
 
 	var appDriver orm.AppDriver
 	if err := snap.DataTo(&appDriver); err != nil {
+		log.Println(err)
 		return orm.AppDriver{}, errors.New("cannot snap : " + docPath)
 	}
 
