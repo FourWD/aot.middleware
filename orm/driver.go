@@ -11,6 +11,7 @@ type Driver struct {
 	orm.GormModel
 	SourceID                string    `json:"source_id" query:"source_id" gorm:"type:varchar(2);"`
 	DriverCode              string    `json:"driver_code" query:"driver_code" gorm:"type:varchar(36);unique;"`
+	PrefixID                string    `json:"prefix_id" query:"prefix_id" firestore:"prefix_id" gorm:"type:varchar(2);"`
 	Firstname               string    `json:"firstname" query:"firstname" gorm:"type:varchar(100)"`
 	Lastname                string    `json:"lastname" query:"lastname" gorm:"type:varchar(100)"`
 	Nickname                string    `json:"nickname" query:"nickname" gorm:"type:varchar(50)"`
