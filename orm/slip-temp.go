@@ -35,7 +35,7 @@ type SlipTemp struct {
 	PaymentTypeID     string    `json:"payment_type_id" query:"payment_type_id" firestore:"payment_type_id" gorm:"type:varchar(2);"`
 	PaymentDate       time.Time `json:"payment_date" query:"payment_date" firestore:"payment_date" gorm:"default:null;"`
 	PaymentSlip       string    `json:"payment_slip" query:"payment_slip" firestore:"payment_slip" gorm:"type:varchar(256);"`
-	PaymentRef        string    `json:"payment_ref" query:"payment_ref" firestore:"payment_ref" gorm:"type:varchar(36);default:null;"`
+	PaymentRef        string    `json:"payment_ref" query:"payment_ref" firestore:"payment_ref" gorm:"type:varchar(50);default:null;"`
 	CreditCardNo      string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
 	CreditCardTypeID  string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
 	CustomerPaymentID string    `json:"customer_payment_id" query:"customer_payment_id" firestore:"customer_payment_id" gorm:"default:null; type:varchar(36);"`
