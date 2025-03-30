@@ -1,15 +1,14 @@
 package utils
 
 import (
-	"fmt"
-
 	"github.com/FourWD/middleware/common"
 )
 
 func SendNotiToDriver(driverID, slipID, typeID string) {
 	title := "NOTI-DRIVER"
 	body := "TEST DRIVER"
-	topic := fmt.Sprintf("DRIVER_%s", driverID)
+	topic := driverID // auto register by flutter
+
 	logData := map[string]interface{}{
 		"topic":    topic,
 		"driverID": driverID,
@@ -18,7 +17,6 @@ func SendNotiToDriver(driverID, slipID, typeID string) {
 		"body":     body,
 		"title":    title,
 	}
-
 	common.Log("SendNotiToDriver", logData, "")
 
 	data := map[string]string{
