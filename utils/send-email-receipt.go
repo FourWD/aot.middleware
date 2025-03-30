@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-func SendEmailReceive(slipID string, recipient string) error {
+func SendEmailReceipt(slipID string, recipient string) error {
 	sender := viper.GetString("mail.sender")
 
 	slip := new(midOrm.Slip)
