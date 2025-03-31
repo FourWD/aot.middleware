@@ -5,8 +5,8 @@ import (
 )
 
 func SendNotiToDriver(driverID, slipID, typeID string) {
-	title := "NOTI-DRIVER"
-	body := "TEST DRIVER"
+	title := "📢 งานเข้าแล้ว!"
+	body := "คุณมีงานใหม่เข้าแล้ว กรุณาตรวจสอบงาน"
 	topic := driverID // auto register by flutter
 
 	logData := map[string]interface{}{
