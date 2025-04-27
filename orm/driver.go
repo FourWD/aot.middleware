@@ -28,8 +28,8 @@ type Driver struct {
 	DriverImagePath         string    `json:"driver_image_path" query:"driver_image_path" gorm:"type:varchar(200)"`
 	DefaultVehicleModelID   string    `json:"default_vehicle_model_id" query:"default_vehicle_model_id" gorm:"default:null;type:varchar(2);"`
 	CurrentVehicleID        string    `json:"current_vehicle_id" query:"current_vehicle_id" gorm:"default:null; type:varchar(36);"`
-	SlipID                  string    `json:"slip_id" query:"slip_id" gorm:"type:varchar(36); comment:'รับงานอะไรอยู่'"`
-	GenderID                string    `json:"gender_id" query:"gender_id" gorm:"type:varchar(2); comment:'รับงานอะไรอยู่'"`
+	SlipID                  string    `json:"slip_id" query:"slip_id" gorm:"type:varchar(36);"`
+	GenderID                string    `json:"gender_id" query:"gender_id" gorm:"type:varchar(2);"`
 	IsOnline                bool      `json:"is_online" query:"is_online" gorm:"type:bool"`
 	IsActive                bool      `json:"is_active" query:"is_active" gorm:"type:bool"`
 	IsAppActive             bool      `json:"is_app_active" query:"is_app_active" gorm:"type:bool"`
