@@ -92,7 +92,7 @@ type SlipTemp struct {
 	CustomerID string `json:"customer_id" query:"customer_id" firestore:"customer_id" gorm:"type:varchar(36);"`
 	// Code             string    `json:"code" query:"code" firestore:"code" gorm:"type:varchar(20) ; dafault:null ; index"`
 	CompanyName string    `json:"company_name" query:"company_name" firestore:"company_name" gorm:"type:varchar(150)"`
-	TaxNo       string    `json:"tax_no" query:"tax_no" firestore:"tax_no" gorm:"type:varchar(20)"`
+	TaxNo       string    `json:"tax_no" query:"tax_no" firestore:"tax_no" gorm:"type:varchar(50)"`
 	IsTax       bool      `json:"is_tax" query:"is_tax" firestore:"is_tax" gorm:"type:bool"`
 	IsHQ        bool      `json:"is_hq" query:"is_hq" firestore:"is_hq" gorm:"type:bool"`
 	Address     string    `json:"address" query:"address" firestore:"address" gorm:"type:text"`
