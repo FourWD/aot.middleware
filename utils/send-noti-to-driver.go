@@ -1,6 +1,8 @@
 package utils
 
 import (
+	"fmt"
+
 	"github.com/FourWD/middleware/common"
 )
 
@@ -26,13 +28,23 @@ func SendNotiToDriver(driverID, slipID, typeID string) {
 	common.SendMessageToSubscriber(topic, title, body, data)
 }
 
-func SendNotiToQueueDriver(driverID, slipID, title, body string) {
+func SendNotiToQueueDriver(driverID, slipID, typeID string, index int) {
+	title := "📢 แจ้งเตือนคิวของคุณ"
+	var body string
+
+	if index == 0 {
+		body = "ถึงคิวของคุณแล้ว"
+	} else {
+		body = fmt.Sprintf("อีก %d คิวจะถึงคุณ", index)
+	}
+
 	topic := driverID
 
 	logData := map[string]interface{}{
 		"topic":    topic,
 		"driverID": driverID,
 		"slipID":   slipID,
+		"typeID":   typeID,
 		"title":    title,
 		"body":     body,
 	}
