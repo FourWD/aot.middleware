@@ -25,3 +25,19 @@ func SendNotiToDriver(driverID, slipID, typeID string) {
 
 	common.SendMessageToSubscriber(topic, title, body, data)
 }
+
+func SendNotiToQueueDriver(driverID, slipID, title, body string) {
+	topic := driverID
+
+	logData := map[string]interface{}{
+		"topic":    topic,
+		"driverID": driverID,
+		"slipID":   slipID,
+		"title":    title,
+		"body":     body,
+	}
+	common.Log("SendNotiToDriver", logData, "")
+
+	data := map[string]string{}
+	common.SendMessageToSubscriber(topic, title, body, data)
+}
