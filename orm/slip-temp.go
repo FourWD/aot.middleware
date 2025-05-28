@@ -62,13 +62,13 @@ type SlipTemp struct {
 	// ========================================================================================
 	CounterID       string  `json:"counter_id" query:"counter_id" firestore:"counter_id" gorm:"type:varchar(5)"`
 	OriginPoiID     string  `json:"origin_poi_id" query:"origin_poi_id" firestore:"origin_poi_id" gorm:"type:varchar(36);"`
-	OriginName      string  `json:"origin_name" query:"origin_name" firestore:"origin_name" gorm:"type:varchar(150);"`
+	OriginName      string  `json:"origin_name" query:"origin_name" firestore:"origin_name" gorm:"type:varchar(256);"`
 	ForceOriginName string  `json:"force_origin_name" query:"force_origin_name" firestore:"force_origin_name" gorm:"type:text;"`
 	OriginLatitude  float64 `json:"origin_latitude" query:"origin_latitude" firestore:"origin_latitude" gorm:"type:decimal(10,6)"`
 	OriginLongitude float64 `json:"origin_longitude" query:"origin_longitude" firestore:"origin_longitude" gorm:"type:decimal(10,6)"`
 	// OriginRemark         string  `json:"origin_remark" query:"origin_remark" firestore:"origin_remark" gorm:"type:text"`
 	DestinationPoiID     string  `json:"destination_poi_id" query:"destination_poi_id" firestore:"destination_poi_id" gorm:"type:varchar(36);index"`
-	DestinationName      string  `json:"destination_name" query:"destination_name" firestore:"destination_name" gorm:"type:varchar(150);"`
+	DestinationName      string  `json:"destination_name" query:"destination_name" firestore:"destination_name" gorm:"type:varchar(256);"`
 	ForceDestinationName string  `json:"force_destination_name" query:"force_destination_name" firestore:"force_destination_name" gorm:"type:text;"`
 	DestinationLatitude  float64 `json:"destination_latitude" query:"destination_latitude" firestore:"destination_latitude" gorm:"type:decimal(10,6)"`
 	DestinationLongitude float64 `json:"destination_longitude" query:"destination_longitude" firestore:"destination_longitude" gorm:"type:decimal(10,6)"`
