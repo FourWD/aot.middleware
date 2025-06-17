@@ -39,6 +39,7 @@ type SlipTemp struct {
 	RefundRef         string    `json:"refund_ref" query:"refund_ref" firestore:"refund_ref" gorm:"type:varchar(50);default:null;"`
 	RefundRemark      string    `json:"refund_remark" query:"refund_remark" firestore:"refund_remark" gorm:"type:varchar(256);default:null;"`
 	RefundAmount      float64   `json:"refund_amount" query:"refund_amount" firestore:"refund_amount" gorm:"default:0; type:decimal(16,4);"`
+	RefundDate        time.Time `json:"refund_date" query:"refund_date" firestore:"refund_date" gorm:"default:null;"`
 	CreditCardNo      string    `json:"credit_card_number" query:"credit_card_number" firestore:"credit_card_number" gorm:"default:null; type:varchar(36);"`
 	CreditCardTypeID  string    `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id" gorm:"type:varchar(2);"`
 	CustomerPaymentID string    `json:"customer_payment_id" query:"customer_payment_id" firestore:"customer_payment_id" gorm:"default:null; type:varchar(36);"`
