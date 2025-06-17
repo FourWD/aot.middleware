@@ -28,5 +28,13 @@ func GetNotiApp(message *pubsub.Message) (model.NotiApp, error) {
 		return noti, errors.New("noti-app expired")
 	}
 
+	common.Log("Data", map[string]interface{}{
+		"slip_id":     noti.SlipID,
+		"vehicle_id":  noti.VehicleID,
+		"driver_id":   noti.DriverID,
+		"user_id":     noti.UserID,
+		"action_time": noti.ActionTime,
+	}, message.ID)
+
 	return noti, nil
 }
