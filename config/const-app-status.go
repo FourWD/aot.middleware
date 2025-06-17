@@ -1,8 +1,5 @@
 package config
 
-const AIRPORT_POI_ID = "99999999-9999-9999-9999-999999999999"
-const DEFAULT_DRIVER_IMAGE = "https://storage.googleapis.com/limousine-app-dev.appspot.com/image/avatar.png"
-
 type appUserStatus struct {
 	AVAILABLE      string
 	SEARCH_VEHICLE string
@@ -10,15 +7,6 @@ type appUserStatus struct {
 	VEHICLE_ARRIVE string
 	ON_THE_WAY     string
 	DELIVER        string
-}
-
-var APP_USER_STATUS = appUserStatus{
-	AVAILABLE:      "00", // ว่าง
-	SEARCH_VEHICLE: "01", // กำลังค้นหารถ
-	WAIT_VEHICLE:   "02", // รถกำลังมารับคุณ
-	VEHICLE_ARRIVE: "03", // รถมาถึงจุดรับคุณแล้ว
-	ON_THE_WAY:     "04", // กำลังเดินทาง
-	DELIVER:        "05", // ถึงปลายทาง
 }
 
 type appDriverStatus struct {
@@ -47,6 +35,15 @@ type appSlipTypeID struct {
 	FLEET      string
 	WEBSITE    string
 	APP        string
+}
+
+var APP_USER_STATUS = appUserStatus{
+	AVAILABLE:      "00", // ว่าง
+	SEARCH_VEHICLE: "01", // กำลังค้นหารถ
+	WAIT_VEHICLE:   "02", // รถกำลังมารับคุณ
+	VEHICLE_ARRIVE: "03", // รถมาถึงจุดรับคุณแล้ว
+	ON_THE_WAY:     "04", // กำลังเดินทาง
+	DELIVER:        "05", // ถึงปลายทาง
 }
 
 var APP_DRIVER_STATUS = appDriverStatus{
