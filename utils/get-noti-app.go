@@ -16,9 +16,11 @@ func GetNotiApp(message *pubsub.Message) (model.NotiApp, error) {
 		"message.data": string(message.Data),
 	}, message.ID)
 
+	gMessage := common.ConventStringToGoogleMessage(string(message.Data))
+
 	var noti model.NotiApp
-	if err := json.Unmarshal(message.Data, &noti); err != nil {
-		common.LogError(err.Error(), nil, message.ID)
+	if err := json.Unmarshal([]byte(string(gMessage.Message)), &noti); err != nil {
+		common.LogError("GetNotiApp json.Unmarshal error: "+err.Error(), nil, message.ID)
 		return noti, err
 	}
 
