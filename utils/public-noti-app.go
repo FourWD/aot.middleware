@@ -17,9 +17,10 @@ func publicNotiApp(topic string, group string, noti *model.NotiApp) error {
 		"driver_id":  noti.DriverID,
 		"user_id":    noti.UserID,
 		"topic":      topic,
+		"group":      group,
 		"message":    message,
 	}
-	common.Log(group, logFields, "")
+	common.Log("publicNotiApp", logFields, "")
 
 	if _, err := common.GooglePublicMessage(topic, message); err != nil {
 		return err
