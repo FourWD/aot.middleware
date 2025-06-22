@@ -9,6 +9,7 @@ type appUserNoti struct {
 	ON_THE_WAY          string
 	DELIVER             string
 	CANCEL_BY_USER      string
+	CANCEL_BY_DRIVER    string
 	PROMOTION           string
 	NOT_FOUND_DRIVER    string
 	REVIEW_TRIP         string
@@ -24,6 +25,7 @@ var APP_USER_NOTI = appUserNoti{
 	ON_THE_WAY:          "ON_THE_WAY",
 	DELIVER:             "DELIVER",
 	CANCEL_BY_USER:      "CANCEL_BY_USER",
+	CANCEL_BY_DRIVER:    "CANCEL_BY_DRIVER",
 	PROMOTION:           "PROMOTION",
 	NOT_FOUND_DRIVER:    "NOT_FOUND_DRIVER",
 	REVIEW_TRIP:         "REVIEW_TRIP",

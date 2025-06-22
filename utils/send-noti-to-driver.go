@@ -1,33 +1,33 @@
 package utils
 
-import (
-	"time"
+// import (
+// 	"time"
 
-	"github.com/FourWD/middleware/common"
-)
+// 	"github.com/FourWD/middleware/common"
+// )
 
-func SendNotiToDriver(driverID, slipID, typeID string) {
-	title := "📢 งานเข้าแล้ว!"
-	body := "คุณมีงานใหม่เข้าแล้ว กรุณาตรวจสอบงาน"
-	topic := driverID // auto register by flutter
+// func SendNotiToDriver(driverID, slipID, typeID string) error {
+// 	title := "📢 งานเข้าแล้ว!"
+// 	body := "คุณมีงานใหม่เข้าแล้ว กรุณาตรวจสอบงาน"
+// 	topic := driverID // auto register by flutter
 
-	logData := map[string]interface{}{
-		"topic":    topic,
-		"driverID": driverID,
-		"slipID":   slipID,
-		"typeID":   typeID,
-		"body":     body,
-		"title":    title,
-	}
-	common.Log("SendNotiToDriver", logData, "")
+// 	logData := map[string]interface{}{
+// 		"topic":    topic,
+// 		"driverID": driverID,
+// 		"slipID":   slipID,
+// 		"typeID":   typeID,
+// 		"body":     body,
+// 		"title":    title,
+// 	}
+// 	common.Log("SendNotiToDriver", logData, "")
 
-	data := map[string]string{
-		"event_code": "D001",
-		"expire":     time.Now().Add(5 * time.Minute).Format(common.DATE_FORMAT_MINUTE),
-	}
+// 	data := map[string]string{
+// 		"event_code": "D001",
+// 		"expire":     time.Now().Add(5 * time.Minute).Format(common.DATE_FORMAT_MINUTE),
+// 	}
 
-	common.SendMessageToSubscriber(topic, title, body, data)
-}
+// 	return common.SendMessageToSubscriber(topic, title, body, data)
+// }
 
 // func SendNotiToQueueDriver(driverID, slipID, typeID string, index int) {
 // 	title := "📢 แจ้งเตือนคิวของคุณ"
