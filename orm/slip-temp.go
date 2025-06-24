@@ -163,6 +163,7 @@ type SlipTemp struct {
 	// RemarkDriver string `json:"remark_driver" query:"remark_driver" firestore:"remark_driver" gorm:"type:text;"`
 	// ========================================================================================
 	AddressTax         string `json:"address_tax" query:"address_tax" firestore:"address_tax" gorm:"type:text"`                        //ที่อยู่ใบกำกับภาษี
+	AddressTax2        string `json:"address_tax_2" query:"address_tax_2" firestore:"address_tax_2" gorm:"type:text"`                  //ที่อยู่ใบกำกับภาษี
 	CompanyTaxName     string `json:"company_tax_name" query:"company_tax_name" firestore:"company_tax_name" gorm:"type:varchar(200)"` //ที่อยู่ใบกำกับภาษี
 	DistrictTaxName    string `json:"district_tax_name" query:"district_tax_name" firestore:"district_tax_name" gorm:"type:varchar(200)"`
 	SubDistrictTaxName string `json:"sub_district_tax_name" query:"sub_district_tax_name" firestore:"sub_district_tax_name" gorm:"type:varchar(200)"`
