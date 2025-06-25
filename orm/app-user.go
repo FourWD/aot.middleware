@@ -25,4 +25,5 @@ type AppUser struct {
 	CreditCardNo     string  `json:"credit_card_no" query:"credit_card_no" firestore:"credit_card_no"`
 	CreditCardTypeID string  `json:"credit_card_type_id" query:"credit_card_type_id" firestore:"credit_card_type_id"`
 	VehiclePrice     float64 `json:"vehicle_price" query:"vehicle_price" firestore:"vehicle_price"`
+	IsPaymentFail    bool    `json:"is_payment_fail" firestore:"is_payment_fail" query:"is_payment_fail"`
 }
