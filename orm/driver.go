@@ -38,6 +38,6 @@ type Driver struct {
 	QueueDate               time.Time `json:"queue_date" query:"queue_date" gorm:"default:null;"`
 	TerminalQueueDate       time.Time `json:"terminal_queue_date" query:"terminal_queue_date" gorm:"default:null;"`
 	GateID                  string    `json:"gate_id" query:"gate_id" gorm:"type:varchar(2)"`
-	DriverResignDate        time.Time `json:"driver_resign_date" query:"driver_resign_date" gorm:"default:null;"` // DriverResignDate
+	DriverResignDate        time.Time `json:"driver_resign_date" query:"driver_resign_date" gorm:"default:null;"`
 	// StopLocationID          int       `json:"stop_location_id" query:"stop_location_id" gorm:"default:null; type:int;"`
 }
