@@ -87,6 +87,7 @@ type SlipTemp struct {
 	DropOffPrice  float64 `json:"drop_off_price" query:"drop_off_price" firestore:"drop_off_price" gorm:"default:0; type:decimal(16,4);"`
 	NetPrice      float64 `json:"net_price" query:"net_price" firestore:"net_price" gorm:"default:0; type:decimal(16,4);"`
 	WaitingCharge float64 `json:"waiting_charge" query:"waiting_charge" firestore:"waiting_charge" gorm:"default:0; type:decimal(16,4);"`
+	FeeID         string  `json:"fee_id" query:"fee_id" firestore:"fee_id" gorm:"type:varchar(36);"`
 	Fee           float64 `json:"fee" query:"fee" firestore:"fee" gorm:"default:0; type:decimal(16,4);"`
 	FeeVat        float64 `json:"fee_vat" query:"fee_vat" firestore:"fee_vat" gorm:"default:0; type:decimal(16,4);"`
 	EDCBankID     string  `json:"edc_bank_id" query:"edc_bank_id" firestore:"edc_bank_id" gorm:"type:varchar(5);"`
