@@ -105,6 +105,7 @@ type SlipTemp struct {
 	Address     string    `json:"address" query:"address" firestore:"address" gorm:"type:text"`
 	Postcode    string    `json:"postcode" query:"postcode" firestore:"postcode" gorm:"type:varchar(10)"`
 	PhoneNo     string    `json:"phone_no" query:"phone_no" firestore:"phone_no" gorm:"type:varchar(50)"`
+	AirlineID   string    `json:"airline_id" query:"airline_id" firestore:"airline_id" gorm:"type:varchar(3)"`
 	AirlineName string    `json:"airline_name" query:"airline_name" firestore:"airline_name" gorm:"type:varchar(100)"`
 	FlightNo    string    `json:"flight_no" query:"flight_no" firestore:"flight_no" gorm:"type:varchar(20)"`
 	FlightDate  time.Time `json:"flight_date" query:"flight_date" firestore:"flight_date" gorm:"default:null;"`
