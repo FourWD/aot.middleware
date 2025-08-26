@@ -40,6 +40,6 @@ type Driver struct {
 	GateID                  string    `json:"gate_id" query:"gate_id" gorm:"type:varchar(2)"`
 	ResignDate              time.Time `json:"resign_date" query:"resign_date" gorm:"default:null;"`
 	RefCode                 string    `json:"ref_code" query:"ref_code" gorm:"type:varchar(10);"`
-	AccidentPoint           int       `json:"accident_point" query:"accident_point" gorm:"default:0; type:int;"` //แต้มทั้งหมดของ driver
+	Point                   float64   `json:"point" query:"point" gorm:"int;"` //แต้มทั้งหมดของ driver
 	// StopLocationID          int       `json:"stop_location_id" query:"stop_location_id" gorm:"default:null; type:int;"`
 }
