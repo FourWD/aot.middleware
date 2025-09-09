@@ -249,5 +249,7 @@ type SlipTemp struct {
 
 	SlipExtraTypeID     string `json:"slip_extra_type_id" query:"slip_extra_type_id" firestore:"slip_extra_type_id" gorm:"type:varchar(2); default:'00';"`
 	IsRequestLadyDriver bool   `json:"is_request_lady_driver" query:"is_request_lady_driver" firestore:"is_request_lady_driver" gorm:"type:bool; default:false;"`
+
+	Room string `json:"room" query:"room" firestore:"room" gorm:"type:varchar(10);"`
 	// ========================================================================================
 }
