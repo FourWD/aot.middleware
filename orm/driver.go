@@ -37,6 +37,7 @@ type Driver struct {
 	QueueNo                 string    `json:"queue_no" query:"queue_no" gorm:"type:varchar(10)"` // stamp from running_nos
 	QueueDate               time.Time `json:"queue_date" query:"queue_date" gorm:"default:null;"`
 	TerminalQueueDate       time.Time `json:"terminal_queue_date" query:"terminal_queue_date" gorm:"default:null;"`
+	CallTerminalDate        time.Time `json:"call_terminal_date" query:"call_terminal_date" gorm:"default:null;"`
 	GateID                  string    `json:"gate_id" query:"gate_id" gorm:"type:varchar(2)"`
 	ResignDate              time.Time `json:"resign_date" query:"resign_date" gorm:"default:null;"`
 	RefCode                 string    `json:"ref_code" query:"ref_code" gorm:"type:varchar(10);"`
