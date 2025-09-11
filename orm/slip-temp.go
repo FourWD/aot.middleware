@@ -129,6 +129,7 @@ type SlipTemp struct {
 	PassengerNationalityID string `json:"passenger_nationality_id" query:"passenger_nationality_id" firestore:"passenger_nationality_id" gorm:"type:varchar(10);"`
 	PassengerEmail         string `json:"passenger_email" query:"passenger_email" firestore:"passenger_email" gorm:"type:varchar(255);"`
 	PassengerPhone         string `json:"passenger_phone" query:"passenger_phone" firestore:"passenger_phone" gorm:"type:varchar(50);"`
+	PassengerCountry       string `json:"passenger_country" query:"passenger_country" firestore:"passenger_country" gorm:"type:varchar(10);"`
 	PassengerPassport      string `json:"passenger_passport" query:"passenger_passport" firestore:"passenger_passport" gorm:"type:varchar(30);"`
 
 	ContactPersonPrefixID  string `json:"contact_person_prefix_id" query:"contact_person_prefix_id" firestore:"contact_person_prefix_id" gorm:"type:varchar(10);"`
@@ -251,5 +252,6 @@ type SlipTemp struct {
 	IsRequestLadyDriver bool   `json:"is_request_lady_driver" query:"is_request_lady_driver" firestore:"is_request_lady_driver" gorm:"type:bool; default:false;"`
 
 	Room string `json:"room" query:"room" firestore:"room" gorm:"type:varchar(10);"`
+
 	// ========================================================================================
 }
