@@ -116,10 +116,11 @@ type SlipTemp struct {
 	BookingDate time.Time `json:"booking_date" query:"booking_date" firestore:"booking_date" gorm:"default:null;"`
 
 	//---FLEET--
-	FleetClientID   string `json:"fleet_client_id" query:"fleet_client_id" firestore:"fleet_client_id" gorm:"type:varchar(10); default:null;"`
-	BookingHour     string `json:"booking_hour" query:"booking_hour" firestore:"booking_hour" gorm:"type:varchar(2);"`
-	Passenger       int    `json:"passenger" query:"passenger" firestore:"passenger" gorm:"type:int"`
-	NumberOfLuggage int    `json:"number_of_luggage" query:"number_of_luggage" firestore:"number_of_luggage" gorm:"type:int"`
+	FleetClientID        string `json:"fleet_client_id" query:"fleet_client_id" firestore:"fleet_client_id" gorm:"type:varchar(10); default:null;"`
+	BookingHour          string `json:"booking_hour" query:"booking_hour" firestore:"booking_hour" gorm:"type:varchar(2);"`
+	Passenger            int    `json:"passenger" query:"passenger" firestore:"passenger" gorm:"type:int"`
+	NumberOfLuggage      int    `json:"number_of_luggage" query:"number_of_luggage" firestore:"number_of_luggage" gorm:"type:int"`
+	NumberOfSmallLuggage int    `json:"number_of_small_luggage" query:"number_of_small_luggage" firestore:"number_of_small_luggage" gorm:"type:int"`
 
 	PassengerPrefixID  string `json:"passenger_prefix_id" query:"passenger_prefix_id" firestore:"passenger_prefix_id" gorm:"type:varchar(2);"`
 	PassengerFirstname string `json:"passenger_firstname" query:"passenger_firstname" firestore:"passenger_firstname" gorm:"type:varchar(200);"`
