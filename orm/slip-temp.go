@@ -255,5 +255,6 @@ type SlipTemp struct {
 	Room            string `json:"room" query:"room" firestore:"room" gorm:"type:varchar(10);"`
 	IsAssignOutside bool   `json:"is_assign_outside" query:"is_assign_outside" firestore:"is_assign_outside" gorm:"type:bool; default:false;"`
 
+	IsHideApp bool `json:"is_hide_app" query:"is_hide_app" firestore:"is_hide_app" gorm:"type:bool; default:false;"` // ซ่อนรายการจองหน้าประวัติ
 	// ========================================================================================
 }
