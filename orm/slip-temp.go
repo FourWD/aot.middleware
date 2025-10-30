@@ -128,6 +128,7 @@ type SlipTemp struct {
 	// PassengerCountryID     string `json:"passenger_country_id" query:"passenger_country_id" firestore:"passenger_country_id" gorm:"type:varchar(10);"`
 	PassengerGenderID      string `json:"passenger_gender_id" query:"passenger_gender_id" firestore:"passenger_gender_id" gorm:"type:varchar(10);"`
 	PassengerNationalityID string `json:"passenger_nationality_id" query:"passenger_nationality_id" firestore:"passenger_nationality_id" gorm:"type:varchar(10);"`
+	PassengerCountryID     string `json:"passenger_country_id" query:"passenger_country_id" firestore:"passenger_country_id" gorm:"type:varchar(10);"`
 	PassengerEmail         string `json:"passenger_email" query:"passenger_email" firestore:"passenger_email" gorm:"type:varchar(255);"`
 	PassengerPhone         string `json:"passenger_phone" query:"passenger_phone" firestore:"passenger_phone" gorm:"type:varchar(50);"`
 	PassengerCountry       string `json:"passenger_country" query:"passenger_country" firestore:"passenger_country" gorm:"type:varchar(10);"`
