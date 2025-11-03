@@ -122,10 +122,9 @@ type SlipTemp struct {
 	NumberOfLuggage      int    `json:"number_of_luggage" query:"number_of_luggage" firestore:"number_of_luggage" gorm:"type:int"`
 	NumberOfSmallLuggage int    `json:"number_of_small_luggage" query:"number_of_small_luggage" firestore:"number_of_small_luggage" gorm:"type:int"`
 
-	PassengerPrefixID  string `json:"passenger_prefix_id" query:"passenger_prefix_id" firestore:"passenger_prefix_id" gorm:"type:varchar(2);"`
-	PassengerFirstname string `json:"passenger_firstname" query:"passenger_firstname" firestore:"passenger_firstname" gorm:"type:varchar(200);"`
-	PassengerLastname  string `json:"passenger_lastname" query:"passenger_lastname" firestore:"passenger_lastname" gorm:"type:varchar(200);"`
-	// PassengerCountryID     string `json:"passenger_country_id" query:"passenger_country_id" firestore:"passenger_country_id" gorm:"type:varchar(10);"`
+	PassengerPrefixID      string `json:"passenger_prefix_id" query:"passenger_prefix_id" firestore:"passenger_prefix_id" gorm:"type:varchar(2);"`
+	PassengerFirstname     string `json:"passenger_firstname" query:"passenger_firstname" firestore:"passenger_firstname" gorm:"type:varchar(200);"`
+	PassengerLastname      string `json:"passenger_lastname" query:"passenger_lastname" firestore:"passenger_lastname" gorm:"type:varchar(200);"`
 	PassengerGenderID      string `json:"passenger_gender_id" query:"passenger_gender_id" firestore:"passenger_gender_id" gorm:"type:varchar(10);"`
 	PassengerNationalityID string `json:"passenger_nationality_id" query:"passenger_nationality_id" firestore:"passenger_nationality_id" gorm:"type:varchar(10);"`
 	PassengerCountryID     string `json:"passenger_country_id" query:"passenger_country_id" firestore:"passenger_country_id" gorm:"type:varchar(10);"`
@@ -134,11 +133,12 @@ type SlipTemp struct {
 	PassengerCountry       string `json:"passenger_country" query:"passenger_country" firestore:"passenger_country" gorm:"type:varchar(10);"`
 	PassengerPassport      string `json:"passenger_passport" query:"passenger_passport" firestore:"passenger_passport" gorm:"type:varchar(30);"`
 
-	ContactPersonPrefixID  string `json:"contact_person_prefix_id" query:"contact_person_prefix_id" firestore:"contact_person_prefix_id" gorm:"type:varchar(10);"`
-	ContactPersonFirstname string `json:"contact_person_firstname" query:"contact_person_firstname" firestore:"contact_person_firstname" gorm:"type:varchar(200);"`
-	ContactPersonLastname  string `json:"contact_person_lastname" query:"contact_person_lastname" firestore:"contact_person_lastname" gorm:"type:varchar(200);"`
-	ContactPersonPhone     string `json:"contact_person_phone " query:"contact_person_phone" firestore:"contact_person_phone" gorm:"type:varchar(50)"`
-	ContactPersonEmail     string `json:"contact_person_email" query:"contact_person_email" firestore:"contact_person_email" gorm:"type:varchar(255)"`
+	ContactPersonPrefixID    string `json:"contact_person_prefix_id" query:"contact_person_prefix_id" firestore:"contact_person_prefix_id" gorm:"type:varchar(10);"`
+	ContactPersonFirstname   string `json:"contact_person_firstname" query:"contact_person_firstname" firestore:"contact_person_firstname" gorm:"type:varchar(200);"`
+	ContactPersonLastname    string `json:"contact_person_lastname" query:"contact_person_lastname" firestore:"contact_person_lastname" gorm:"type:varchar(200);"`
+	ContactPersonPhone       string `json:"contact_person_phone " query:"contact_person_phone" firestore:"contact_person_phone" gorm:"type:varchar(50)"`
+	ContactPersonEmail       string `json:"contact_person_email" query:"contact_person_email" firestore:"contact_person_email" gorm:"type:varchar(255)"`
+	ContactPersonCountryCode string `json:"contact_person_country_code" query:"contact_person_country_code" firestore:"contact_person_country_code" gorm:"type:varchar(10);"`
 
 	SubPassengerFirstname1 string `json:"sub_passenger_firstname_1" query:"sub_passenger_firstname_1" firestore:"sub_passenger_firstname_1" gorm:"type:varchar(255);column:sub_passenger_firstname_1;"`
 	SubPassengerLastname1  string `json:"sub_passenger_lastname_1" query:"sub_passenger_lastname_1" firestore:"sub_passenger_lastname_1" gorm:"type:varchar(255);column:sub_passenger_lastname_1;"`
