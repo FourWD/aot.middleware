@@ -40,7 +40,7 @@ type Driver struct {
 	CallTerminalDate        time.Time `json:"call_terminal_date" query:"call_terminal_date" gorm:"default:null;"`
 	GateID                  string    `json:"gate_id" query:"gate_id" gorm:"type:varchar(2)"`
 	ResignDate              time.Time `json:"resign_date" query:"resign_date" gorm:"default:null;"`
-	RefCode                 string    `json:"ref_code" query:"ref_code" gorm:"type:varchar(10);"`
+	RefNo                   string    `json:"ref_no" query:"ref_no" gorm:"type:varchar(10)"`
 	Point                   float64   `json:"point" query:"point" gorm:"int;"` //แต้มทั้งหมดของ driver
 	// StopLocationID          int       `json:"stop_location_id" query:"stop_location_id" gorm:"default:null; type:int;"`
 }
