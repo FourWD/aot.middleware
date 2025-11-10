@@ -43,4 +43,8 @@ type Driver struct {
 	RefNo                   string    `json:"ref_no" query:"ref_no" gorm:"type:varchar(10)"`
 	Point                   float64   `json:"point" query:"point" gorm:"int;"` //แต้มทั้งหมดของ driver
 	// StopLocationID          int       `json:"stop_location_id" query:"stop_location_id" gorm:"default:null; type:int;"`
+
+	Systolic  int `json:"systolic" query:"systolic" gorm:"type:int"`
+	Diastolic int `json:"diastolic" query:"diastolic" gorm:"type:int"`
+	Heartrate int `json:"heartrate" query:"heartrate" gorm:"type:int"`
 }
