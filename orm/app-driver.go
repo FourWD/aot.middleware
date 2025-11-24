@@ -23,6 +23,7 @@ type AppDriver struct {
 	VehicleModelID     string `json:"vehicle_model_id" firestore:"vehicle_model_id" query:"vehicle_model_id"`
 	VehicleModelName   string `json:"vehicle_model_name" firestore:"vehicle_model_name" query:"vehicle_model_name"`
 
+	// FleetCardName string `json:"fleet_card_name" firestore:"fleet_card_name" query:"fleet_card_name"`
 	DriverName  string `json:"driver_name" firestore:"driver_name" query:"driver_name"`
 	DriverImage string `json:"driver_image" firestore:"driver_image" query:"driver_image"`
 	JwtToken    string `json:"jwt_token" firestore:"jwt_token" query:"jwt_token"`
