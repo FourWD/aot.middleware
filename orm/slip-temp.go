@@ -200,6 +200,8 @@ type SlipTemp struct {
 
 	IsRequestCancel   bool      `json:"is_request_cancel " query:"is_request_cancel" firestore:"is_request_cancel" gorm:"type:bool; default:false;"`
 	RequestCancelDate time.Time `json:"request_cancel_date" query:"request_cancel_date" firestore:"request_cancel_date" gorm:"default:null;"`
+	IsRequestVoid     bool      `json:"is_request_void " query:"is_request_void" firestore:"is_request_void" gorm:"type:bool; default:false;"`
+	RequestVoidDate   time.Time `json:"request_void_date" query:"request_void_date" firestore:"request_void_date" gorm:"default:null;"`
 	IsRequestRefund   bool      `json:"is_request_refund " query:"is_request_refund" firestore:"is_request_refund" gorm:"type:bool; default:false;"`
 	// ========================================================================================
 	AssignVehicleID string `json:"assign_vehicle_id" query:"assign_vehicle_id" firestore:"assign_vehicle_id" gorm:"type:varchar(36);"`
