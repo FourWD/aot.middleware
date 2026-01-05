@@ -260,5 +260,9 @@ type SlipTemp struct {
 	IsAssignOutside bool   `json:"is_assign_outside" query:"is_assign_outside" firestore:"is_assign_outside" gorm:"type:bool; default:false;"`
 
 	IsHideApp bool `json:"is_hide_app" query:"is_hide_app" firestore:"is_hide_app" gorm:"type:bool; default:false;"` // ซ่อนรายการจองหน้าประวัติ
+
+	IsConfirmCall   bool      `json:"is_confirm_call" query:"is_confirm_call" firestore:"is_confirm_call" gorm:"default:0; type:bool;"`
+	ConfirmCallBy   string    `json:"confirm_call_by" query:"confirm_call_by" firestore:"confirm_call_by" gorm:"type:varchar(36);"`
+	ConfirmCallDate time.Time `json:"confirm_call_date" query:"confirm_call_date" firestore:"confirm_call_date" gorm:"default:null;"`
 	// ========================================================================================
 }
