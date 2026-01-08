@@ -264,5 +264,7 @@ type SlipTemp struct {
 	IsConfirmCall   bool      `json:"is_confirm_call" query:"is_confirm_call" firestore:"is_confirm_call" gorm:"default:0; type:bool;"`
 	ConfirmCallBy   string    `json:"confirm_call_by" query:"confirm_call_by" firestore:"confirm_call_by" gorm:"type:varchar(36);"`
 	ConfirmCallDate time.Time `json:"confirm_call_date" query:"confirm_call_date" firestore:"confirm_call_date" gorm:"default:null;"`
+
+	VipID string `json:"vip_id" query:"vip_id" firestore:"vip_id" gorm:"type:varchar(36);"`
 	// ========================================================================================
 }
