@@ -267,6 +267,7 @@ type SlipTemp struct {
 
 	VipID string `json:"vip_id" query:"vip_id" firestore:"vip_id" gorm:"type:varchar(36);"`
 
-	Language string `json:"language" query:"language" firestore:"language" gorm:"type:varchar(5); default:'TH';"`
+	PartnerCode string `json:"partner_code" query:"partner_code" firestore:"partner_code" gorm:"type:varchar(20);"`
+	Language    string `json:"language" query:"language" firestore:"language" gorm:"type:varchar(2); default:'TH';"`
 	// ========================================================================================
 }
