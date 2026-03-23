@@ -14,6 +14,7 @@ type appUserNoti struct {
 	NOT_FOUND_DRIVER    string
 	REVIEW_TRIP         string
 	ALMOST_BOOKING_TIME string
+	LINK_TOKEN          string
 }
 
 var APP_USER_NOTI = appUserNoti{
@@ -30,4 +31,5 @@ var APP_USER_NOTI = appUserNoti{
 	NOT_FOUND_DRIVER:    "NOT_FOUND_DRIVER",
 	REVIEW_TRIP:         "REVIEW_TRIP",
 	ALMOST_BOOKING_TIME: "ALMOST_BOOKING_TIME",
+	LINK_TOKEN:          "LINK_TOKEN",
 }
