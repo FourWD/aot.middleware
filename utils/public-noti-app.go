@@ -5,12 +5,13 @@ import (
 
 	"github.com/FourWD/aot.middleware/model"
 	"github.com/FourWD/middleware/common"
+	"github.com/FourWD/middleware/kit"
 )
 
 func publicNotiApp(topic string, group string, noti *model.NotiApp) error {
 	noti.ActionTime = time.Now()
 
-	message := group + "@" + common.StructToString(noti)
+	message := group + "@" + kit.StructToString(noti)
 	logFields := map[string]interface{}{
 		"slip_id":    noti.SlipID,
 		"vehicle_id": noti.VehicleID,

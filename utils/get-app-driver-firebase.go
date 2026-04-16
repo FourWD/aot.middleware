@@ -8,6 +8,7 @@ import (
 
 	"github.com/FourWD/aot.middleware/orm"
 	"github.com/FourWD/middleware/common"
+	"github.com/FourWD/middleware/kit"
 )
 
 func GetAppDriverFirebase(driverID string) (orm.AppDriver, error) {
@@ -37,13 +38,13 @@ func GetAppDriverFirebase(driverID string) (orm.AppDriver, error) {
 	completeDate, _ := snap.Data()["complete_date"].(time.Time)
 
 	appDriver.ID = driverID
-	appDriver.ArriveDate = common.UTCToThailandTime(arriveDate.Truncate(time.Second))
-	appDriver.PickupDate = common.UTCToThailandTime(pickupDate.Truncate(time.Second))
-	appDriver.DropOffDate1 = common.UTCToThailandTime(dropOffDate1.Truncate(time.Second))
-	appDriver.DropOffDate2 = common.UTCToThailandTime(dropOffDate2.Truncate(time.Second))
-	// appDriver.DropOffDate3 = common.UTCToThailandTime(dropOffDate3.Truncate(time.Second))
-	appDriver.DeliverDate = common.UTCToThailandTime(deliverDate.Truncate(time.Second))
-	appDriver.CompleteDate = common.UTCToThailandTime(completeDate.Truncate(time.Second))
+	appDriver.ArriveDate = kit.UTCToThailandTime(arriveDate.Truncate(time.Second))
+	appDriver.PickupDate = kit.UTCToThailandTime(pickupDate.Truncate(time.Second))
+	appDriver.DropOffDate1 = kit.UTCToThailandTime(dropOffDate1.Truncate(time.Second))
+	appDriver.DropOffDate2 = kit.UTCToThailandTime(dropOffDate2.Truncate(time.Second))
+	// appDriver.DropOffDate3 = kit.UTCToThailandTime(dropOffDate3.Truncate(time.Second))
+	appDriver.DeliverDate = kit.UTCToThailandTime(deliverDate.Truncate(time.Second))
+	appDriver.CompleteDate = kit.UTCToThailandTime(completeDate.Truncate(time.Second))
 
 	return appDriver, nil
 }
