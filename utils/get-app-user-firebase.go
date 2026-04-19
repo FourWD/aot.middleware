@@ -6,12 +6,12 @@ import (
 	"fmt"
 
 	"github.com/FourWD/aot.middleware/orm"
-	"github.com/FourWD/middleware/common"
+	"github.com/FourWD/middleware/infra"
 )
 
 func GetAppUserFirebase(userID string) (orm.AppUser, error) {
 	docPath := fmt.Sprintf("users/%s", userID)
-	docRef := common.FirebaseClient.Doc(docPath)
+	docRef := infra.FirestoreClient.Doc(docPath)
 	snap, err := docRef.Get(context.Background())
 	if err != nil {
 		return orm.AppUser{}, errors.New("cannot get : " + docPath)

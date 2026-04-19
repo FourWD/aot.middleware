@@ -3,7 +3,7 @@ package utils
 import (
 	"github.com/FourWD/aot.middleware/config"
 	"github.com/FourWD/aot.middleware/orm"
-	"github.com/FourWD/middleware/common"
+	"github.com/FourWD/middleware/infra"
 )
 
 func InitAppUser(userID string) error {
@@ -16,6 +16,6 @@ func InitAppUser(userID string) error {
 
 	appUser.AppUserStatusID = config.APP_USER_STATUS.AVAILABLE
 
-	_, err := common.FirebaseClient.Collection("users").Doc(userID).Set(common.FirebaseCtx, appUser)
+	_, err := infra.FirestoreClient.Collection("users").Doc(userID).Set(infra.FirebaseCtx, appUser)
 	return err
 }

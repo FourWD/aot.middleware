@@ -7,13 +7,13 @@ import (
 	"time"
 
 	"github.com/FourWD/aot.middleware/orm"
-	"github.com/FourWD/middleware/common"
+	"github.com/FourWD/middleware/infra"
 	"github.com/FourWD/middleware/kit"
 )
 
 func GetAppDriverFirebase(driverID string) (orm.AppDriver, error) {
 	docPath := fmt.Sprintf("drivers/%s", driverID)
-	docRef := common.FirebaseClient.Doc(docPath)
+	docRef := infra.FirestoreClient.Doc(docPath)
 	snap, err := docRef.Get(context.Background())
 	if err != nil {
 		// log.Println(err)

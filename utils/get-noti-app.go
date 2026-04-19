@@ -8,6 +8,7 @@ import (
 	"cloud.google.com/go/pubsub"
 	"github.com/FourWD/aot.middleware/model"
 	"github.com/FourWD/middleware/common"
+	"github.com/FourWD/middleware/infra"
 )
 
 func GetNotiApp(message *pubsub.Message) (model.NotiApp, error) {
@@ -16,7 +17,7 @@ func GetNotiApp(message *pubsub.Message) (model.NotiApp, error) {
 		"message.data": string(message.Data),
 	}, message.ID)
 
-	gMessage := common.ConventStringToGoogleMessage(string(message.Data))
+	gMessage := infra.ConventStringToGoogleMessage(string(message.Data))
 
 	var noti model.NotiApp
 	if err := json.Unmarshal([]byte(string(gMessage.Message)), &noti); err != nil {
