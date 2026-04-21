@@ -4,7 +4,6 @@ import (
 	"time"
 
 	"github.com/FourWD/aot.middleware/model"
-	"github.com/FourWD/middleware/common"
 	"github.com/FourWD/middleware/infra"
 	"github.com/FourWD/middleware/kit"
 )
@@ -22,7 +21,7 @@ func publicNotiApp(topic string, group string, noti *model.NotiApp) error {
 		"group":      group,
 		"message":    message,
 	}
-	common.Log("publicNotiApp", logFields, "")
+	infra.AppLog.Event("publicNotiApp", logFields, "")
 
 	if _, err := infra.GooglePublicMessage(topic, message); err != nil {
 		return err
