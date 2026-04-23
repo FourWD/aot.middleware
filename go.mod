@@ -4,7 +4,7 @@ go 1.26.1
 
 require (
 	cloud.google.com/go/pubsub v1.50.1
-	github.com/FourWD/middleware v1.5.610
+	github.com/FourWD/middleware v1.5.611
 	gorm.io/gorm v1.31.1
 )
 
