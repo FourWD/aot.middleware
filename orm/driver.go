@@ -13,8 +13,11 @@ type Driver struct {
 	DriverCode              string    `json:"driver_code" query:"driver_code" gorm:"type:varchar(36);unique;"`
 	PrefixID                string    `json:"prefix_id" query:"prefix_id" firestore:"prefix_id" gorm:"type:varchar(2);"`
 	Firstname               string    `json:"firstname" query:"firstname" gorm:"type:varchar(100)"`
+	FirstnameEn             string    `json:"firstname_en" query:"firstname_en" gorm:"type:varchar(100)"`
 	Lastname                string    `json:"lastname" query:"lastname" gorm:"type:varchar(100)"`
+	LastnameEn              string    `json:"lastname_en" query:"lastname_en" gorm:"type:varchar(100)"`
 	Nickname                string    `json:"nickname" query:"nickname" gorm:"type:varchar(50)"`
+	NicknameEn              string    `json:"nickname_en" query:"nickname_en" gorm:"type:varchar(50)"`
 	Birthday                time.Time `json:"birthday" query:"birthday" gorm:"default:null;"`
 	Email                   string    `json:"email" query:"email" gorm:"type:varchar(100)"`
 	IDCardNo                string    `json:"idcard_no" query:"idcard_no" gorm:"type:varchar(13)"`
