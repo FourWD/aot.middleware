@@ -250,6 +250,7 @@ type SlipTemp struct {
 
 	IsComplete   bool      `json:"is_complete" query:"is_complete" firestore:"is_complete" gorm:"default:0; type:bool;"`
 	CompleteDate time.Time `json:"complete_date" query:"complete_date" firestore:"complete_date" gorm:"default:null;"`
+	CompleteBy   string    `json:"complete_by" query:"complete_by" firestore:"complete_by" gorm:"type:varchar(36);"`
 
 	ActualDistance float64 `json:"actual_distance" query:"actual_distance" firestore:"actual_distance" gorm:"type:decimal(10,4)"`
 	Duration       int     `json:"duration" query:"duration" firestore:"duration" gorm:"type:int"`
