@@ -35,7 +35,7 @@ type SlipTemp struct {
 	PaymentTypeID     string    `json:"payment_type_id" query:"payment_type_id" firestore:"payment_type_id" gorm:"type:varchar(2);"`
 	PaymentDate       time.Time `json:"payment_date" query:"payment_date" firestore:"payment_date" gorm:"default:null;"`
 	PaymentSlip       string    `json:"payment_slip" query:"payment_slip" firestore:"payment_slip" gorm:"type:varchar(256);"`
-	PaymentSlip2      string    `json:"payment_slip_2" query:"payment_slip_2" firestore:"payment_slip_2" gorm:"type:varchar(256); column:payment_slip_2;"`
+	PaymentSlip2      string    `json:"payment_slip_2" query:"payment_slip_2" firestore:"payment_slip_2" gorm:"type:varchar(256);column:payment_slip_2;"`
 	PaymentRef        string    `json:"payment_ref" query:"payment_ref" firestore:"payment_ref" gorm:"type:varchar(50);default:null;"`
 	RefundRef         string    `json:"refund_ref" query:"refund_ref" firestore:"refund_ref" gorm:"type:varchar(50);default:null;"`
 	RefundRemark      string    `json:"refund_remark" query:"refund_remark" firestore:"refund_remark" gorm:"type:varchar(256);default:null;"`
