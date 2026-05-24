@@ -3,7 +3,8 @@
     "allow": [
       "Bash(go build *)",
       "Bash(go env *)",
-      "Read(//c/Users/puarns/go/pkg/mod/github.com/!four!w!d/**)"
+      "Read(//c/Users/puarns/go/pkg/mod/github.com/!four!w!d/**)",
+      "Bash(git mv *)"
     ]
   }
 }
